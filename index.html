@@ -134,23 +134,99 @@
       text-decoration: none;
     }
 
+    /* ============ ANIMATIONS ============ */
+    @keyframes kenBurns {
+      0% {
+        transform: scale(1) translateX(0);
+      }
+      50% {
+        transform: scale(1.1) translateX(-2%);
+      }
+      100% {
+        transform: scale(1) translateX(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.7;
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -200% 0;
+      }
+      100% {
+        background-position: 200% 0;
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
     /* ============ HERO VIDÉO/IMAGE ============ */
     .hero {
       padding: 140px 24px 80px;
       background: var(--navy);
       position: relative;
       overflow: hidden;
-      min-height: 600px;
+      min-height: 650px;
     }
 
-    .hero-bg {
+    .hero-slider {
+      position: absolute;
+      top: -10%;
+      left: -10%;
+      width: 120%;
+      height: 120%;
+    }
+
+    .hero-slide {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.3;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+      animation: kenBurns 20s ease-in-out infinite;
+    }
+
+    .hero-slide.active {
+      opacity: 0.85;
     }
 
     .hero-overlay {
@@ -159,7 +235,32 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, rgba(10,22,40,0.95) 0%, rgba(10,22,40,0.7) 100%);
+      background: linear-gradient(
+        135deg, 
+        rgba(10,22,40,0.8) 0%, 
+        rgba(10,22,40,0.4) 40%,
+        rgba(10,22,40,0.35) 60%,
+        rgba(10,22,40,0.65) 100%
+      );
+      z-index: 1;
+    }
+
+    /* Vignette effect pour mieux voir le footage au centre */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(
+        ellipse at center,
+        transparent 0%,
+        transparent 50%,
+        rgba(10,22,40,0.5) 100%
+      );
+      pointer-events: none;
+      z-index: 1;
     }
 
     .hero-inner {
@@ -173,6 +274,10 @@
       z-index: 2;
     }
 
+    .hero-content {
+      animation: fadeInUp 1s ease-out;
+    }
+
     .hero-content h1 {
       font-size: 48px;
       font-weight: 700;
@@ -180,10 +285,17 @@
       color: var(--white);
       margin-bottom: 24px;
       letter-spacing: -1px;
+      animation: fadeInUp 1s ease-out 0.2s both;
     }
 
     .hero-content h1 span {
       color: #60A5FA;
+      background: linear-gradient(90deg, #60A5FA, #93C5FD, #60A5FA);
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 3s linear infinite;
     }
 
     .hero-content p {
@@ -191,6 +303,7 @@
       color: rgba(255,255,255,0.8);
       margin-bottom: 32px;
       max-width: 520px;
+      animation: fadeInUp 1s ease-out 0.4s both;
     }
 
     .hero-badges {
@@ -198,6 +311,7 @@
       gap: 16px;
       margin-bottom: 40px;
       flex-wrap: wrap;
+      animation: fadeInUp 1s ease-out 0.6s both;
     }
 
     .hero-badge {
@@ -210,6 +324,12 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .hero-badge:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-2px);
     }
 
     .hero-badge svg {
@@ -246,6 +366,13 @@
       border-radius: 16px;
       padding: 32px;
       box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+      animation: fadeInRight 1s ease-out 0.5s both;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .quote-form:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.3);
     }
 
     .quote-form h3 {
@@ -309,11 +436,30 @@
       border-radius: 8px;
       cursor: pointer;
       margin-top: 8px;
-      transition: all 0.2s;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-submit::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s;
+    }
+
+    .btn-submit:hover::before {
+      left: 100%;
     }
 
     .btn-submit:hover {
       background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
     }
 
     .form-note {
@@ -335,6 +481,11 @@
       font-size: 13px;
       font-weight: 500;
       margin-bottom: 20px;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .response-time svg {
+      animation: float 2s ease-in-out infinite;
     }
 
     .shop-link {
@@ -1177,9 +1328,13 @@
     </div>
   </header>
 
-  <!-- HERO AVEC IMAGE DE FOND -->
+  <!-- HERO AVEC SLIDER D'IMAGES -->
   <section class="hero">
-    <img src="https://neobex.ca/cdn/shop/files/industrial_gif.gif?v=1736456173" alt="" class="hero-bg">
+    <div class="hero-slider">
+      <img src="https://neobex.ca/cdn/shop/files/industrial_gif.gif?v=1736456173" alt="" class="hero-slide active">
+      <img src="https://neobex.ca/cdn/shop/files/medical_gif.gif?v=1736436639" alt="" class="hero-slide">
+      <img src="https://neobex.ca/cdn/shop/files/alimentationgif-ezgif.com-crop.gif?v=1736451432" alt="" class="hero-slide">
+    </div>
     <div class="hero-overlay"></div>
     <div class="hero-inner">
       <div class="hero-content">
@@ -1190,7 +1345,7 @@
           </span>
           <span class="hero-badge">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-            Livraison 24-48h
+            Livraison 24-72h
           </span>
         </div>
         <h1>Votre fournisseur complet en <span>fournitures sanitaires et industrielles</span></h1>
@@ -1328,13 +1483,8 @@
         </a>
         
         <a href="https://neobex.ca/collections/nos-produits" class="category-card">
-          <div class="category-image" style="background:#e8f4ea;display:flex;align-items:center;justify-content:center;">
-            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.5">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/>
-              <line x1="16" y1="17" x2="8" y2="17"/>
-            </svg>
+          <div class="category-image">
+            <img src="https://images.pexels.com/photos/6195125/pexels-photo-6195125.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" alt="Produits papier">
           </div>
           <div class="category-content">
             <h3>Produits papier</h3>
@@ -1343,10 +1493,8 @@
         </a>
         
         <a href="https://neobex.ca/collections/nos-produits" class="category-card">
-          <div class="category-image" style="background:#e0f2fe;display:flex;align-items:center;justify-content:center;">
-            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="1.5">
-              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
-            </svg>
+          <div class="category-image">
+            <img src="https://images.pexels.com/photos/4239013/pexels-photo-4239013.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" alt="Produits nettoyants">
           </div>
           <div class="category-content">
             <h3>Produits nettoyants</h3>
@@ -1355,11 +1503,8 @@
         </a>
         
         <a href="https://neobex.ca/collections/nos-produits" class="category-card">
-          <div class="category-image" style="background:#fef3c7;display:flex;align-items:center;justify-content:center;">
-            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="1.5">
-              <path d="M3 6h18l-2 13H5L3 6z"/>
-              <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
-            </svg>
+          <div class="category-image" style="background:#222;">
+            <img src="https://images.pexels.com/photos/3962267/pexels-photo-3962267.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" alt="Sacs à déchets">
           </div>
           <div class="category-content">
             <h3>Sacs à déchets</h3>
@@ -1368,26 +1513,18 @@
         </a>
         
         <a href="https://neobex.ca/collections/medical" class="category-card">
-          <div class="category-image" style="background:#fce7f3;display:flex;align-items:center;justify-content:center;">
-            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#db2777" stroke-width="1.5">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-            </svg>
+          <div class="category-image">
+            <img src="https://images.pexels.com/photos/3786157/pexels-photo-3786157.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" alt="Fournitures médicales">
           </div>
           <div class="category-content">
             <h3>Fournitures médicales</h3>
-            <p>Masques, blouses, équipements</p>
+            <p>Masques, seringues, blouses</p>
           </div>
         </a>
         
         <a href="https://neobex.ca/collections/section-alimentaire" class="category-card">
-          <div class="category-image" style="background:#fef9c3;display:flex;align-items:center;justify-content:center;">
-            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#ca8a04" stroke-width="1.5">
-              <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
-              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
-              <line x1="6" y1="1" x2="6" y2="4"/>
-              <line x1="10" y1="1" x2="10" y2="4"/>
-              <line x1="14" y1="1" x2="14" y2="4"/>
-            </svg>
+          <div class="category-image">
+            <img src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" alt="Alimentaire">
           </div>
           <div class="category-content">
             <h3>Alimentaire</h3>
@@ -1396,10 +1533,8 @@
         </a>
         
         <a href="https://neobex.ca/collections/section-industriel" class="category-card">
-          <div class="category-image" style="background:#f3e8ff;display:flex;align-items:center;justify-content:center;">
-            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="1.5">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            </svg>
+          <div class="category-image">
+            <img src="https://images.pexels.com/photos/8487779/pexels-photo-8487779.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" alt="ÉPI">
           </div>
           <div class="category-content">
             <h3>ÉPI</h3>
@@ -1520,9 +1655,9 @@
         </div>
         
         <div class="benefit-card">
-          <div class="benefit-number">48h</div>
+          <div class="benefit-number">72h</div>
           <h4>Livraison express</h4>
-          <p>Expédition depuis notre entrepôt québécois. Livraison garantie en 24-48h partout au Canada avec suivi en temps réel.</p>
+          <p>Expédition depuis notre entrepôt québécois. Livraison garantie en 24-72h partout au Canada avec suivi en temps réel.</p>
         </div>
         
         <div class="benefit-card">
@@ -1544,9 +1679,9 @@
         </div>
         
         <div class="benefit-card">
-          <div class="benefit-number">∞</div>
-          <h4>Stock garanti</h4>
-          <p>Grâce à notre inventaire permanent, plus jamais de rupture de stock. Programme de réapprovisionnement automatique disponible.</p>
+          <div class="benefit-number">✓</div>
+          <h4>Stock en inventaire</h4>
+          <p>Entrepôt local au Québec avec inventaire permanent. Vos produits sont toujours disponibles, prêts à être expédiés.</p>
         </div>
       </div>
     </div>
@@ -1632,7 +1767,7 @@
         </div>
         
         <div class="testimonial-card">
-          <p class="testimonial-quote">"La livraison en 48h est un game-changer pour notre réseau de 45 restaurants. Gants, produits nettoyants, sacs... tout arrive à temps. Plus jamais de rupture de stock en plein rush."</p>
+          <p class="testimonial-quote">"La livraison en 72h est un game-changer pour notre réseau de 45 restaurants. Gants, produits nettoyants, sacs... tout arrive à temps. Plus jamais de rupture de stock en plein rush."</p>
           <div class="testimonial-author">
             <div class="author-avatar">PL</div>
             <div class="author-info">
@@ -1736,6 +1871,18 @@
         }
       });
     });
+
+    // Hero slider - change d'image toutes les 5 secondes
+    const slides = document.querySelectorAll('.hero-slide');
+    let currentSlide = 0;
+
+    function nextSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+
+    setInterval(nextSlide, 5000);
   </script>
 
 </body>
