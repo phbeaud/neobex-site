@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obtenir une soumission | Neobex</title>
+  <meta name="description" content="Demandez une soumission gratuite pour vos fournitures sanitaires et industrielles. Analyse personnalisée de vos besoins et prix compétitifs.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://neobex.ca/soumission">
+  <link rel="icon" type="image/webp" href="https://neobex.ca/cdn/shop/files/Neobex-Logo_small.webp?v=1721174601">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a href="/" class="logo"><img src="https://neobex.ca/cdn/shop/files/Neobex-Logo_small.webp?v=1721174601" alt="Neobex"></a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="/">Accueil</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle">À propos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <div class="nav-dropdown-menu">
+            <a href="a-propos.html#mission">Notre mission</a>
+            <a href="a-propos.html#valeurs">Nos valeurs</a>
+            <a href="a-propos.html#equipe">Notre équipe</a>
+          </div>
+        </div>
+        <a href="/#avantages">Pourquoi Neobex</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle">Produits <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <div class="nav-dropdown-menu">
+            <a href="produits.html">Tous les produits</a>
+            <a href="produits.html#alimentaire">Alimentaire</a>
+            <a href="produits.html#medical">Médical</a>
+            <a href="produits.html#industriel">Industriel</a>
+          </div>
+        </div>
+        <a href="nous-joindre.html">Nous joindre</a>
+      </nav>
+      <div class="header-actions">
+        <a href="en/quote.html" class="lang-toggle" aria-label="Switch to English">EN</a>
+        <button class="search-toggle" aria-label="Rechercher"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+        <a href="https://shopify.com/authentication/87295230236/login?client_id=20cf5b16-cc75-48f2-b412-6081bbc5777f&locale=fr&region_country=CA" class="btn-secondary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Mon portail</a>
+        <a href="soumission.html" class="btn-primary active">Obtenir une soumission</a>
+        <button class="mobile-menu-toggle" aria-label="Menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="search-overlay"><div class="search-box"><input type="text" placeholder="Rechercher des produits, catégories..."></div></div>
+
+  <main role="main">
+
+  <section class="page-hero">
+    <h1>Obtenir une soumission</h1>
+    <p>Recevez un devis personnalisé selon vos besoins. Sans engagement.</p>
+  </section>
+
+  <section class="form-section">
+    <div class="form-section-inner">
+      <div class="form-card">
+        <h2>Demandez votre soumission gratuite</h2>
+        <p class="subtitle">Remplissez le formulaire ci-dessous et notre équipe vous contactera rapidement.</p>
+
+        <form action="https://formspree.io/f/xplaceholder" method="POST" aria-label="Formulaire de demande de soumission">
+          <input type="hidden" name="_subject" value="Nouvelle demande de soumission - Neobex">
+          <input type="hidden" name="_replyto">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="prenom">Prénom *</label>
+              <input type="text" id="prenom" name="prenom" placeholder="Jean" required autocomplete="given-name">
+            </div>
+            <div class="form-group">
+              <label for="nom">Nom *</label>
+              <input type="text" id="nom" name="nom" placeholder="Tremblay" required autocomplete="family-name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="entreprise">Entreprise</label>
+            <input type="text" id="entreprise" name="entreprise" placeholder="Nom de votre entreprise" autocomplete="organization">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Courriel professionnel *</label>
+            <input type="email" id="email" name="email" placeholder="jean@entreprise.ca" required autocomplete="email">
+          </div>
+
+          <div class="form-group">
+            <label for="telephone">Téléphone</label>
+            <input type="tel" id="telephone" name="telephone" placeholder="(514) 555-0123" autocomplete="tel">
+          </div>
+
+          <div class="form-group">
+            <label for="categorie">Type de produits recherchés</label>
+            <select id="categorie" name="categorie">
+              <option value="">Sélectionnez une catégorie</option>
+              <option value="alimentaire">Alimentaire</option>
+              <option value="medical">Médical</option>
+              <option value="industriel">Industriel</option>
+              <option value="multiple">Plusieurs catégories</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="volume">Volume mensuel estimé</label>
+            <select id="volume" name="volume">
+              <option value="">Sélectionnez une quantité</option>
+              <option value="small">Moins de 500$</option>
+              <option value="medium">500$ - 2 000$</option>
+              <option value="large">2 000$ - 10 000$</option>
+              <option value="enterprise">Plus de 10 000$</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message ou détails supplémentaires</label>
+            <textarea id="message" name="message" rows="4" placeholder="Décrivez vos besoins, joignez une liste de produits ou des factures pour une analyse personnalisée..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Envoyer ma demande →</button>
+        </form>
+
+        <p class="form-note">Sans engagement • Devis valide 30 jours</p>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="https://neobex.ca/cdn/shop/files/Neobex-Logo_small.webp?v=1721174601" alt="Neobex" style="filter:brightness(0) invert(1);">
+          <p>Votre partenaire de confiance pour les fournitures sanitaires et industrielles au Canada.</p>
+        </div>
+        <div class="footer-col"><h4>Produits</h4><a href="produits.html#alimentaire">Alimentaire</a><a href="produits.html#medical">Médical</a><a href="produits.html#industriel">Industriel</a><a href="https://neobex.ca/collections/nos-produits">Boutique en ligne</a></div>
+        <div class="footer-col"><h4>Entreprise</h4><a href="a-propos.html">À propos</a><a href="faq.html">FAQ</a><a href="https://neobex.ca/pages/carriere">Carrières</a><a href="nous-joindre.html">Nous joindre</a></div>
+        <div class="footer-col footer-contact"><h4>Contact</h4><p><strong>info@neobex.ca</strong></p><p>Lun-Ven: 8h-18h EST</p></div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Neobex. Tous droits réservés.</p>
+        <div><a href="https://neobex.ca/policies/privacy-policy">Politique de confidentialité</a><a href="https://neobex.ca/policies/terms-of-service">Conditions d'utilisation</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
