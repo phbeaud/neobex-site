@@ -133,6 +133,67 @@ body {
   color: var(--accent);
 }
 
+.nav-dropdown-menu .catalogue-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px solid var(--border);
+  margin-top: 4px;
+  padding-top: 12px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.nav-dropdown-menu .catalogue-link img {
+  height: 18px;
+  width: auto;
+}
+
+/* Catalogue card on pages */
+.catalogue-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--white);
+  border: 2px solid var(--accent);
+  border-radius: 16px;
+  padding: 28px 32px;
+  text-decoration: none;
+  transition: all 0.3s;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.catalogue-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(37,99,235,0.15);
+}
+
+.catalogue-card img {
+  height: 48px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.catalogue-card-text h4 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.catalogue-card-text p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.catalogue-card-arrow {
+  margin-left: auto;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
 .header-actions {
   display: flex;
   align-items: center;
