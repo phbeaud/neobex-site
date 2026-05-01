@@ -23,24 +23,17 @@
           <button class="nav-dropdown-toggle">À propos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
           <div class="nav-dropdown-menu"><a href="a-propos.html#mission">Notre mission</a><a href="a-propos.html#valeurs">Nos valeurs</a></div>
         </div>
-        <a href="index.html#avantages">Pourquoi Neobex</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-toggle">Produits <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-          <div class="nav-dropdown-menu"><a href="produits.html">Tous les produits</a><a href="produits.html#alimentaire">Alimentaire</a><a href="produits.html#medical">Médical</a><a href="produits.html#industriel">Industriel</a><a href="https://phbeaud.github.io/neobex-catalogue/" class="catalogue-link">Catalogue Neobex</a></div>
-        </div>
+        <a href="https://phbeaud.github.io/neobex-catalogue/">Catalogue Neobex</a>
         <a href="nous-joindre.html" class="active">Nous joindre</a>
       </nav>
       <div class="header-actions">
         <a href="en/contact.html" class="lang-toggle" aria-label="Switch to English">EN</a>
-        <button class="search-toggle" aria-label="Rechercher"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
         <a href="https://shopify.com/authentication/87295230236/login?client_id=20cf5b16-cc75-48f2-b412-6081bbc5777f&locale=fr&region_country=CA" class="btn-secondary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Mon portail</a>
         <a href="soumission.html" class="btn-primary">Obtenir une soumission</a>
         <button class="mobile-menu-toggle" aria-label="Menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
       </div>
     </div>
   </header>
-
-  <div class="search-overlay"><div class="search-box"><input type="text" placeholder="Rechercher des produits, catégories..."></div></div>
 
   <main role="main">
 
@@ -55,15 +48,14 @@
         <div>
           <div class="contact-info-card">
             <h3>Courriel</h3>
-            <p>Pour toute question ou demande d'information :</p>
-            <p><a href="mailto:info@neobex.ca">info@neobex.ca</a></p>
+            <p>Pour toute question ou demande d'information, utilisez le formulaire ci-contre.</p>
+            <p><a href="#contact-form" style="font-weight:600;">Envoyer un message →</a></p>
           </div>
 
           <div class="contact-info-card">
             <h3>Ventes et soumissions</h3>
             <p>Pour obtenir une soumission personnalisée :</p>
-            <p><a href="mailto:vente@neobexgroup.com">vente@neobexgroup.com</a></p>
-            <p style="margin-top:12px;"><a href="soumission.html" style="font-weight:600;">Remplir le formulaire de soumission →</a></p>
+            <p><a href="soumission.html" style="font-weight:600;">Remplir le formulaire de soumission →</a></p>
           </div>
 
           <div class="contact-info-card">
@@ -76,8 +68,11 @@
         <div>
           <div class="contact-info-card" style="height:100%;">
             <h3>Envoyez-nous un message</h3>
-            <form action="https://formspree.io/f/xplaceholder" method="POST" aria-label="Formulaire de contact">
-              <input type="hidden" name="_subject" value="Nouveau message - Neobex Contact">
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" aria-label="Formulaire de contact">
+              <input type="hidden" name="access_key" value="ed7b66a0-b000-43d0-9ddf-9337b8a5c40f">
+              <input type="hidden" name="subject" value="Nouveau message - Neobex Contact">
+              <input type="hidden" name="from_name" value="Site Neobex - Contact">
+              <input type="checkbox" name="botcheck" style="display:none;">
               <div class="form-group">
                 <label for="contact-nom">Nom complet *</label>
                 <input type="text" id="contact-nom" name="nom" required autocomplete="name">
@@ -95,6 +90,7 @@
                 <textarea id="contact-message" name="message" rows="5" required placeholder="Comment pouvons-nous vous aider?"></textarea>
               </div>
               <button type="submit" class="btn-submit">Envoyer le message →</button>
+              <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">Pour transmettre une pièce jointe, vous pourrez répondre à notre courriel de confirmation.</p>
             </form>
           </div>
         </div>
@@ -111,9 +107,9 @@
           <img src="https://neobex.ca/cdn/shop/files/Neobex-Logo_small.webp?v=1721174601" alt="Neobex">
           <p>Votre partenaire de confiance pour les fournitures sanitaires et industrielles au Canada.</p>
         </div>
-        <div class="footer-col"><h4>Produits</h4><a href="produits.html#alimentaire">Alimentaire</a><a href="produits.html#medical">Médical</a><a href="produits.html#industriel">Industriel</a><a href="https://phbeaud.github.io/neobex-catalogue/" class="catalogue-link">Catalogue Neobex</a><a href="https://phbeaud.github.io/neobex-catalogue/">Catalogue Neobex</a></div>
+        <div class="footer-col"><h4>Catalogue</h4><a href="https://phbeaud.github.io/neobex-catalogue/" class="catalogue-link">Catalogue Neobex 2026</a><a href="soumission.html">Demander une soumission</a></div>
         <div class="footer-col"><h4>Entreprise</h4><a href="a-propos.html">À propos</a><a href="faq.html">FAQ</a><a href="https://neobex.ca/pages/carriere">Carrières</a><a href="nous-joindre.html">Nous joindre</a></div>
-        <div class="footer-col footer-contact"><h4>Contact</h4><p><strong>info@neobex.ca</strong></p><p>Lun-Ven: 8h-18h EST</p></div>
+        <div class="footer-col footer-contact"><h4>Contact</h4><p><a href="nous-joindre.html"><strong>info@neobex.ca</strong></a></p><p>Lun-Ven: 8h-18h EST</p></div>
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 Neobex. Tous droits réservés.</p>

@@ -20,21 +20,17 @@
       <nav class="nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <div class="nav-dropdown"><button class="nav-dropdown-toggle">About <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-dropdown-menu"><a href="about.html#mission">Our Mission</a><a href="about.html#values">Our Values</a></div></div>
-        <a href="index.html#benefits">Why Neobex</a>
-        <div class="nav-dropdown"><button class="nav-dropdown-toggle">Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-dropdown-menu"><a href="products.html">All Products</a><a href="products.html#food">Food Industry</a><a href="products.html#medical">Medical</a><a href="products.html#industrial">Industrial</a><a href="https://phbeaud.github.io/neobex-catalogue/" class="catalogue-link">Neobex Catalogue</a></div></div>
+        <a href="https://phbeaud.github.io/neobex-catalogue/">Neobex Catalogue</a>
         <a href="contact.html">Contact Us</a>
       </nav>
       <div class="header-actions">
         <a href="../soumission.html" class="lang-toggle" aria-label="Passer au français">FR</a>
-        <button class="search-toggle" aria-label="Search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
         <a href="https://shopify.com/authentication/87295230236/login?client_id=20cf5b16-cc75-48f2-b412-6081bbc5777f&locale=en&region_country=CA" class="btn-secondary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> My Portal</a>
         <a href="quote.html" class="btn-primary active">Get a Quote</a>
         <button class="mobile-menu-toggle" aria-label="Menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
       </div>
     </div>
   </header>
-
-  <div class="search-overlay"><div class="search-box"><input type="text" placeholder="Search products, categories..."></div></div>
 
   <main role="main">
 
@@ -48,8 +44,11 @@
       <div class="form-card">
         <h2>Request Your Free Quote</h2>
         <p class="subtitle">Fill out the form below and our team will get back to you promptly.</p>
-        <form action="https://formspree.io/f/xplaceholder" method="POST" aria-label="Quote request form">
-          <input type="hidden" name="_subject" value="New Quote Request - Neobex (EN)">
+        <form action="https://api.web3forms.com/submit" method="POST" aria-label="Quote request form">
+          <input type="hidden" name="access_key" value="ed7b66a0-b000-43d0-9ddf-9337b8a5c40f">
+          <input type="hidden" name="subject" value="New Quote Request - Neobex (EN)">
+          <input type="hidden" name="from_name" value="Neobex Site - Quote">
+          <input type="checkbox" name="botcheck" style="display:none;">
           <div class="form-row">
             <div class="form-group"><label for="firstname">First Name *</label><input type="text" id="firstname" name="firstname" placeholder="John" required autocomplete="given-name"></div>
             <div class="form-group"><label for="lastname">Last Name *</label><input type="text" id="lastname" name="lastname" placeholder="Smith" required autocomplete="family-name"></div>
@@ -77,10 +76,10 @@
               <option value="enterprise">Over $10,000</option>
             </select>
           </div>
-          <div class="form-group"><label for="message">Message or Additional Details</label><textarea id="message" name="message" rows="4" placeholder="Describe your needs, attach a product list or invoices for a personalized analysis..."></textarea></div>
+          <div class="form-group"><label for="message">Message or Additional Details</label><textarea id="message" name="message" rows="4" placeholder="Describe your needs..."></textarea></div>
           <button type="submit" class="btn-submit">Submit My Request →</button>
         </form>
-        <p class="form-note">Quote valid for 30 days</p>
+        <p class="form-note">Quote valid for 30 days · To send a product list or invoices, you can attach them when replying to our confirmation email.</p>
       </div>
     </div>
   </section>
@@ -91,9 +90,9 @@
     <div class="footer-inner">
       <div class="footer-grid">
         <div class="footer-brand"><img src="https://neobex.ca/cdn/shop/files/Neobex-Logo_small.webp?v=1721174601" alt="Neobex"><p>Your trusted partner for sanitary and industrial supplies in Canada.</p></div>
-        <div class="footer-col"><h4>Products</h4><a href="products.html#food">Food Industry</a><a href="products.html#medical">Medical</a><a href="products.html#industrial">Industrial</a><a href="https://phbeaud.github.io/neobex-catalogue/" class="catalogue-link">Neobex Catalogue</a><a href="https://phbeaud.github.io/neobex-catalogue/">Neobex Catalogue</a></div>
+        <div class="footer-col"><h4>Catalogue</h4><a href="https://phbeaud.github.io/neobex-catalogue/" class="catalogue-link">Neobex Catalogue 2026</a><a href="quote.html">Request a Quote</a></div>
         <div class="footer-col"><h4>Company</h4><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="https://neobex.ca/pages/carriere">Careers</a><a href="contact.html">Contact Us</a></div>
-        <div class="footer-col footer-contact"><h4>Contact</h4><p><strong>info@neobex.ca</strong></p><p>Mon-Fri: 8am-6pm EST</p></div>
+        <div class="footer-col footer-contact"><h4>Contact</h4><p><a href="contact.html"><strong>info@neobex.ca</strong></a></p><p>Mon-Fri: 8am-6pm EST</p></div>
       </div>
       <div class="footer-bottom"><p>&copy; 2026 Neobex. All rights reserved.</p><div><a href="https://neobex.ca/policies/privacy-policy">Privacy Policy</a><a href="https://neobex.ca/policies/terms-of-service">Terms of Service</a></div></div>
     </div>
