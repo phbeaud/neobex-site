@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+  <!-- Case = stack of 3 boxes (2 below, 1 on top) -->
+  <!-- Bottom-left box -->
+  <g>
+    <polygon points="38,42 60,53 60,75 38,64" fill="#E0E7FF" stroke="#2563EB" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="38,64 60,75 60,98 38,87" fill="#C7D2FE" stroke="#2563EB" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="60,53 82,42 82,64 60,75" fill="#A5B4FC" stroke="#2563EB" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="60,75 82,64 82,87 60,98" fill="#818CF8" stroke="#2563EB" stroke-width="1.8" stroke-linejoin="round"/>
+  </g>
+  <!-- Top box (smaller, centered) -->
+  <g>
+    <polygon points="60,8 80,18 60,28 40,18" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="40,18 60,28 60,52 40,42" fill="#E0E7FF" stroke="#2563EB" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="80,18 60,28 60,52 80,42" fill="#C7D2FE" stroke="#2563EB" stroke-width="1.8" stroke-linejoin="round"/>
+    <!-- Top tape -->
+    <line x1="50" y1="13" x2="70" y2="23" stroke="#1E3A8A" stroke-width="1.5" opacity="0.5"/>
+  </g>
+  <!-- Small green dot indicating "popular" -->
+  <circle cx="95" cy="22" r="6" fill="#10B981" stroke="#FFFFFF" stroke-width="2"/>
+</svg>

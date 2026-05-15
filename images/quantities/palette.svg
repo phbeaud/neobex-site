@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+  <!-- Pallet with stacked boxes -->
+  <!-- Boxes on top (3 boxes arranged) -->
+  <g>
+    <!-- Back-left box -->
+    <polygon points="22,30 46,40 46,60 22,50" fill="#E0E7FF" stroke="#2563EB" stroke-width="1.6" stroke-linejoin="round"/>
+    <polygon points="46,40 70,30 70,50 46,60" fill="#C7D2FE" stroke="#2563EB" stroke-width="1.6" stroke-linejoin="round"/>
+    <polygon points="22,30 46,20 70,30 46,40" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6" stroke-linejoin="round"/>
+    <!-- Back-right box -->
+    <polygon points="50,38 74,48 74,68 50,58" fill="#E0E7FF" stroke="#2563EB" stroke-width="1.6" stroke-linejoin="round"/>
+    <polygon points="74,48 98,38 98,58 74,68" fill="#A5B4FC" stroke="#2563EB" stroke-width="1.6" stroke-linejoin="round"/>
+    <polygon points="50,38 74,28 98,38 74,48" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6" stroke-linejoin="round"/>
+    <!-- Front-center box (slightly lower & forward) -->
+    <polygon points="36,52 60,62 60,82 36,72" fill="#C7D2FE" stroke="#2563EB" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="60,62 84,52 84,72 60,82" fill="#818CF8" stroke="#2563EB" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="36,52 60,42 84,52 60,62" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.8" stroke-linejoin="round"/>
+    <!-- Tape on front box -->
+    <line x1="48" y1="47" x2="72" y2="57" stroke="#1E3A8A" stroke-width="1.5" opacity="0.5"/>
+  </g>
+  <!-- Wooden pallet (3 horizontal planks + 3 vertical risers, isometric) -->
+  <g stroke="#92400E" stroke-width="1.5" stroke-linejoin="round">
+    <!-- Top plank surface -->
+    <polygon points="14,82 60,102 106,82 60,62" fill="#D97706" opacity="0.95"/>
+    <!-- Side (front) of pallet -->
+    <polygon points="14,82 60,102 60,112 14,92" fill="#92400E"/>
+    <polygon points="60,102 106,82 106,92 60,112" fill="#B45309"/>
+    <!-- Plank divisions on top -->
+    <line x1="29" y1="77" x2="75" y2="97" stroke="#78350F" stroke-width="1" opacity="0.7"/>
+    <line x1="45" y1="72" x2="91" y2="92" stroke="#78350F" stroke-width="1" opacity="0.7"/>
+  </g>
+</svg>

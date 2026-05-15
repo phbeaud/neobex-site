@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+  <!-- Single cardboard box, slight isometric -->
+  <!-- Top face -->
+  <polygon points="60,18 100,38 60,58 20,38" fill="#E0E7FF" stroke="#2563EB" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Left face -->
+  <polygon points="20,38 60,58 60,102 20,82" fill="#C7D2FE" stroke="#2563EB" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Right face -->
+  <polygon points="100,38 60,58 60,102 100,82" fill="#A5B4FC" stroke="#2563EB" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Tape on top -->
+  <line x1="40" y1="28" x2="80" y2="48" stroke="#1E3A8A" stroke-width="2.5" opacity="0.5"/>
+  <!-- Front label -->
+  <rect x="33" y="74" width="20" height="12" rx="1.5" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.2"/>
+</svg>
