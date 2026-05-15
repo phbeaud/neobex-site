@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#DBEAFE"/>
+      <stop offset="100%" stop-color="#BFDBFE"/>
+    </linearGradient>
+    <linearGradient id="stamp" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="100%" stop-color="#DC2626"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="200" fill="url(#bg)"/>
+
+  <!-- Subtle grid pattern dots in background -->
+  <g fill="#93C5FD" opacity="0.35">
+    <circle cx="50" cy="40" r="1.6"/>
+    <circle cx="120" cy="25" r="1.6"/>
+    <circle cx="180" cy="50" r="1.6"/>
+    <circle cx="510" cy="35" r="1.6"/>
+    <circle cx="560" cy="55" r="1.6"/>
+    <circle cx="80" cy="180" r="1.6"/>
+    <circle cx="540" cy="170" r="1.6"/>
+  </g>
+
+  <!-- Surface / ground shadow line -->
+  <ellipse cx="300" cy="170" rx="240" ry="6" fill="#1E40AF" opacity="0.08"/>
+
+  <!-- Box 1 (left, closed, smallest) -->
+  <g transform="translate(110,90)">
+    <polygon points="0,18 30,32 60,18 30,4" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="0,18 30,32 30,62 0,48" fill="#E0E7FF" stroke="#2563EB" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="60,18 30,32 30,62 60,48" fill="#C7D2FE" stroke="#2563EB" stroke-width="1.8" stroke-linejoin="round"/>
+    <line x1="10" y1="22" x2="40" y2="38" stroke="#1E3A8A" stroke-width="1.5" opacity="0.5"/>
+  </g>
+
+  <!-- Box 2 (open, showing sample inside — gloves icon) -->
+  <g transform="translate(210,70)">
+    <!-- Box body -->
+    <polygon points="0,28 40,46 80,28 40,10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2" stroke-linejoin="round" opacity="0.4"/>
+    <polygon points="0,28 40,46 40,86 0,68" fill="#E0E7FF" stroke="#2563EB" stroke-width="2" stroke-linejoin="round"/>
+    <polygon points="80,28 40,46 40,86 80,68" fill="#A5B4FC" stroke="#2563EB" stroke-width="2" stroke-linejoin="round"/>
+    <!-- Open flaps -->
+    <polygon points="0,28 40,10 40,2 0,20" fill="#F1F5F9" stroke="#2563EB" stroke-width="1.5" stroke-linejoin="round"/>
+    <polygon points="80,28 40,10 40,2 80,20" fill="#E2E8F0" stroke="#2563EB" stroke-width="1.5" stroke-linejoin="round"/>
+    <!-- Content peeking out: small product (cylinder/bottle) -->
+    <rect x="32" y="20" width="16" height="22" rx="2" fill="#10B981" stroke="#047857" stroke-width="1.5"/>
+    <rect x="34" y="16" width="12" height="6" rx="1.5" fill="#065F46"/>
+  </g>
+
+  <!-- Box 3 (closed, medium, slightly behind) -->
+  <g transform="translate(330,82)">
+    <polygon points="0,22 36,40 72,22 36,4" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="0,22 36,40 36,76 0,58" fill="#E0E7FF" stroke="#2563EB" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="72,22 36,40 36,76 72,58" fill="#C7D2FE" stroke="#2563EB" stroke-width="1.8" stroke-linejoin="round"/>
+    <line x1="12" y1="28" x2="48" y2="46" stroke="#1E3A8A" stroke-width="1.5" opacity="0.5"/>
+    <!-- Tiny label/sticker -->
+    <rect x="10" y="50" width="14" height="10" rx="1.5" fill="#FBBF24" stroke="#D97706" stroke-width="0.8"/>
+  </g>
+
+  <!-- Box 4 (open, smaller, on the right showing colorful items) -->
+  <g transform="translate(440,95)">
+    <polygon points="0,22 28,34 56,22 28,10" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6" stroke-linejoin="round" opacity="0.4"/>
+    <polygon points="0,22 28,34 28,62 0,50" fill="#E0E7FF" stroke="#2563EB" stroke-width="1.6" stroke-linejoin="round"/>
+    <polygon points="56,22 28,34 28,62 56,50" fill="#A5B4FC" stroke="#2563EB" stroke-width="1.6" stroke-linejoin="round"/>
+    <!-- Open flap -->
+    <polygon points="0,22 28,10 28,4 0,16" fill="#F1F5F9" stroke="#2563EB" stroke-width="1.2" stroke-linejoin="round"/>
+    <!-- Content: small folded gloves/cloth (rectangles) -->
+    <rect x="20" y="15" width="16" height="4" rx="1" fill="#3B82F6"/>
+    <rect x="22" y="11" width="14" height="3.5" rx="1" fill="#60A5FA"/>
+  </g>
+
+  <!-- Big red "GRATUIT" stamp top-right -->
+  <g transform="translate(498,42) rotate(-12)">
+    <circle cx="0" cy="0" r="38" fill="url(#stamp)" stroke="#7F1D1D" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="33" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+    <text x="0" y="-5" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="800" fill="#FFFFFF" letter-spacing="0.5">GRATUIT</text>
+    <text x="0" y="11" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="8.5" font-weight="700" fill="#FFFFFF" letter-spacing="1">★ NEOBEX ★</text>
+  </g>
+
+  <!-- Small sparkles around the stamp -->
+  <g fill="#FBBF24">
+    <polygon points="450,15 452,21 458,23 452,25 450,31 448,25 442,23 448,21" opacity="0.85"/>
+    <polygon points="555,90 556,93 559,94 556,95 555,98 554,95 551,94 554,93" opacity="0.8"/>
+  </g>
+</svg>
