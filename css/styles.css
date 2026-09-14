@@ -1,8 +1,10 @@
 :root {
   --navy: #0A1628;
   --navy-light: #142238;
-  --accent: #2563EB;
-  --accent-hover: #1D4ED8;
+  --accent: #005088;
+  --accent-hover: #003F6B;
+  --brand-green: #86BD46;
+  --brand-green-hover: #9BCB62;
   --text-primary: #0F172A;
   --text-secondary: #64748B;
   --text-muted: #94A3B8;
@@ -166,7 +168,7 @@ body {
 
 .catalogue-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(37,99,235,0.15);
+  box-shadow: 0 12px 32px rgba(0,80,136,0.15);
 }
 
 .catalogue-card img {
@@ -299,8 +301,8 @@ body {
 
 .btn-primary {
   padding: 10px 24px;
-  background: var(--accent);
-  color: var(--white);
+  background: var(--brand-green);
+  color: var(--navy);
   font-size: 14px;
   font-weight: 600;
   border: none;
@@ -314,7 +316,7 @@ body {
 }
 
 .btn-primary:hover {
-  background: var(--accent-hover);
+  background: var(--brand-green-hover);
 }
 
 .mobile-menu-toggle {
@@ -463,8 +465,8 @@ body {
 }
 
 .hero-content h1 span {
-  color: #60A5FA;
-  background: linear-gradient(90deg, #60A5FA, #93C5FD, #60A5FA);
+  color: #A6D96E;
+  background: linear-gradient(90deg, #86BD46, #B7DD8C, #86BD46);
   background-size: 200% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -502,6 +504,35 @@ body {
   animation: fadeInUp 1s ease-out 0.6s both;
 }
 
+.hero-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: -28px 0 44px;
+  font-size: 15px;
+  animation: fadeInUp 1s ease-out 0.65s both;
+}
+
+.hero-links a {
+  color: rgba(255,255,255,0.85);
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 2px;
+  transition: all 0.2s;
+}
+
+.hero-links a:hover {
+  color: var(--brand-green);
+  border-bottom-color: var(--brand-green);
+}
+
+.hero-links span {
+  color: rgba(255,255,255,0.4);
+}
+
 .hero-stats {
   display: flex;
   justify-content: center;
@@ -529,8 +560,8 @@ body {
 
 .btn-hero-primary {
   padding: 16px 32px;
-  background: var(--accent);
-  color: var(--white);
+  background: var(--brand-green);
+  color: var(--navy);
   font-size: 16px;
   font-weight: 600;
   border: none;
@@ -541,9 +572,9 @@ body {
 }
 
 .btn-hero-primary:hover {
-  background: var(--accent-hover);
+  background: var(--brand-green-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(37,99,235,0.4);
+  box-shadow: 0 8px 20px rgba(134,189,70,0.45);
 }
 
 .btn-hero-outline {
@@ -1760,8 +1791,8 @@ body {
 .btn-submit {
   width: 100%;
   padding: 14px;
-  background: var(--accent);
-  color: var(--white);
+  background: var(--brand-green);
+  color: var(--navy);
   font-size: 16px;
   font-weight: 600;
   border: none;
@@ -1772,9 +1803,9 @@ body {
 }
 
 .btn-submit:hover {
-  background: var(--accent-hover);
+  background: var(--brand-green-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(37,99,235,0.4);
+  box-shadow: 0 8px 20px rgba(134,189,70,0.45);
 }
 
 .form-note {
