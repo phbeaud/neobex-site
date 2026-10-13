@@ -7,7 +7,7 @@
 //      mesure (G-XXXXXXXXXX) ci-dessous pour l'activer.
 // Tant que GA_MEASUREMENT_ID est vide, aucun script Google n'est chargé.
 
-const GA_MEASUREMENT_ID = '';
+const GA_MEASUREMENT_ID = 'G-WVJWYMSCFS';
 
 (function () {
   'use strict';
