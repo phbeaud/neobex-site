@@ -2578,3 +2578,96 @@ body {
 .about-section h2[id] {
   scroll-margin-top: 120px;
 }
+
+/* ============ TÉLÉPHONE ============ */
+.header-phone {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  text-decoration: none;
+  white-space: nowrap;
+  margin-right: 4px;
+}
+
+.header-phone svg {
+  width: 16px;
+  height: 16px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.header-phone:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 1180px) {
+  .header-phone { display: none; }
+}
+
+.footer-phone {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.footer-phone a {
+  color: var(--white);
+}
+
+/* ============ ENVOI DE FICHIERS ============ */
+.file-drop {
+  border: 1px dashed var(--border);
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 24px 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.file-drop-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(0,80,136,0.08);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.file-drop-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.file-drop h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.file-drop p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.file-drop a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .file-drop {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
