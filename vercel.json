@@ -5,36 +5,300 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/pages/contact", "destination": "/nous-joindre", "statusCode": 301 },
-    { "source": "/en/pages/contact", "destination": "/en/contact", "statusCode": 301 },
-    { "source": "/pages/a-propos", "destination": "/a-propos", "statusCode": 301 },
-    { "source": "/en/pages/a-propos", "destination": "/en/about", "statusCode": 301 },
-    { "source": "/pages/carriere", "destination": "/carriere", "statusCode": 301 },
-    { "source": "/en/pages/carriere", "destination": "/en/careers", "statusCode": 301 },
-    { "source": "/pages/faqs", "destination": "/faq", "statusCode": 301 },
-    { "source": "/en/pages/faqs", "destination": "/en/faq", "statusCode": 301 },
-    { "source": "/pages/disposable-glove-guide", "destination": "/fournisseur-gants", "statusCode": 301 },
-    { "source": "/en/pages/disposable-glove-guide", "destination": "/en/products", "statusCode": 301 },
-    { "source": "/pages/section-alimentaire", "destination": "/fournisseur-industrie-alimentaire", "statusCode": 301 },
-    { "source": "/pages/section-medicale", "destination": "https://shop.neobex.ca/collections/medical", "statusCode": 301 },
-    { "source": "/en/pages/section-medicale", "destination": "https://shop.neobex.ca/en/collections/medical", "statusCode": 301 },
-    { "source": "/pages/quick-order-form", "destination": "/soumission", "statusCode": 301 },
-    { "source": "/en/pages/quick-order-form", "destination": "/en/quote", "statusCode": 301 },
-    { "source": "/pages/register", "destination": "https://shop.neobex.ca/account/register", "statusCode": 301 },
-    { "source": "/en/pages/register", "destination": "https://shop.neobex.ca/en/account/register", "statusCode": 301 },
-    { "source": "/pages/cookies", "destination": "/politique-confidentialite", "statusCode": 301 },
-    { "source": "/pages/:path*", "destination": "/", "statusCode": 301 },
-    { "source": "/en/pages/:path*", "destination": "/en", "statusCode": 301 },
-
-    { "source": "/en/products/:path*", "destination": "https://shop.neobex.ca/en/products/:path*", "statusCode": 301 },
-    { "source": "/en/collections/:path*", "destination": "https://shop.neobex.ca/en/collections/:path*", "statusCode": 301 },
-    { "source": "/products/:path*", "destination": "https://shop.neobex.ca/products/:path*", "statusCode": 301 },
-    { "source": "/collections/:path*", "destination": "https://shop.neobex.ca/collections/:path*", "statusCode": 301 },
-
-    { "source": "/en/policies/:path*", "destination": "https://shop.neobex.ca/en/policies/:path*", "statusCode": 301 },
-    { "source": "/policies/:path*", "destination": "https://shop.neobex.ca/policies/:path*", "statusCode": 301 },
-    { "source": "/blogs/:path*", "destination": "https://shop.neobex.ca/blogs/:path*", "statusCode": 301 },
-    { "source": "/cart", "destination": "https://shop.neobex.ca/cart", "statusCode": 301 },
-    { "source": "/account/:path*", "destination": "https://shop.neobex.ca/account/:path*", "statusCode": 301 }
+    {
+      "source": "/pages/contact",
+      "destination": "/nous-joindre",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/pages/contact",
+      "destination": "/en/contact",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/a-propos",
+      "destination": "/a-propos",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/pages/a-propos",
+      "destination": "/en/about",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/carriere",
+      "destination": "/carriere",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/pages/carriere",
+      "destination": "/en/careers",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/faqs",
+      "destination": "/faq",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/pages/faqs",
+      "destination": "/en/faq",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/disposable-glove-guide",
+      "destination": "/fournisseur-gants",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/pages/disposable-glove-guide",
+      "destination": "/en/products",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/section-alimentaire",
+      "destination": "/fournisseur-industrie-alimentaire",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/section-medicale",
+      "destination": "https://shop.neobex.ca/collections/medical",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/pages/section-medicale",
+      "destination": "https://shop.neobex.ca/en/collections/medical",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/quick-order-form",
+      "destination": "/soumission",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/pages/quick-order-form",
+      "destination": "/en/quote",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/register",
+      "destination": "https://shop.neobex.ca/account/register",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/pages/register",
+      "destination": "https://shop.neobex.ca/en/account/register",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/cookies",
+      "destination": "/politique-confidentialite",
+      "statusCode": 301
+    },
+    {
+      "source": "/pages/:path*",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/pages/:path*",
+      "destination": "/en",
+      "statusCode": 301
+    },
+    {
+      "source": "/collections/gants",
+      "destination": "/fournisseur-gants",
+      "statusCode": 301
+    },
+    {
+      "source": "/collections/equipement-de-protection-individuel",
+      "destination": "/fournisseur-epi",
+      "statusCode": 301
+    },
+    {
+      "source": "/collections/masques",
+      "destination": "/fournisseur-epi",
+      "statusCode": 301
+    },
+    {
+      "source": "/collections/lunette",
+      "destination": "/fournisseur-epi",
+      "statusCode": 301
+    },
+    {
+      "source": "/collections/visieres",
+      "destination": "/fournisseur-epi",
+      "statusCode": 301
+    },
+    {
+      "source": "/collections/jaquettes",
+      "destination": "/fournisseur-epi",
+      "statusCode": 301
+    },
+    {
+      "source": "/collections/equipement-specialise",
+      "destination": "/fournisseur-epi",
+      "statusCode": 301
+    },
+    {
+      "source": "/collections/sanitaire",
+      "destination": "/fournisseur-produits-sanitaires",
+      "statusCode": 301
+    },
+    {
+      "source": "/collections/desinfectants",
+      "destination": "/fournisseur-produits-sanitaires",
+      "statusCode": 301
+    },
+    {
+      "source": "/collections/nettoyant-quebecois",
+      "destination": "/fournisseur-produits-sanitaires",
+      "statusCode": 301
+    },
+    {
+      "source": "/collections/lingettes",
+      "destination": "/fournisseur-produits-sanitaires",
+      "statusCode": 301
+    },
+    {
+      "source": "/collections/papier",
+      "destination": "/fournisseur-produits-sanitaires",
+      "statusCode": 301
+    },
+    {
+      "source": "/collections/distributeurs",
+      "destination": "/fournisseur-produits-sanitaires",
+      "statusCode": 301
+    },
+    {
+      "source": "/collections/section-alimentaire",
+      "destination": "/fournisseur-industrie-alimentaire",
+      "statusCode": 301
+    },
+    {
+      "source": "/collections/nos-produits",
+      "destination": "/produits",
+      "statusCode": 301
+    },
+    {
+      "source": "/collections/all",
+      "destination": "/produits",
+      "statusCode": 301
+    },
+    {
+      "source": "/collections/catalog",
+      "destination": "/produits",
+      "statusCode": 301
+    },
+    {
+      "source": "/collections/frontpage",
+      "destination": "/produits",
+      "statusCode": 301
+    },
+    {
+      "source": "/collections/section-industriel",
+      "destination": "/produits",
+      "statusCode": 301
+    },
+    {
+      "source": "/collections/accessoires",
+      "destination": "/produits",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/collections/gants",
+      "destination": "/en/products",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/collections/equipement-de-protection-individuel",
+      "destination": "/en/products",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/collections/masques",
+      "destination": "/en/products",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/collections/sanitaire",
+      "destination": "/en/products",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/collections/section-alimentaire",
+      "destination": "/en/products",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/collections/nos-produits",
+      "destination": "/en/products",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/collections/all",
+      "destination": "/en/products",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/collections/catalog",
+      "destination": "/en/products",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/collections/papier",
+      "destination": "/en/products",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/collections/desinfectants",
+      "destination": "/en/products",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/collections/:path*",
+      "destination": "https://shop.neobex.ca/en/collections/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/collections/:path*",
+      "destination": "https://shop.neobex.ca/collections/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/products/:path*",
+      "destination": "https://shop.neobex.ca/en/products/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/products/:path*",
+      "destination": "https://shop.neobex.ca/products/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/policies/:path*",
+      "destination": "https://shop.neobex.ca/en/policies/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/policies/:path*",
+      "destination": "https://shop.neobex.ca/policies/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/:path*",
+      "destination": "https://shop.neobex.ca/blogs/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/cart",
+      "destination": "https://shop.neobex.ca/cart",
+      "statusCode": 301
+    },
+    {
+      "source": "/account/:path*",
+      "destination": "https://shop.neobex.ca/account/:path*",
+      "statusCode": 301
+    }
   ]
 }
