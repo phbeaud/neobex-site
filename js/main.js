@@ -152,3 +152,39 @@ if (mobileToggle && nav) {
     nav.style.boxShadow = '0 8px 32px rgba(0,0,0,0.1)';
   });
 }
+
+// Pièces jointes : le service refuse au-delà de 10 Mo au total.
+// On le dit avant l'envoi plutôt que de laisser la demande se perdre.
+const champFichiers = document.querySelector('input[type="file"][name="attachment"]');
+if (champFichiers) {
+  const LIMITE = 10 * 1024 * 1024;
+  const indice = champFichiers.parentElement.querySelector('.form-hint');
+  const indiceInitial = indice ? indice.textContent : '';
+  const formulaire = champFichiers.closest('form');
+
+  const tropGros = () => Array.from(champFichiers.files)
+    .reduce((somme, f) => somme + f.size, 0) > LIMITE;
+
+  const afficher = () => {
+    if (!indice) return;
+    if (tropGros()) {
+      const mo = (Array.from(champFichiers.files).reduce((s, f) => s + f.size, 0) / 1048576).toFixed(1);
+      indice.textContent = `Vos fichiers totalisent ${mo} Mo, soit plus que la limite de 10 Mo. Retirez-en un, ou envoyez-les à vente@neobexgroup.com.`;
+      indice.classList.add('erreur');
+    } else {
+      indice.textContent = indiceInitial;
+      indice.classList.remove('erreur');
+    }
+  };
+
+  champFichiers.addEventListener('change', afficher);
+  if (formulaire) {
+    formulaire.addEventListener('submit', (e) => {
+      if (tropGros()) {
+        e.preventDefault();
+        afficher();
+        champFichiers.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+  }
+}

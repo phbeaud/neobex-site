@@ -48,7 +48,7 @@ const GA_MEASUREMENT_ID = '';
   const page = location.pathname.replace(/\/$/, '') || '/';
 
   // ---- Conversions : les deux formulaires ---------------------------------
-  document.querySelectorAll('form[action*="web3forms"]').forEach(form => {
+  document.querySelectorAll('form[action*="web3forms"], form[action*="formsubmit"]').forEach(form => {
     const estSoumission = /soumission|quote/.test(page);
     form.addEventListener('submit', () => {
       suivre(estSoumission ? 'demande_soumission' : 'message_contact', {

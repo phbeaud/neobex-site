@@ -2792,3 +2792,45 @@ body {
   background: var(--accent);
   color: var(--white);
 }
+
+/* ============ CHAMP DE TÉLÉVERSEMENT ============ */
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.form-group input[type="file"]:hover {
+  border-color: var(--accent);
+}
+
+.form-group input[type="file"]::file-selector-button {
+  margin-right: 14px;
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--white);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.form-hint {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin-top: 7px;
+}
+
+.form-hint.erreur {
+  color: #DC2626;
+  font-weight: 600;
+}

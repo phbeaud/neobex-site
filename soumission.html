@@ -69,11 +69,12 @@
         <h2>Demandez votre soumission gratuite</h2>
         <p class="subtitle">Remplissez le formulaire ci-dessous et notre équipe vous contactera rapidement.</p>
 
-        <form action="https://api.web3forms.com/submit" method="POST" aria-label="Formulaire de demande de soumission">
-          <input type="hidden" name="access_key" value="9c2c050b-6ccf-4c76-b9f6-765335b4d1c4">
-          <input type="hidden" name="subject" value="Nouvelle demande de soumission - Neobex">
-          <input type="hidden" name="from_name" value="Site Neobex - Soumission">
-          <input type="checkbox" name="botcheck" style="display:none;">
+        <form action="https://formsubmit.co/vente@neobexgroup.com" method="POST" enctype="multipart/form-data" aria-label="Formulaire de demande de soumission">
+          <input type="hidden" name="_subject" value="Nouvelle demande de soumission - Neobex">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://neobex.ca/merci">
+          <input type="hidden" name="_autoresponse" value="Merci pour votre demande. Notre équipe l'a bien reçue et vous répondra sous un jour ouvrable. Pour toute question entre-temps : 1 800 632-6239. — L'équipe Neobex">
+          <input type="text" name="_honey" style="display:none;" tabindex="-1" autocomplete="off" aria-hidden="true">
 
           <div class="form-row">
             <div class="form-group">
@@ -128,14 +129,20 @@
             <textarea id="message" name="message" rows="4" placeholder="Décrivez vos besoins..."></textarea>
           </div>
 
+          <div class="form-group">
+            <label for="fichiers">Vos listes de produits ou vos factures</label>
+            <input type="file" id="fichiers" name="attachment" multiple accept=".pdf,.xls,.xlsx,.csv,.doc,.docx,.jpg,.jpeg,.png,.heic">
+            <p class="form-hint">Excel, PDF, Word ou une simple photo. C'est le moyen le plus rapide d'obtenir un prix juste. Maximum 10 Mo au total.</p>
+          </div>
+
           <button type="submit" class="btn-submit">Envoyer ma demande →</button>
         </form>
 
         <div class="file-drop">
           <div class="file-drop-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg></div>
           <div>
-            <h4>Vous avez déjà une liste ou des factures?</h4>
-            <p>C'est la façon la plus rapide d'obtenir un prix juste. Envoyez vos fichiers à <a href="mailto:vente@neobexgroup.com?subject=Liste%20de%20produits%20%E2%80%93%20demande%20de%20soumission&body=Bonjour,%0A%0AVoici%20notre%20liste%20de%20produits%20(ou%20nos%20derni%C3%A8res%20factures)%20en%20pi%C3%A8ce%20jointe.%0A%0AEntreprise%C2%A0%3A%20%0APersonne%20%C3%A0%20joindre%C2%A0%3A%20%0AT%C3%A9l%C3%A9phone%C2%A0%3A%20%0A%0AMerci%C2%A0!">vente@neobexgroup.com</a> — Excel, PDF ou photo, peu importe le format — ou appelez-nous au <a href="tel:+18006326239">1 800 632-6239</a>.</p>
+            <h4>Vous préférez envoyer vos documents par courriel?</h4>
+            <p>Écrivez à <a href="mailto:vente@neobexgroup.com">vente@neobexgroup.com</a> ou appelez-nous au <a href="tel:+18006326239">1 800 632-6239</a>. Les deux aboutissent à la même équipe.</p>
           </div>
         </div>
 
