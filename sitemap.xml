@@ -183,24 +183,72 @@
   </url>
   <url>
     <loc>https://neobex.ca/fournisseur-gants</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://neobex.ca/fournisseur-gants"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://neobex.ca/en/disposable-glove-supplier"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://neobex.ca/fournisseur-gants"/>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://neobex.ca/en/disposable-glove-supplier</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://neobex.ca/fournisseur-gants"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://neobex.ca/en/disposable-glove-supplier"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://neobex.ca/fournisseur-gants"/>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://neobex.ca/fournisseur-epi</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://neobex.ca/fournisseur-epi"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://neobex.ca/en/ppe-supplier"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://neobex.ca/fournisseur-epi"/>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://neobex.ca/en/ppe-supplier</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://neobex.ca/fournisseur-epi"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://neobex.ca/en/ppe-supplier"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://neobex.ca/fournisseur-epi"/>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://neobex.ca/fournisseur-produits-sanitaires</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://neobex.ca/fournisseur-produits-sanitaires"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://neobex.ca/en/sanitary-supplies"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://neobex.ca/fournisseur-produits-sanitaires"/>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://neobex.ca/en/sanitary-supplies</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://neobex.ca/fournisseur-produits-sanitaires"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://neobex.ca/en/sanitary-supplies"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://neobex.ca/fournisseur-produits-sanitaires"/>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://neobex.ca/fournisseur-industrie-alimentaire</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://neobex.ca/fournisseur-industrie-alimentaire"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://neobex.ca/en/food-industry-supplies"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://neobex.ca/fournisseur-industrie-alimentaire"/>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://neobex.ca/en/food-industry-supplies</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://neobex.ca/fournisseur-industrie-alimentaire"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://neobex.ca/en/food-industry-supplies"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://neobex.ca/fournisseur-industrie-alimentaire"/>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
