@@ -2671,3 +2671,124 @@ body {
     gap: 12px;
   }
 }
+
+/* ============ GAMMES DE PRODUITS (accueil) ============ */
+.gammes {
+  padding: 100px 24px;
+  background: var(--white);
+}
+
+.gammes-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gammes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.gamme-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 26px 22px;
+  text-decoration: none;
+  transition: border-color .25s, transform .25s, box-shadow .25s;
+}
+
+.gamme-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(10,22,40,0.08);
+}
+
+.gamme-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(0,80,136,0.08);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gamme-icon svg {
+  width: 23px;
+  height: 23px;
+}
+
+.gamme-card:hover .gamme-icon {
+  background: var(--accent);
+  color: var(--white);
+}
+
+.gamme-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.35;
+}
+
+.gamme-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.gammes-footer {
+  text-align: center;
+  margin-top: 44px;
+}
+
+.gammes-footer p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+}
+
+@media (max-width: 1024px) {
+  .gammes-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .gammes { padding: 64px 20px; }
+  .gammes-grid { grid-template-columns: 1fr; gap: 14px; }
+  .gamme-card { padding: 20px; gap: 8px; }
+  .gamme-icon { width: 40px; height: 40px; }
+  .gammes-footer a { display: block; margin: 0 0 12px 0 !important; }
+}
+
+/* En-tête sur très petit écran : le bouton de soumission débordait de l'écran */
+@media (max-width: 600px) {
+  .header-inner { padding: 0 14px; }
+  .logo img { height: 56px; }
+  .header-actions { gap: 8px; }
+  .header-actions .btn-secondary {
+    font-size: 0;
+    padding: 10px;
+    gap: 0;
+  }
+  .header-actions .btn-primary {
+    padding: 11px 14px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+}
+
+.gammes-footer .btn-secondary {
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.gammes-footer .btn-secondary:hover {
+  background: var(--accent);
+  color: var(--white);
+}
