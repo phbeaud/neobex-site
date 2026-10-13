@@ -4,16 +4,16 @@
   <url>
     <loc>https://neobex.ca/</loc>
     <xhtml:link rel="alternate" hreflang="fr-CA" href="https://neobex.ca/"/>
-    <xhtml:link rel="alternate" hreflang="en-CA" href="https://neobex.ca/en/"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://neobex.ca/en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://neobex.ca/"/>
     <lastmod>2026-10-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://neobex.ca/en/</loc>
+    <loc>https://neobex.ca/en</loc>
     <xhtml:link rel="alternate" hreflang="fr-CA" href="https://neobex.ca/"/>
-    <xhtml:link rel="alternate" hreflang="en-CA" href="https://neobex.ca/en/"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://neobex.ca/en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://neobex.ca/"/>
     <lastmod>2026-10-13</lastmod>
     <changefreq>weekly</changefreq>
