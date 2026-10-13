@@ -266,6 +266,36 @@
       "statusCode": 301
     },
     {
+      "source": "/products/glove-examination-nitrile-synguard-s-p-n-s-9-5-blue-bx-100",
+      "destination": "/fournisseur-gants",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/products/glove-examination-nitrile-synguard-s-p-n-s-9-5-blue-bx-100",
+      "destination": "/en/products",
+      "statusCode": 301
+    },
+    {
+      "source": "/products/nettoyant-acier-inoxydable",
+      "destination": "/fournisseur-produits-sanitaires",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/products/nettoyant-acier-inoxydable",
+      "destination": "/en/products",
+      "statusCode": 301
+    },
+    {
+      "source": "/products/multiusage-ultraconcentre",
+      "destination": "/fournisseur-produits-sanitaires",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/products/multiusage-ultraconcentre",
+      "destination": "/en/products",
+      "statusCode": 301
+    },
+    {
       "source": "/en/products/:path+",
       "destination": "https://shop.neobex.ca/en/products/:path+",
       "statusCode": 301
