@@ -96,12 +96,12 @@
       "statusCode": 301
     },
     {
-      "source": "/pages/:path*",
+      "source": "/pages/:path+",
       "destination": "/",
       "statusCode": 301
     },
     {
-      "source": "/en/pages/:path*",
+      "source": "/en/pages/:path+",
       "destination": "/en",
       "statusCode": 301
     },
@@ -256,38 +256,38 @@
       "statusCode": 301
     },
     {
-      "source": "/en/collections/:path*",
-      "destination": "https://shop.neobex.ca/en/collections/:path*",
+      "source": "/en/collections/:path+",
+      "destination": "https://shop.neobex.ca/en/collections/:path+",
       "statusCode": 301
     },
     {
-      "source": "/collections/:path*",
-      "destination": "https://shop.neobex.ca/collections/:path*",
+      "source": "/collections/:path+",
+      "destination": "https://shop.neobex.ca/collections/:path+",
       "statusCode": 301
     },
     {
-      "source": "/en/products/:path*",
-      "destination": "https://shop.neobex.ca/en/products/:path*",
+      "source": "/en/products/:path+",
+      "destination": "https://shop.neobex.ca/en/products/:path+",
       "statusCode": 301
     },
     {
-      "source": "/products/:path*",
-      "destination": "https://shop.neobex.ca/products/:path*",
+      "source": "/products/:path+",
+      "destination": "https://shop.neobex.ca/products/:path+",
       "statusCode": 301
     },
     {
-      "source": "/en/policies/:path*",
-      "destination": "https://shop.neobex.ca/en/policies/:path*",
+      "source": "/en/policies/:path+",
+      "destination": "https://shop.neobex.ca/en/policies/:path+",
       "statusCode": 301
     },
     {
-      "source": "/policies/:path*",
-      "destination": "https://shop.neobex.ca/policies/:path*",
+      "source": "/policies/:path+",
+      "destination": "https://shop.neobex.ca/policies/:path+",
       "statusCode": 301
     },
     {
-      "source": "/blogs/:path*",
-      "destination": "https://shop.neobex.ca/blogs/:path*",
+      "source": "/blogs/:path+",
+      "destination": "https://shop.neobex.ca/blogs/:path+",
       "statusCode": 301
     },
     {
@@ -296,8 +296,8 @@
       "statusCode": 301
     },
     {
-      "source": "/account/:path*",
-      "destination": "https://shop.neobex.ca/account/:path*",
+      "source": "/account/:path+",
+      "destination": "https://shop.neobex.ca/account/:path+",
       "statusCode": 301
     }
   ]
