@@ -205,4 +205,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://neobex.ca/guide-gants-jetables</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://neobex.ca/guide-gants-jetables"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://neobex.ca/en/disposable-glove-guide"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://neobex.ca/guide-gants-jetables"/>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://neobex.ca/en/disposable-glove-guide</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://neobex.ca/guide-gants-jetables"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://neobex.ca/en/disposable-glove-guide"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://neobex.ca/guide-gants-jetables"/>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>

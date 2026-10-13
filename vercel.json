@@ -47,12 +47,12 @@
     },
     {
       "source": "/pages/disposable-glove-guide",
-      "destination": "/fournisseur-gants",
+      "destination": "/guide-gants-jetables",
       "statusCode": 301
     },
     {
       "source": "/en/pages/disposable-glove-guide",
-      "destination": "/en/products",
+      "destination": "/en/disposable-glove-guide",
       "statusCode": 301
     },
     {
