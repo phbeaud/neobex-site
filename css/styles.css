@@ -2834,3 +2834,147 @@ body {
   color: #DC2626;
   font-weight: 600;
 }
+
+/* ============ ÉTAPES DU PROCESSUS ============ */
+.process-timeline {
+  max-width: 820px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.process-step {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 24px;
+  position: relative;
+  padding-bottom: 44px;
+}
+
+.process-step:last-child {
+  padding-bottom: 0;
+}
+
+/* le trait qui relie les étapes */
+.process-step:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 27px;
+  top: 56px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--border);
+}
+
+.process-num {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 0 6px var(--white);
+}
+
+.process-body h3 {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 12px 0 10px;
+}
+
+.process-body p {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+}
+
+.process-body p:last-child {
+  margin-bottom: 0;
+}
+
+.process-aside {
+  border-left: 3px solid var(--brand-green);
+  background: var(--surface);
+  border-radius: 0 10px 10px 0;
+  padding: 14px 18px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+.process-aside strong {
+  color: var(--text-primary);
+}
+
+@media (max-width: 600px) {
+  .process-step {
+    grid-template-columns: 44px 1fr;
+    gap: 16px;
+    padding-bottom: 36px;
+  }
+  .process-step:not(:last-child)::before { left: 21px; top: 44px; }
+  .process-num { width: 44px; height: 44px; font-size: 17px; box-shadow: 0 0 0 4px var(--white); }
+  .process-body h3 { font-size: 19px; margin-top: 8px; }
+  .process-body p { font-size: 16px; }
+}
+
+/* ============ TROIS FAÇONS DE COMMANDER ============ */
+.order-ways {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.order-way {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.order-way h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.order-way .order-for {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.order-way p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+
+.order-way a {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+@media (max-width: 860px) {
+  .order-ways { grid-template-columns: 1fr; }
+}
