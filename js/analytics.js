@@ -12,6 +12,37 @@ const GA_MEASUREMENT_ID = 'G-WVJWYMSCFS';
 (function () {
   'use strict';
 
+  // ---- Trafic interne : ne pas se compter soi-même ------------------------
+  // Visitez neobex.ca/?no-track une fois sur chaque appareil (ordinateur,
+  // portable, cellulaire) : ce navigateur cesse définitivement d'alimenter
+  // les statistiques. neobex.ca/?track annule l'exclusion.
+  // Plus fiable qu'un filtre d'adresse IP, qui ne couvre ni le cellulaire
+  // ni le télétravail.
+  const CLE_EXCLUSION = 'neobex_trafic_interne';
+
+  const lireExclusion = () => {
+    try { return localStorage.getItem(CLE_EXCLUSION) === '1'; } catch (e) { return false; }
+  };
+  const ecrireExclusion = (valeur) => {
+    try {
+      if (valeur) localStorage.setItem(CLE_EXCLUSION, '1');
+      else localStorage.removeItem(CLE_EXCLUSION);
+    } catch (e) { /* navigation privée : on ignore */ }
+  };
+
+  const parametres = new URLSearchParams(location.search);
+  if (parametres.has('no-track')) {
+    ecrireExclusion(true);
+    console.info('Neobex : ce navigateur est exclu des statistiques.');
+  } else if (parametres.has('track')) {
+    ecrireExclusion(false);
+    console.info('Neobex : ce navigateur est de nouveau compté.');
+  }
+
+  // navigator.webdriver = navigateur piloté par un outil (tests automatisés)
+  const estInterne = lireExclusion() || navigator.webdriver === true;
+  if (estInterne) return;
+
   // ---- Vercel Web Analytics ----------------------------------------------
   window.va = window.va || function () {
     (window.vaq = window.vaq || []).push(arguments);
