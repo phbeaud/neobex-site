@@ -127,7 +127,7 @@
   .v2-visual-body h3 { font-size: 17px; margin-bottom: 16px; }
   .v2-visual .v2-visual-icon { margin-bottom: 20px; }
 
-  .v2-carousel { position: relative; aspect-ratio: 16 / 10; background: #0A1628; overflow: hidden; }
+  .v2-carousel { position: relative; aspect-ratio: 16 / 7; background: #0A1628; overflow: hidden; }
   .v2-slides { position: absolute; inset: 0; }
   .v2-slides img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
     opacity: 0; transition: opacity 1s ease; filter: saturate(.92) contrast(1.04); }
@@ -161,9 +161,9 @@
   .v2-visual::after { display: none; }
 
   /* étalonnage commun : neuf photos de neuf photographes doivent se tenir */
-  .v2-slides img { filter: saturate(.9) contrast(1.03) brightness(1.06); }
+  .v2-slides img { filter: saturate(.96) contrast(1.01); }
   .v2-carousel::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
-    background: linear-gradient(158deg, rgba(0,80,136,.10) 0%, rgba(10,22,40,.02) 55%, rgba(10,22,40,.08) 100%);
+    background: linear-gradient(158deg, rgba(0,80,136,.05) 0%, rgba(10,22,40,0) 60%, rgba(10,22,40,.04) 100%);
     mix-blend-mode: multiply; }
   .v2-carousel-scrim { z-index: 2; }
   .v2-dots { z-index: 3; left: 22px; bottom: 18px; }
@@ -409,15 +409,13 @@
       <div class="v2-visual reveal">
         <div class="v2-carousel" data-intervalle="3200">
           <div class="v2-slides">
-            <img src="/images/secteurs/alimentaire-1.webp" alt="Employée en filet à cheveux et vêtements de protection à son poste" width="1200" height="750" class="active">
-            <img src="/images/secteurs/alimentaire-2.webp" alt="Main gantée manipulant des aliments en cuisine professionnelle" width="1200" height="750" loading="lazy">
-            <img src="/images/secteurs/alimentaire-3.webp" alt="Employé en filet à cheveux devant des plateaux emballés" width="1200" height="750" loading="lazy">
+            <img src="/images/secteurs/usine.webp" alt="Filets à cheveux, jaquettes, gants et masques prêts à l'usage en usine alimentaire" width="1400" height="613" class="active">
+            <img src="/images/secteurs/usine-2.webp" alt="Employées en filet, masque et gants bleus sur une ligne de transformation" width="1400" height="613" loading="lazy">
           </div>
           <div class="v2-carousel-scrim"></div>
           <div class="v2-dots" role="tablist" aria-label="Photos — Transformation alimentaire">
-            <button type="button" role="tab" aria-selected="true" aria-label="Photo 1 sur 3 — Transformation alimentaire"></button>
-            <button type="button" role="tab" aria-selected="false" aria-label="Photo 2 sur 3 — Transformation alimentaire"></button>
-            <button type="button" role="tab" aria-selected="false" aria-label="Photo 3 sur 3 — Transformation alimentaire"></button>
+            <button type="button" role="tab" aria-selected="true" aria-label="Photo 1 sur 2 — Transformation alimentaire"></button>
+            <button type="button" role="tab" aria-selected="false" aria-label="Photo 2 sur 2 — Transformation alimentaire"></button>
           </div>
           <div class="v2-visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h1a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
         </div>
@@ -439,15 +437,13 @@
       <div class="v2-visual reveal">
         <div class="v2-carousel" data-intervalle="3200">
           <div class="v2-slides">
-            <img src="/images/secteurs/medical-1.webp" alt="Mains enfilant des gants de nitrile bleus" width="1200" height="750" class="active">
-            <img src="/images/secteurs/medical-2.webp" alt="Prélèvement effectué avec des gants d'examen" width="1200" height="750" loading="lazy">
-            <img src="/images/secteurs/medical-3.webp" alt="Professionnelle de la santé portant un masque" width="1200" height="750" loading="lazy">
+            <img src="/images/secteurs/gants-medical.webp" alt="Gants d'examen, lingettes et fournitures d'hygiène en salle de soins" width="1400" height="613" class="active">
+            <img src="/images/secteurs/medical-1.webp" alt="Mains enfilant des gants de nitrile bleus" width="1400" height="613" loading="lazy">
           </div>
           <div class="v2-carousel-scrim"></div>
           <div class="v2-dots" role="tablist" aria-label="Photos — Cliniques et milieux de soins">
-            <button type="button" role="tab" aria-selected="true" aria-label="Photo 1 sur 3 — Cliniques et milieux de soins"></button>
-            <button type="button" role="tab" aria-selected="false" aria-label="Photo 2 sur 3 — Cliniques et milieux de soins"></button>
-            <button type="button" role="tab" aria-selected="false" aria-label="Photo 3 sur 3 — Cliniques et milieux de soins"></button>
+            <button type="button" role="tab" aria-selected="true" aria-label="Photo 1 sur 2 — Cliniques et milieux de soins"></button>
+            <button type="button" role="tab" aria-selected="false" aria-label="Photo 2 sur 2 — Cliniques et milieux de soins"></button>
           </div>
           <div class="v2-visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
         </div>
@@ -469,15 +465,15 @@
       <div class="v2-visual reveal">
         <div class="v2-carousel" data-intervalle="3200">
           <div class="v2-slides">
-            <img src="/images/secteurs/entretien-1.webp" alt="Vaporisateur nettoyant et chiffons d'entretien" width="1200" height="750" class="active">
-            <img src="/images/secteurs/entretien-2.webp" alt="Entretien de plancher avec affiche de prudence" width="1200" height="750" loading="lazy">
-            <img src="/images/secteurs/entretien-3.webp" alt="Boîte de carton et fournitures d'emballage" width="1200" height="750" loading="lazy">
+            <img src="/images/secteurs/papier.webp" alt="Distributrices, rouleaux de papier à mains et papier hygiénique" width="1400" height="613" class="active">
+            <img src="/images/secteurs/nettoyant.webp" alt="Produits nettoyants, sacs à déchets, microfibres et emballages" width="1400" height="613" loading="lazy">
+            <img src="/images/secteurs/industrie.webp" alt="Dégraisseurs, microfibres, gants et lunettes de sécurité en atelier" width="1400" height="613" loading="lazy">
           </div>
           <div class="v2-carousel-scrim"></div>
           <div class="v2-dots" role="tablist" aria-label="Photos — Entretien, hygiène et expédition">
-            <button type="button" role="tab" aria-selected="true" aria-label="Photo 1 sur 3 — Entretien"></button>
-            <button type="button" role="tab" aria-selected="false" aria-label="Photo 2 sur 3 — Entretien"></button>
-            <button type="button" role="tab" aria-selected="false" aria-label="Photo 3 sur 3 — Entretien"></button>
+            <button type="button" role="tab" aria-selected="true" aria-label="Photo 1 sur 3 — Entretien, hygiène et expédition"></button>
+            <button type="button" role="tab" aria-selected="false" aria-label="Photo 2 sur 3 — Entretien, hygiène et expédition"></button>
+            <button type="button" role="tab" aria-selected="false" aria-label="Photo 3 sur 3 — Entretien, hygiène et expédition"></button>
           </div>
           <div class="v2-visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 8h6a3 3 0 0 1 3 3v8a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-8a3 3 0 0 1 3-3z"/><path d="M10 8V4h4v4"/><path d="M14 4h3l2-2"/><path d="M9 13h6"/></svg></div>
         </div>
