@@ -309,6 +309,35 @@
     .v2-vol-bar .btn-hero-primary { text-align: center; }
   }
 
+
+  /* ---------- Les huit gammes, en photos ---------- */
+  .v2-gammes { padding: 104px 24px; background: var(--white); }
+  .v2-gammes-inner { max-width: 1240px; margin: 0 auto; }
+  .v2-gammes .v2-head { margin-bottom: 44px; }
+  .v2-gammes .v2-head h2 .hl-bleu { color: var(--accent); }
+
+  .v2-gam-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+
+  .v2-gam-card { display: flex; flex-direction: column; text-decoration: none;
+    background: var(--white); border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
+    transition: border-color .25s, transform .25s, box-shadow .25s; }
+  .v2-gam-card:hover { border-color: var(--accent); transform: translateY(-3px);
+    box-shadow: 0 18px 44px -24px rgba(10,22,40,.45); }
+  .v2-gam-card > img { width: 100%; aspect-ratio: 358 / 226; object-fit: cover; display: block; }
+
+  .v2-gam-body { padding: 20px 20px 22px; display: flex; align-items: center; gap: 14px; flex-grow: 1; }
+  .v2-gam-body h3 { font-size: 16.5px; color: var(--navy); line-height: 1.25; margin-bottom: 7px; }
+  .v2-gam-body p { font-size: 14px; line-height: 1.55; color: var(--text-secondary); margin: 0; }
+
+  .v2-gam-arrow { width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0; margin-left: auto;
+    background: rgba(0,80,136,.08); color: var(--accent);
+    display: flex; align-items: center; justify-content: center; transition: .25s; }
+  .v2-gam-arrow svg { width: 17px; height: 17px; }
+  .v2-gam-card:hover .v2-gam-arrow { background: var(--accent); color: var(--white); }
+
+  @media (max-width: 1080px) { .v2-gam-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .v2-gam-grid { grid-template-columns: 1fr; } .v2-gammes { padding: 72px 20px; } }
+
   /* ---------- MOMENT FORT ---------- */
   .v2-statement { background: var(--navy); padding: 124px 24px; text-align: center; position: relative; overflow: hidden; }
   .v2-statement::before { content: ""; position: absolute; inset: 0;
@@ -544,60 +573,101 @@
   </section>
 
   <!-- ============ GAMMES ============ -->
-  <section class="gammes v2-section" id="gammes">
-    <div class="v2-section-inner">
+  <section class="v2-gammes" id="gammes">
+    <div class="v2-gammes-inner">
       <div class="v2-head centre">
-        <h2>Nos huit gammes</h2>
-        <p>Un seul bon de commande pour tout ce que vos équipes consomment</p>
+        <h2>Tous vos consommables. <span class="hl-bleu">Un seul fournisseur.</span></h2>
+        <p>Huit gammes de produits pour simplifier vos achats, réduire vos coûts et approvisionner vos équipes.</p>
       </div>
-<div class="gammes-grid">
-        <a href="/fournisseur-gants" class="gamme-card">
-          <div class="gamme-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg></div>
-          <h3>Gants jetables et de travail</h3>
-          <p>Nitrile, vinyle, latex et gants de manutention.</p>
+      <div class="v2-gam-grid">
+        <a href="/fournisseur-gants" class="v2-gam-card reveal">
+          <img src="/images/gammes/gants.webp" alt="Mains gantées de nitrile bleu manipulant des aliments" width="358" height="226" loading="lazy">
+          <div class="v2-gam-body">
+            <div>
+              <h3>Gants jetables et de travail</h3>
+              <p>Protection adaptée à chaque tâche.</p>
+            </div>
+            <span class="v2-gam-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+          </div>
         </a>
-
-        <a href="/fournisseur-epi#protection-respiratoire" class="gamme-card">
-          <div class="gamme-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9h14v5a5 5 0 0 1-5 5h-4a5 5 0 0 1-5-5z"/><path d="M5 10.5H2.5M5 13.5H2.5M19 10.5h2.5M19 13.5h2.5"/><path d="M5 12h14"/></svg></div>
-          <h3>Protection individuelle</h3>
-          <p>Masques, lunettes, visières et protection respiratoire.</p>
+        <a href="/fournisseur-epi#protection-respiratoire" class="v2-gam-card reveal">
+          <img src="/images/gammes/protection.webp" alt="Lunettes de sécurité, masque respiratoire et bouchons d'oreilles" width="358" height="226" loading="lazy">
+          <div class="v2-gam-body">
+            <div>
+              <h3>Protection individuelle</h3>
+              <p>Lunettes, masques, bouchons et plus encore.</p>
+            </div>
+            <span class="v2-gam-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+          </div>
         </a>
-
-        <a href="/fournisseur-epi#vetements" class="gamme-card">
-          <div class="gamme-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg></div>
-          <h3>Vêtements et accessoires</h3>
-          <p>Blouses, tabliers, filets, couvre-chaussures et bonnets.</p>
+        <a href="/fournisseur-epi#vetements" class="v2-gam-card reveal">
+          <img src="/images/gammes/vetements.webp" alt="Filets à cheveux, jaquettes et couvre-chaussures empilés" width="358" height="226" loading="lazy">
+          <div class="v2-gam-body">
+            <div>
+              <h3>Vêtements et accessoires</h3>
+              <p>Jaquettes, blouses, filets, couvre-chaussures et bonnets.</p>
+            </div>
+            <span class="v2-gam-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+          </div>
         </a>
-
-        <a href="/fournisseur-produits-sanitaires#nettoyants" class="gamme-card">
-          <div class="gamme-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 9h6a3 3 0 0 1 3 3v7a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-7a3 3 0 0 1 3-3z"/><path d="M10 9V5h4v4"/><path d="M14 5h3l2-2"/><path d="M9 14h6"/></svg></div>
-          <h3>Désinfectants et nettoyants</h3>
-          <p>Désinfectants de surface, savons et nettoyants industriels.</p>
+        <a href="/fournisseur-produits-sanitaires#nettoyants" class="v2-gam-card reveal">
+          <img src="/images/gammes/desinfectants.webp" alt="Vaporisateurs, bidons de nettoyant et microfibres" width="358" height="226" loading="lazy">
+          <div class="v2-gam-body">
+            <div>
+              <h3>Désinfectants et nettoyants</h3>
+              <p>Des solutions pour tous vos environnements.</p>
+            </div>
+            <span class="v2-gam-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+          </div>
         </a>
-
-        <a href="/fournisseur-produits-sanitaires#papier" class="gamme-card">
-          <div class="gamme-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="3"/><circle cx="8.5" cy="12" r="2.6"/><path d="M14 9.5h4M14 12h4M14 14.5h4"/></svg></div>
-          <h3>Papier et distributrices</h3>
-          <p>Papier à mains, hygiénique, essuie-tout et distributrices.</p>
+        <a href="/fournisseur-produits-sanitaires#papier" class="v2-gam-card reveal">
+          <img src="/images/gammes/papier.webp" alt="Rouleaux de papier et distributrice murale" width="358" height="226" loading="lazy">
+          <div class="v2-gam-body">
+            <div>
+              <h3>Papier et distributrices</h3>
+              <p>Papier à mains, essuie-tout, hygiénique et distributrices.</p>
+            </div>
+            <span class="v2-gam-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+          </div>
         </a>
-
-        <a href="/fournisseur-industrie-alimentaire#contenants" class="gamme-card">
-          <div class="gamme-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></div>
-          <h3>Emballage et contenants</h3>
-          <p>Contenants, barquettes, sacs et fournitures d'emballage.</p>
+        <a href="/fournisseur-industrie-alimentaire#contenants" class="v2-gam-card reveal">
+          <img src="/images/gammes/emballage.webp" alt="Contenants, barquettes et bols à emporter" width="358" height="226" loading="lazy">
+          <div class="v2-gam-body">
+            <div>
+              <h3>Emballage et contenants</h3>
+              <p>Contenants, barquettes, sacs et fournitures d'emballage.</p>
+            </div>
+            <span class="v2-gam-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+          </div>
         </a>
-
-        <a href="/fournisseur-industrie-alimentaire#consommables" class="gamme-card">
-          <div class="gamme-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h1a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
-          <h3>Service alimentaire</h3>
-          <p>Ustensiles, articles jetables et accessoires de cuisine.</p>
+        <a href="/fournisseur-industrie-alimentaire#consommables" class="v2-gam-card reveal">
+          <img src="/images/gammes/service.webp" alt="Verres, ustensiles de bois et contenants jetables" width="358" height="226" loading="lazy">
+          <div class="v2-gam-body">
+            <div>
+              <h3>Service alimentaire</h3>
+              <p>Ustensiles, articles jetables et accessoires de cuisine.</p>
+            </div>
+            <span class="v2-gam-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+          </div>
         </a>
-
-        <a href="/produits#milieux" class="gamme-card">
-          <div class="gamme-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H3a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2"/><path d="M14 9h4l4 4v4a1 1 0 0 1-1 1h-2"/><circle cx="7.5" cy="18.5" r="2.5"/><circle cx="17.5" cy="18.5" r="2.5"/></svg></div>
-          <h3>Entrepôt et expédition</h3>
-          <p>Fournitures d'expédition et consommables d'entrepôt.</p>
+        <a href="/produits#milieux" class="v2-gam-card reveal">
+          <img src="/images/gammes/entrepot.webp" alt="Film étirable, boîtes de carton et rubans d'expédition" width="358" height="226" loading="lazy">
+          <div class="v2-gam-body">
+            <div>
+              <h3>Entrepôt et expédition</h3>
+              <p>Tout pour préparer, protéger et expédier vos envois.</p>
+            </div>
+            <span class="v2-gam-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+          </div>
         </a>
+      </div>
+      <div class="v2-vol-bar reveal">
+        <span class="v2-vol-bar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 19V13M12 19V8M19 19V5"/></svg></span>
+        <div class="v2-vol-bar-text">
+          <strong>Vous achetez dans plusieurs catégories?</strong>
+          <p>Regroupez vos achats chez Neobex et découvrez vos économies potentielles.</p>
+        </div>
+        <a href="/soumission" class="btn-hero-primary">Faire analyser mes achats &rarr;</a>
       </div>
     </div>
   </section>
