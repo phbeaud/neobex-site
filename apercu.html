@@ -120,6 +120,114 @@
     .v2-split.inverse .v2-visual { order: 0; }
   }
 
+
+  /* ---------- Carrousel photo des secteurs ---------- */
+  .v2-visual { padding: 0; }
+  .v2-visual-body { padding: 30px 32px 34px; position: relative; z-index: 1; }
+  .v2-visual-body h3 { font-size: 17px; margin-bottom: 16px; }
+  .v2-visual .v2-visual-icon { margin-bottom: 20px; }
+
+  .v2-carousel { position: relative; aspect-ratio: 16 / 10; background: #0A1628; overflow: hidden; }
+  .v2-slides { position: absolute; inset: 0; }
+  .v2-slides img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    opacity: 0; transition: opacity 1s ease; filter: saturate(.92) contrast(1.04); }
+  .v2-slides img.active { opacity: 1; }
+
+  .v2-carousel-scrim { position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(180deg, rgba(10,22,40,.12) 0%, rgba(10,22,40,0) 42%, rgba(10,22,40,.55) 100%); }
+
+  .v2-dots { position: absolute; left: 20px; bottom: 16px; display: flex; gap: 7px; }
+  .v2-dots button { width: 22px; height: 4px; border-radius: 99px; border: 0; cursor: pointer;
+    background: rgba(255,255,255,.42); padding: 0; transition: background .3s, width .3s; }
+  .v2-dots button[aria-selected="true"] { background: var(--brand-green); width: 34px; }
+  .v2-dots button:hover { background: rgba(255,255,255,.75); }
+  .v2-dots button:focus-visible { outline: 2px solid var(--brand-green); outline-offset: 3px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .v2-slides img { transition: none; }
+  }
+
+
+  /* ---------- Finition : numérotation éditoriale ---------- */
+  .v2-index { display: flex; align-items: center; gap: 14px; margin-bottom: 18px;
+    font-size: 11.5px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase;
+    color: var(--text-muted); }
+  .v2-index span { font-family: var(--display); font-size: 13px; font-weight: 800;
+    color: var(--brand-green); letter-spacing: 0.5px; }
+  .v2-index::after { content: ""; height: 1px; flex: 1; max-width: 140px; background: var(--border); }
+
+  /* ---------- Finition : carte visuelle ---------- */
+  .v2-visual { box-shadow: 0 28px 64px -28px rgba(10,22,40,.5); }
+  .v2-visual::after { display: none; }
+
+  /* étalonnage commun : neuf photos de neuf photographes doivent se tenir */
+  .v2-slides img { filter: saturate(.82) contrast(1.07) brightness(1.02); }
+  .v2-carousel::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background: linear-gradient(158deg, rgba(0,80,136,.22) 0%, rgba(10,22,40,.05) 55%, rgba(10,22,40,.18) 100%);
+    mix-blend-mode: multiply; }
+  .v2-carousel-scrim { z-index: 2; }
+  .v2-dots { z-index: 3; left: 22px; bottom: 18px; }
+
+  .v2-carousel .v2-visual-icon { position: absolute; z-index: 3; right: 20px; bottom: 14px;
+    margin: 0; width: 54px; height: 54px; border-radius: 15px;
+    background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.26);
+    -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+
+  .v2-visual-body { padding: 26px 30px 30px; }
+  .v2-visual-body h3 { font-size: 12px; font-weight: 700; letter-spacing: 1.6px;
+    text-transform: uppercase; color: rgba(255,255,255,.5); margin-bottom: 14px; }
+  .v2-tag { font-size: 13px; padding: 6px 12px; }
+
+  .v2-split { gap: 88px; align-items: center; }
+  .v2-split h2 { margin-bottom: 20px; }
+
+  @media (max-width: 900px) {
+    .v2-split { gap: 36px; }
+    .v2-carousel .v2-visual-icon { width: 46px; height: 46px; right: 16px; bottom: 12px; }
+  }
+
+
+  /* ---------- Le catalogue, traité comme l'outil qu'il est ---------- */
+  .v2-catalogue { max-width: 1160px; margin: 0 auto; padding: 0 24px 104px; }
+  .v2-catalogue-card { position: relative; overflow: hidden;
+    background: linear-gradient(135deg, #0A1628 0%, #133253 58%, #16406A 100%);
+    border-radius: 24px; padding: 48px 52px;
+    display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 40px;
+    box-shadow: 0 28px 64px -30px rgba(10,22,40,.6); }
+  .v2-catalogue-card::before { content: ""; position: absolute; right: -90px; top: -90px;
+    width: 300px; height: 300px; border-radius: 50%; background: rgba(134,189,70,.1); }
+  .v2-catalogue-card::after { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+    background: var(--brand-green); }
+
+  .v2-cat-picto { width: 104px; height: 104px; border-radius: 22px; flex-shrink: 0;
+    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16);
+    display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
+  .v2-cat-picto svg { width: 54px; height: 54px; }
+
+  .v2-cat-text { position: relative; z-index: 1; }
+  .v2-cat-label { font-size: 11.5px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase;
+    color: var(--brand-green); margin-bottom: 10px; }
+  .v2-cat-text h2 { font-size: clamp(24px, 2.6vw, 32px); color: var(--white); margin-bottom: 10px; line-height: 1.15; }
+  .v2-cat-text p { font-size: 16px; line-height: 1.65; color: rgba(255,255,255,.72); max-width: 520px; margin: 0; }
+
+  .v2-cat-action { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 10px; align-items: stretch; }
+  .v2-cat-action .btn-hero-primary { padding: 16px 30px; font-size: 15px; white-space: nowrap; text-align: center; }
+  .v2-cat-note { font-size: 12.5px; color: rgba(255,255,255,.45); text-align: center; }
+
+  @media (max-width: 900px) {
+    .v2-catalogue { padding-bottom: 72px; }
+    .v2-catalogue-card { grid-template-columns: 1fr; gap: 26px; padding: 36px 28px; text-align: left; }
+    .v2-cat-picto { width: 84px; height: 84px; }
+    .v2-cat-picto svg { width: 44px; height: 44px; }
+  }
+
+  /* ---------- Gammes : cartes plus présentes ---------- */
+  .gamme-icon { width: 54px; height: 54px; border-radius: 15px;
+    background: linear-gradient(145deg, rgba(0,80,136,.12), rgba(0,80,136,.05)); }
+  .gamme-icon svg { width: 26px; height: 26px; }
+  .gamme-card { padding: 30px 24px; border-radius: 16px; }
+  .gamme-card:hover .gamme-icon { background: linear-gradient(145deg, var(--accent), #013D69); }
+
   /* ---------- MOMENT FORT ---------- */
   .v2-statement { background: var(--navy); padding: 124px 24px; text-align: center; position: relative; overflow: hidden; }
   .v2-statement::before { content: ""; position: absolute; inset: 0;
@@ -251,40 +359,91 @@
   <!-- ============ SECTEURS, EN ASYMÉTRIE ============ -->
   <section class="v2-split">
       <div class="reveal">
+        <p class="v2-index"><span>01</span> Secteur</p>
         <h2>Transformation alimentaire</h2>
-        <p>Dans une usine, une rupture de gants ou de filets arrête une ligne de production. C'est pour ça que nous gardons en inventaire ce que vous consommez chaque semaine, et que nous fournissons les fiches techniques dont vos équipes qualité ont besoin pour leurs audits.</p><p>Usines de transformation, boucheries, fromageries, cuisines commerciales.</p>
+        <p>Dans une usine, une rupture de gants ou de filets arrête une ligne de production. C'est pour ça que nous gardons en inventaire ce que vous consommez chaque semaine, et que nous fournissons les fiches techniques dont vos équipes qualité ont besoin pour leurs audits.</p>
+        <p>Usines de transformation, boucheries, fromageries, cuisines commerciales.</p>
         <a href="/fournisseur-industrie-alimentaire" class="v2-link">Voir la page alimentaire &rarr;</a>
       </div>
       <div class="v2-visual reveal">
-        <div class="v2-visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h1a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
-        <h3>Ce qu'on y livre</h3>
-        <div class="v2-tags"><span class="v2-tag">Gants bleus repérables</span><span class="v2-tag">Filets et bonnets</span><span class="v2-tag">Tabliers</span><span class="v2-tag">Contenants</span><span class="v2-tag">Emballages</span><span class="v2-tag">Ustensiles</span><span class="v2-tag">Désinfectants</span><span class="v2-tag">Papier</span></div>
+        <div class="v2-carousel" data-intervalle="5000">
+          <div class="v2-slides">
+            <img src="/images/secteurs/alimentaire-1.webp" alt="Employé en filet à cheveux emballant des produits frais" width="1200" height="750" class="active">
+            <img src="/images/secteurs/alimentaire-2.webp" alt="Équipe en vêtements de protection sur une ligne de conditionnement" width="1200" height="750" loading="lazy">
+            <img src="/images/secteurs/alimentaire-3.webp" alt="Ligne de transformation alimentaire en usine" width="1200" height="750" loading="lazy">
+          </div>
+          <div class="v2-carousel-scrim"></div>
+          <div class="v2-dots" role="tablist" aria-label="Photos — Transformation alimentaire">
+            <button type="button" role="tab" aria-selected="true" aria-label="Photo 1 sur 3 — Transformation alimentaire"></button>
+            <button type="button" role="tab" aria-selected="false" aria-label="Photo 2 sur 3 — Transformation alimentaire"></button>
+            <button type="button" role="tab" aria-selected="false" aria-label="Photo 3 sur 3 — Transformation alimentaire"></button>
+          </div>
+          <div class="v2-visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h1a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        </div>
+        <div class="v2-visual-body">
+          <h3>Ce qu'on y livre</h3>
+          <div class="v2-tags"><span class="v2-tag">Gants bleus repérables</span><span class="v2-tag">Filets et bonnets</span><span class="v2-tag">Tabliers</span><span class="v2-tag">Contenants</span><span class="v2-tag">Emballages</span><span class="v2-tag">Ustensiles</span><span class="v2-tag">Désinfectants</span><span class="v2-tag">Papier</span></div>
+        </div>
       </div>
   </section>
 
   <section class="v2-split inverse">
       <div class="reveal">
+        <p class="v2-index"><span>02</span> Secteur</p>
         <h2>Cliniques et milieux de soins</h2>
-        <p>Les gants d'examen vendus au Canada doivent détenir une licence d'instrument médical de Santé Canada. Nous fournissons la documentation avec le produit, pas trois semaines après la commande.</p><p>Cliniques, cabinets, résidences, laboratoires et services de santé.</p>
+        <p>Les gants d'examen vendus au Canada doivent détenir une licence d'instrument médical de Santé Canada. Nous fournissons la documentation avec le produit, pas trois semaines après la commande.</p>
+        <p>Cliniques, cabinets, résidences, laboratoires et services de santé.</p>
         <a href="/fournisseur-epi" class="v2-link">Voir la page protection &rarr;</a>
       </div>
       <div class="v2-visual reveal">
-        <div class="v2-visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-        <h3>Ce qu'on y livre</h3>
-        <div class="v2-tags"><span class="v2-tag">Gants nitrile</span><span class="v2-tag">Masques</span><span class="v2-tag">Blouses</span><span class="v2-tag">Couvre-chaussures</span><span class="v2-tag">Visières</span><span class="v2-tag">Désinfectants</span><span class="v2-tag">Lingettes</span><span class="v2-tag">Savons</span></div>
+        <div class="v2-carousel" data-intervalle="5000">
+          <div class="v2-slides">
+            <img src="/images/secteurs/medical-1.webp" alt="Mains enfilant des gants de nitrile bleus" width="1200" height="750" class="active">
+            <img src="/images/secteurs/medical-2.webp" alt="Prélèvement effectué avec des gants d'examen" width="1200" height="750" loading="lazy">
+            <img src="/images/secteurs/medical-3.webp" alt="Professionnelle de la santé portant un masque" width="1200" height="750" loading="lazy">
+          </div>
+          <div class="v2-carousel-scrim"></div>
+          <div class="v2-dots" role="tablist" aria-label="Photos — Cliniques et milieux de soins">
+            <button type="button" role="tab" aria-selected="true" aria-label="Photo 1 sur 3 — Cliniques et milieux de soins"></button>
+            <button type="button" role="tab" aria-selected="false" aria-label="Photo 2 sur 3 — Cliniques et milieux de soins"></button>
+            <button type="button" role="tab" aria-selected="false" aria-label="Photo 3 sur 3 — Cliniques et milieux de soins"></button>
+          </div>
+          <div class="v2-visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        </div>
+        <div class="v2-visual-body">
+          <h3>Ce qu'on y livre</h3>
+          <div class="v2-tags"><span class="v2-tag">Gants nitrile</span><span class="v2-tag">Masques</span><span class="v2-tag">Blouses</span><span class="v2-tag">Couvre-chaussures</span><span class="v2-tag">Visières</span><span class="v2-tag">Désinfectants</span><span class="v2-tag">Lingettes</span><span class="v2-tag">Savons</span></div>
+        </div>
       </div>
   </section>
 
   <section class="v2-split">
       <div class="reveal">
+        <p class="v2-index"><span>03</span> Secteur</p>
         <h2>Ateliers, entrepôts et entretien</h2>
-        <p>Là où le gant doit tenir toute la journée, l'épaisseur et la prise comptent plus que le prix de la boîte. Nous partons de vos postes de travail avant de proposer quoi que ce soit.</p><p>Ateliers, entrepôts, entrepreneurs en entretien ménager, municipalités.</p>
+        <p>Là où le gant doit tenir toute la journée, l'épaisseur et la prise comptent plus que le prix de la boîte. Nous partons de vos postes de travail avant de proposer quoi que ce soit.</p>
+        <p>Ateliers, entrepôts, entrepreneurs en entretien ménager, municipalités.</p>
         <a href="/fournisseur-produits-sanitaires" class="v2-link">Voir la page sanitaire &rarr;</a>
       </div>
       <div class="v2-visual reveal">
-        <div class="v2-visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <h3>Ce qu'on y livre</h3>
-        <div class="v2-tags"><span class="v2-tag">Gants 6 à 8 mil</span><span class="v2-tag">Lunettes</span><span class="v2-tag">Visières</span><span class="v2-tag">Papier</span><span class="v2-tag">Distributrices</span><span class="v2-tag">Nettoyants</span><span class="v2-tag">Sacs</span><span class="v2-tag">Absorbants</span></div>
+        <div class="v2-carousel" data-intervalle="5000">
+          <div class="v2-slides">
+            <img src="/images/secteurs/industriel-1.webp" alt="Allée d'entrepôt avec rayonnages et palettes" width="1200" height="750" class="active">
+            <img src="/images/secteurs/industriel-2.webp" alt="Chariot élévateur en entrepôt" width="1200" height="750" loading="lazy">
+            <img src="/images/secteurs/industriel-3.webp" alt="Poste de travail en entrepôt de distribution" width="1200" height="750" loading="lazy">
+          </div>
+          <div class="v2-carousel-scrim"></div>
+          <div class="v2-dots" role="tablist" aria-label="Photos — Ateliers, entrepôts et entretien">
+            <button type="button" role="tab" aria-selected="true" aria-label="Photo 1 sur 3 — Ateliers, entrepôts et entretien"></button>
+            <button type="button" role="tab" aria-selected="false" aria-label="Photo 2 sur 3 — Ateliers, entrepôts et entretien"></button>
+            <button type="button" role="tab" aria-selected="false" aria-label="Photo 3 sur 3 — Ateliers, entrepôts et entretien"></button>
+          </div>
+          <div class="v2-visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        </div>
+        <div class="v2-visual-body">
+          <h3>Ce qu'on y livre</h3>
+          <div class="v2-tags"><span class="v2-tag">Gants 6 à 8 mil</span><span class="v2-tag">Lunettes</span><span class="v2-tag">Visières</span><span class="v2-tag">Papier</span><span class="v2-tag">Distributrices</span><span class="v2-tag">Nettoyants</span><span class="v2-tag">Sacs</span><span class="v2-tag">Absorbants</span></div>
+        </div>
       </div>
   </section>
 
@@ -351,6 +510,23 @@
           <h3>Entrepôt et expédition</h3>
           <p>Fournitures d'expédition et consommables d'entrepôt.</p>
         </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ LE CATALOGUE ============ -->
+  <section class="v2-catalogue">
+    <div class="v2-catalogue-card reveal">
+      <div class="v2-cat-picto"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="6" y="7" width="17" height="34" rx="2.5" stroke="rgba(255,255,255,.55)" stroke-width="2"/><path d="M25 9.5c0-1.4 1.1-2.5 2.5-2.5H39.5c1.4 0 2.5 1.1 2.5 2.5v29c0 1.4-1.1 2.5-2.5 2.5H27.5c-1.4 0-2.5-1.1-2.5-2.5z" fill="rgba(134,189,70,.18)" stroke="#86BD46" stroke-width="2"/><path d="M24 7v34" stroke="rgba(255,255,255,.55)" stroke-width="2" stroke-linecap="round"/><path d="M10.5 15h8M10.5 21h8M10.5 27h5" stroke="rgba(255,255,255,.4)" stroke-width="2" stroke-linecap="round"/><path d="M29.5 16h8M29.5 22h8M29.5 28h5" stroke="#86BD46" stroke-width="2" stroke-linecap="round"/></svg></div>
+      <div class="v2-cat-text">
+        <p class="v2-cat-label">L'outil central</p>
+        <h2>Le catalogue Neobex 2026</h2>
+        <p>Plus de 2 000 produits classés par catégorie — bien au-delà de ce que présentent ce site et la boutique. C'est le document que nos clients gardent ouvert quand ils préparent leur commande.</p>
+      </div>
+      <div class="v2-cat-action">
+        <a href="https://catalogue.neobex.ca/" class="btn-hero-primary">Consulter le catalogue</a>
+        <span class="v2-cat-note">Accès libre, sans inscription</span>
       </div>
     </div>
   </section>
@@ -520,6 +696,42 @@
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
     cibles.forEach(function (el) { obs.observe(el); });
+  })();
+
+  // Carrousels des secteurs : défilement automatique, pause au survol
+  (function () {
+    var douceur = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('.v2-carousel').forEach(function (car) {
+      var photos = car.querySelectorAll('.v2-slides img');
+      var points = car.querySelectorAll('.v2-dots button');
+      if (photos.length < 2) return;
+      var index = 0, minuteur = null;
+      var intervalle = parseInt(car.dataset.intervalle, 10) || 5000;
+
+      function afficher(n) {
+        index = (n + photos.length) % photos.length;
+        photos.forEach(function (img, i) { img.classList.toggle('active', i === index); });
+        points.forEach(function (b, i) { b.setAttribute('aria-selected', i === index ? 'true' : 'false'); });
+      }
+      function demarrer() {
+        if (douceur || minuteur) return;
+        minuteur = setInterval(function () { afficher(index + 1); }, intervalle);
+      }
+      function arreter() { clearInterval(minuteur); minuteur = null; }
+
+      points.forEach(function (b, i) {
+        b.addEventListener('click', function () { arreter(); afficher(i); demarrer(); });
+      });
+      car.addEventListener('mouseenter', arreter);
+      car.addEventListener('mouseleave', demarrer);
+
+      // On ne fait tourner que ce qui est visible à l'écran
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (e) {
+          e[0].isIntersecting ? demarrer() : arreter();
+        }, { threshold: 0.25 }).observe(car);
+      } else { demarrer(); }
+    });
   })();
   </script>
 </body>
