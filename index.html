@@ -20,8 +20,367 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/webp" href="/images/logo.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+  /* =========================================================
+     APERÇU — styles propres à cette page de démonstration.
+     Rien ici n'affecte le site en ligne.
+     ========================================================= */
+  :root { --display: 'Archivo', 'Inter', sans-serif; }
+
+  h1, h2, h3, h4, h5,
+  .v2-stat-value, .v2-benefit-num, .quantity-card h4, .stat-value {
+    font-family: var(--display);
+    letter-spacing: -0.022em;
+  }
+
+  /* ---------- Apparition au défilement ---------- */
+  .js .reveal { opacity: 0; transform: translateY(20px);
+    transition: opacity .75s cubic-bezier(.22,.61,.36,1), transform .75s cubic-bezier(.22,.61,.36,1); }
+  .js .reveal.vu { opacity: 1; transform: none; }
+  .reveal:nth-child(2) { transition-delay: .08s; }
+  .reveal:nth-child(3) { transition-delay: .16s; }
+  @media (prefers-reduced-motion: reduce) {
+    .js .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* ---------- HERO ---------- */
+  .v2-hero { position: relative; min-height: 94vh; display: flex; align-items: center; overflow: hidden; }
+  .v2-hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .v2-scrim { position: absolute; inset: 0;
+    background: linear-gradient(100deg, rgba(10,22,40,.96) 0%, rgba(10,22,40,.88) 38%, rgba(10,22,40,.45) 68%, rgba(10,22,40,.2) 100%); }
+  .v2-hero-inner { position: relative; width: 100%; max-width: 1200px; margin: 0 auto; padding: 150px 24px 64px; }
+  .v2-hero-content { max-width: 760px; }
+
+  .v2-eyebrow { display: inline-flex; align-items: center; gap: 10px;
+    font-size: 12px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase;
+    color: var(--brand-green); margin-bottom: 22px; }
+  .v2-eyebrow::before { content: ""; width: 28px; height: 2px; background: var(--brand-green); }
+
+  .v2-hero h1 { font-size: clamp(36px, 5.2vw, 68px); line-height: 1.03; font-weight: 700;
+    color: var(--white); margin-bottom: 24px; }
+  .v2-hero h1 em { font-style: normal; color: var(--brand-green); }
+
+  .v2-lede { font-size: 19px; line-height: 1.6; color: rgba(255,255,255,.76); max-width: 580px; margin-bottom: 34px; }
+
+  .v2-hero-actions { display: flex; align-items: center; gap: 26px; flex-wrap: wrap; margin-bottom: 52px; }
+  .v2-hero-actions .btn-hero-primary { padding: 17px 34px; font-size: 16px; }
+  .v2-ghost { color: rgba(255,255,255,.8); font-weight: 600; font-size: 15px; text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,.3); padding-bottom: 2px; transition: .2s; }
+  .v2-ghost:hover { color: var(--white); border-color: var(--brand-green); }
+
+  .v2-stats { display: flex; gap: 56px; flex-wrap: wrap;
+    border-top: 1px solid rgba(255,255,255,.16); padding-top: 30px; }
+  .v2-stat-value { font-size: 42px; font-weight: 700; color: var(--white); line-height: 1;
+    font-variant-numeric: tabular-nums; }
+  .v2-stat-label { font-size: 12px; text-transform: uppercase; letter-spacing: 1.2px;
+    color: rgba(255,255,255,.5); margin-top: 9px; }
+
+  .v2-certs { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 30px; }
+  .v2-chip { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600;
+    color: rgba(255,255,255,.82); background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.14); border-radius: 999px; padding: 7px 15px; }
+
+  @media (max-width: 760px) {
+    .v2-hero { min-height: auto; }
+    .v2-hero-inner { padding: 124px 20px 56px; }
+    .v2-scrim { background: linear-gradient(180deg, rgba(10,22,40,.88) 0%, rgba(10,22,40,.95) 60%); }
+    .v2-stats { gap: 28px; }
+    .v2-stat-value { font-size: 32px; }
+  }
+
+  /* ---------- BANDE CLIENTS ---------- */
+  .v2-clients { background: var(--surface); border-bottom: 1px solid var(--border); padding: 44px 24px; }
+  .v2-clients-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center;
+    gap: 48px; flex-wrap: wrap; justify-content: center; }
+  .v2-clients-label { font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase;
+    color: var(--text-muted); white-space: nowrap; }
+  .v2-clients-logos { display: flex; align-items: center; gap: 46px; flex-wrap: wrap; justify-content: center; }
+  .v2-clients-logos img { max-height: 46px; max-width: 150px; object-fit: contain;
+    filter: grayscale(1); opacity: .62; transition: .3s; }
+  .v2-clients-logos img:hover { filter: none; opacity: 1; }
+
+  /* ---------- SECTIONS ASYMÉTRIQUES ---------- */
+  .v2-split { max-width: 1160px; margin: 0 auto; padding: 104px 24px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .v2-split.inverse .v2-visual { order: -1; }
+  .v2-split h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.12; color: var(--navy); margin-bottom: 18px; }
+  .v2-split p { font-size: 17px; line-height: 1.75; color: var(--text-secondary); margin-bottom: 16px; }
+  .v2-split .v2-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 10px;
+    font-weight: 600; color: var(--accent); text-decoration: none; }
+  .v2-split .v2-link:hover { gap: 13px; }
+
+  .v2-visual { background: linear-gradient(150deg, #0A1628 0%, #12304F 100%);
+    border-radius: 22px; padding: 46px 42px; color: var(--white); position: relative; overflow: hidden; }
+  .v2-visual::after { content: ""; position: absolute; right: -70px; bottom: -70px;
+    width: 220px; height: 220px; border-radius: 50%; background: rgba(134,189,70,.12); }
+  .v2-visual-icon { width: 58px; height: 58px; border-radius: 14px; background: rgba(255,255,255,.1);
+    display: flex; align-items: center; justify-content: center; margin-bottom: 26px; }
+  .v2-visual-icon svg { width: 28px; height: 28px; color: var(--brand-green); }
+  .v2-visual h3 { font-size: 22px; margin-bottom: 20px; color: var(--white); }
+  .v2-tags { display: flex; flex-wrap: wrap; gap: 9px; position: relative; z-index: 1; }
+  .v2-tag { font-size: 13.5px; font-weight: 500; color: rgba(255,255,255,.88);
+    background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.13);
+    border-radius: 8px; padding: 7px 13px; }
+
+  @media (max-width: 900px) {
+    .v2-split { grid-template-columns: 1fr; gap: 40px; padding: 72px 20px; }
+    .v2-split.inverse .v2-visual { order: 0; }
+  }
+
+
+  /* ---------- Carrousel photo des secteurs ---------- */
+  .v2-visual { padding: 0; }
+  .v2-visual-body { padding: 30px 32px 34px; position: relative; z-index: 1; }
+  .v2-visual-body h3 { font-size: 17px; margin-bottom: 16px; }
+  .v2-visual .v2-visual-icon { margin-bottom: 20px; }
+
+  .v2-carousel { position: relative; aspect-ratio: 16 / 7; background: #0A1628; overflow: hidden; }
+  .v2-slides { position: absolute; inset: 0; }
+  .v2-slides img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    opacity: 0; transition: opacity 1s ease; filter: saturate(.92) contrast(1.04); }
+  .v2-slides img.active { opacity: 1; }
+
+  .v2-carousel-scrim { position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(180deg, rgba(10,22,40,0) 0%, rgba(10,22,40,0) 62%, rgba(10,22,40,.5) 100%); }
+
+  .v2-dots { position: absolute; left: 20px; bottom: 16px; display: flex; gap: 7px; }
+  .v2-dots button { width: 22px; height: 4px; border-radius: 99px; border: 0; cursor: pointer;
+    background: rgba(255,255,255,.42); padding: 0; transition: background .3s, width .3s; }
+  .v2-dots button[aria-selected="true"] { background: var(--brand-green); width: 34px; }
+  .v2-dots button:hover { background: rgba(255,255,255,.75); }
+  .v2-dots button:focus-visible { outline: 2px solid var(--brand-green); outline-offset: 3px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .v2-slides img { transition: none; }
+  }
+
+
+  /* ---------- Finition : numérotation éditoriale ---------- */
+  .v2-index { display: flex; align-items: center; gap: 14px; margin-bottom: 18px;
+    font-size: 11.5px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase;
+    color: var(--text-muted); }
+  .v2-index span { font-family: var(--display); font-size: 13px; font-weight: 800;
+    color: var(--brand-green); letter-spacing: 0.5px; }
+  .v2-index::after { content: ""; height: 1px; flex: 1; max-width: 140px; background: var(--border); }
+
+  /* ---------- Finition : carte visuelle ---------- */
+  .v2-visual { box-shadow: 0 28px 64px -28px rgba(10,22,40,.5); }
+  .v2-visual::after { display: none; }
+
+  /* étalonnage commun : neuf photos de neuf photographes doivent se tenir */
+  .v2-slides img { filter: saturate(.96) contrast(1.01); }
+  .v2-carousel::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background: linear-gradient(158deg, rgba(0,80,136,.05) 0%, rgba(10,22,40,0) 60%, rgba(10,22,40,.04) 100%);
+    mix-blend-mode: multiply; }
+  .v2-carousel-scrim { z-index: 2; }
+  .v2-dots { z-index: 3; left: 22px; bottom: 18px; }
+
+  .v2-carousel .v2-visual-icon { position: absolute; z-index: 3; right: 20px; bottom: 14px;
+    margin: 0; width: 54px; height: 54px; border-radius: 15px;
+    background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.26);
+    -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+
+  .v2-visual-body { padding: 26px 30px 30px; }
+  .v2-visual-body h3 { font-size: 12px; font-weight: 700; letter-spacing: 1.6px;
+    text-transform: uppercase; color: rgba(255,255,255,.5); margin-bottom: 14px; }
+  .v2-tag { font-size: 13px; padding: 6px 12px; }
+
+  .v2-split { gap: 88px; align-items: center; }
+  .v2-split h2 { margin-bottom: 20px; }
+
+  @media (max-width: 900px) {
+    .v2-split { gap: 36px; }
+    .v2-carousel .v2-visual-icon { width: 46px; height: 46px; right: 16px; bottom: 12px; }
+  }
+
+
+  /* ---------- Le catalogue, traité comme l'outil qu'il est ---------- */
+  .v2-catalogue { max-width: 1160px; margin: 0 auto; padding: 0 24px 104px; }
+  .v2-catalogue-card { position: relative; overflow: hidden;
+    background: linear-gradient(135deg, #0A1628 0%, #133253 58%, #16406A 100%);
+    border-radius: 24px; padding: 48px 52px;
+    display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 40px;
+    box-shadow: 0 28px 64px -30px rgba(10,22,40,.6); }
+  .v2-catalogue-card::before { content: ""; position: absolute; right: -90px; top: -90px;
+    width: 300px; height: 300px; border-radius: 50%; background: rgba(134,189,70,.1); }
+  .v2-catalogue-card::after { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+    background: var(--brand-green); }
+
+  .v2-cat-picto { width: 104px; height: 104px; border-radius: 22px; flex-shrink: 0;
+    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16);
+    display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
+  .v2-cat-picto svg { width: 54px; height: 54px; }
+
+  .v2-cat-text { position: relative; z-index: 1; }
+  .v2-cat-label { font-size: 11.5px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase;
+    color: var(--brand-green); margin-bottom: 10px; }
+  .v2-cat-text h2 { font-size: clamp(24px, 2.6vw, 32px); color: var(--white); margin-bottom: 10px; line-height: 1.15; }
+  .v2-cat-text p { font-size: 16px; line-height: 1.65; color: rgba(255,255,255,.72); max-width: 520px; margin: 0; }
+
+  .v2-cat-action { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 10px; align-items: stretch; }
+  .v2-cat-action .btn-hero-primary { padding: 16px 30px; font-size: 15px; white-space: nowrap; text-align: center; }
+  .v2-cat-note { font-size: 12.5px; color: rgba(255,255,255,.45); text-align: center; }
+
+  @media (max-width: 900px) {
+    .v2-catalogue { padding-bottom: 72px; }
+    .v2-catalogue-card { grid-template-columns: 1fr; gap: 26px; padding: 36px 28px; text-align: left; }
+    .v2-cat-picto { width: 84px; height: 84px; }
+    .v2-cat-picto svg { width: 44px; height: 44px; }
+  }
+
+  /* ---------- Gammes : cartes plus présentes ---------- */
+  .gamme-icon { width: 54px; height: 54px; border-radius: 15px;
+    background: linear-gradient(145deg, rgba(0,80,136,.12), rgba(0,80,136,.05)); }
+  .gamme-icon svg { width: 26px; height: 26px; }
+  .gamme-card { padding: 30px 24px; border-radius: 16px; }
+  .gamme-card:hover .gamme-icon { background: linear-gradient(145deg, var(--accent), #013D69); }
+
+
+  /* ---------- Le catalogue, mis en avant des le hero ---------- */
+  .v2-cat-cta { display: inline-flex; align-items: center; gap: 14px; text-decoration: none;
+    padding: 12px 20px 12px 14px; border-radius: 12px;
+    background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.22);
+    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); transition: .25s; }
+  .v2-cat-cta:hover { background: rgba(255,255,255,.13); border-color: var(--brand-green); transform: translateY(-2px); }
+  .v2-cat-cta-picto { width: 38px; height: 38px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+  .v2-cat-cta-picto svg { width: 30px; height: 30px; }
+  .v2-cat-cta-text { display: flex; flex-direction: column; line-height: 1.3; }
+  .v2-cat-cta-text strong { font-size: 14.5px; font-weight: 700; color: var(--white); }
+  .v2-cat-cta-text em { font-style: normal; font-size: 12.5px; color: rgba(255,255,255,.6); margin-top: 2px; }
+
+  .v2-hero-links { display: flex; gap: 24px; flex-wrap: wrap; margin: -34px 0 48px; }
+
+  @media (max-width: 560px) {
+    .v2-hero-actions { flex-direction: column; align-items: stretch; gap: 14px; }
+    .v2-cat-cta { justify-content: flex-start; }
+  }
+
+
+  /* ---------- Gammes : pictogrammes plus grands et plus lisibles ---------- */
+  .gamme-icon { width: 64px; height: 64px; border-radius: 17px; }
+  .gamme-icon svg { width: 32px; height: 32px; stroke-width: 1.8; }
+  .gamme-card { padding: 32px 26px; gap: 14px; }
+  .gamme-card h3 { font-size: 16.5px; }
+  .gamme-card p { font-size: 14.5px; }
+  @media (max-width: 560px) {
+    .gamme-icon { width: 54px; height: 54px; }
+    .gamme-icon svg { width: 28px; height: 28px; }
+  }
+
+
+  /* ---------- Volumes : boite, caisse, palette ---------- */
+  .v2-volumes { padding: 104px 24px; background: var(--surface); }
+  .v2-volumes-inner { max-width: 1160px; margin: 0 auto; }
+  .v2-volumes .v2-head { margin-bottom: 44px; }
+  .v2-volumes .v2-head h2 .hl-bleu { color: var(--accent); }
+
+  .v2-vol-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+  .v2-vol-card { background: var(--white); border: 1px solid var(--border); border-radius: 18px;
+    overflow: hidden; display: flex; flex-direction: column;
+    transition: border-color .25s, transform .25s, box-shadow .25s; }
+  .v2-vol-card:hover { border-color: var(--accent); transform: translateY(-3px);
+    box-shadow: 0 18px 44px -22px rgba(10,22,40,.4); }
+  .v2-vol-card > img { width: 100%; aspect-ratio: 541 / 261; object-fit: cover; display: block; }
+
+  .v2-vol-body { padding: 24px 24px 22px; display: flex; flex-direction: column; flex-grow: 1; }
+  .v2-vol-head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+  .v2-vol-icon { width: 46px; height: 46px; border-radius: 50%; flex-shrink: 0;
+    background: rgba(0,80,136,.08); color: var(--accent);
+    display: flex; align-items: center; justify-content: center; }
+  .v2-vol-icon svg { width: 24px; height: 24px; }
+  .v2-vol-card h3 { font-size: 21px; color: var(--navy); line-height: 1.15; }
+  .v2-vol-sub { font-size: 14.5px; font-weight: 600; color: var(--accent); margin: 3px 0 0; }
+  .v2-vol-desc { font-size: 14.5px; line-height: 1.6; color: var(--text-secondary); margin: 0 0 18px; flex-grow: 1; }
+
+  .v2-vol-badge { display: flex; align-items: center; justify-content: center; gap: 9px; margin: 0;
+    background: rgba(0,80,136,.06); border-radius: 10px; padding: 11px 14px;
+    font-size: 14.5px; font-weight: 700; color: var(--accent); }
+  .v2-vol-badge svg { width: 19px; height: 19px; flex-shrink: 0; }
+
+  .v2-vol-bar { margin-top: 24px; background: rgba(0,80,136,.06); border-radius: 16px;
+    padding: 26px 30px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 26px; }
+  .v2-vol-bar-icon { width: 50px; height: 50px; border-radius: 12px; background: rgba(255,255,255,.75);
+    color: var(--accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .v2-vol-bar-icon svg { width: 25px; height: 25px; }
+  .v2-vol-bar-text { border-right: 1px solid rgba(0,80,136,.14); padding-right: 26px; }
+  .v2-vol-bar-text strong { display: block; font-family: var(--display); font-size: 18px;
+    color: var(--navy); margin-bottom: 5px; }
+  .v2-vol-bar-text p { font-size: 14.5px; line-height: 1.6; color: var(--text-secondary); margin: 0; }
+  .v2-vol-bar .btn-hero-primary { padding: 16px 28px; font-size: 15px; white-space: nowrap; }
+
+  @media (max-width: 900px) {
+    .v2-vol-grid { grid-template-columns: 1fr; }
+    .v2-vol-bar { grid-template-columns: 1fr; gap: 18px; text-align: left; }
+    .v2-vol-bar-text { border-right: 0; padding-right: 0; }
+    .v2-vol-bar .btn-hero-primary { text-align: center; }
+  }
+
+
+  /* ---------- Les huit gammes, en photos ---------- */
+  .v2-gammes { padding: 104px 24px; background: var(--white); }
+  .v2-gammes-inner { max-width: 1240px; margin: 0 auto; }
+  .v2-gammes .v2-head { margin-bottom: 44px; }
+  .v2-gammes .v2-head h2 .hl-bleu { color: var(--accent); }
+
+  .v2-gam-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+
+  .v2-gam-card { display: flex; flex-direction: column; text-decoration: none;
+    background: var(--white); border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
+    transition: border-color .25s, transform .25s, box-shadow .25s; }
+  .v2-gam-card:hover { border-color: var(--accent); transform: translateY(-3px);
+    box-shadow: 0 18px 44px -24px rgba(10,22,40,.45); }
+  .v2-gam-card > img { width: 100%; aspect-ratio: 358 / 226; object-fit: cover; display: block; }
+
+  .v2-gam-body { padding: 20px 20px 22px; display: flex; align-items: center; gap: 14px; flex-grow: 1; }
+  .v2-gam-body h3 { font-size: 16.5px; color: var(--navy); line-height: 1.25; margin-bottom: 7px; }
+  .v2-gam-body p { font-size: 14px; line-height: 1.55; color: var(--text-secondary); margin: 0; }
+
+  .v2-gam-arrow { width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0; margin-left: auto;
+    background: rgba(0,80,136,.08); color: var(--accent);
+    display: flex; align-items: center; justify-content: center; transition: .25s; }
+  .v2-gam-arrow svg { width: 17px; height: 17px; }
+  .v2-gam-card:hover .v2-gam-arrow { background: var(--accent); color: var(--white); }
+
+  @media (max-width: 1080px) { .v2-gam-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .v2-gam-grid { grid-template-columns: 1fr; } .v2-gammes { padding: 72px 20px; } }
+
+  /* ---------- MOMENT FORT ---------- */
+  .v2-statement { background: var(--navy); padding: 124px 24px; text-align: center; position: relative; overflow: hidden; }
+  .v2-statement::before { content: ""; position: absolute; inset: 0;
+    background: radial-gradient(900px 420px at 50% -10%, rgba(134,189,70,.15), transparent 70%); }
+  .v2-statement-inner { position: relative; max-width: 940px; margin: 0 auto; }
+  .v2-statement p { font-family: var(--display); font-size: clamp(26px, 3.9vw, 46px); line-height: 1.16;
+    font-weight: 700; letter-spacing: -0.022em; color: var(--white); }
+  .v2-statement .hl { color: var(--brand-green); }
+  .v2-statement .v2-sub { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 400;
+    letter-spacing: 0; color: rgba(255,255,255,.6); margin-top: 26px; line-height: 1.7; }
+
+  /* ---------- AVANTAGES, SANS PHOTOS ---------- */
+  .v2-section { padding: 104px 24px; }
+  .v2-section-inner { max-width: 1160px; margin: 0 auto; }
+  .v2-head { max-width: 680px; margin-bottom: 52px; }
+  .v2-head h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.12; color: var(--navy); margin-bottom: 14px; }
+  .v2-head p { font-size: 18px; color: var(--text-secondary); line-height: 1.65; }
+  .v2-head.centre { margin-left: auto; margin-right: auto; text-align: center; }
+
+  .v2-benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: var(--border); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; }
+  .v2-benefit { background: var(--white); padding: 40px 34px; transition: background .25s; }
+  .v2-benefit:hover { background: #FBFDFF; }
+  .v2-benefit-num { font-size: 46px; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 16px; }
+  .v2-benefit h4 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+  .v2-benefit p { font-size: 15px; line-height: 1.65; color: var(--text-secondary); }
+  @media (max-width: 900px) { .v2-benefits { grid-template-columns: 1fr; } }
+
+  /* ---------- Retouches ---------- */
+  .gammes { padding-top: 0; }
+  .quantities h2 { font-family: var(--display); }
+  .testimonials .section-header h2, .cta-section h2 { font-family: var(--display); }
+  </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","name":"Neobex","url":"https://neobex.ca","logo":"https://neobex.ca/images/logo.webp","contactPoint":{"@type":"ContactPoint","telephone":"+1-514-312-1809","contactType":"sales","areaServed":"CA","availableLanguage":["French","English"]},"email":"info@neobex.ca"}
   </script>
@@ -29,10 +388,12 @@
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "LocalBusiness", "@id": "https://neobex.ca/#neobex", "name": "Neobex", "image": "https://neobex.ca/images/logo.webp", "logo": "https://neobex.ca/images/logo.webp", "url": "https://neobex.ca", "telephone": "+1-514-312-1809", "email": "info@neobex.ca", "address": {"@type": "PostalAddress", "streetAddress": "202-85 Albert Street", "addressLocality": "Sherbrooke", "addressRegion": "QC", "postalCode": "J1H 1N1", "addressCountry": "CA"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00"}], "areaServed": {"@type": "Country", "name": "Canada"}, "sameAs": ["https://shop.neobex.ca", "https://catalogue.neobex.ca"]}
   </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "OfferCatalog", "name": "Gammes de produits Neobex", "url": "https://neobex.ca/produits", "provider": {"@type": "Organization", "name": "Neobex", "@id": "https://neobex.ca/#neobex"}, "itemListElement": [{"@type": "OfferCatalog", "position": 1, "name": "Gants jetables et de travail", "description": "Gants de nitrile, vinyle, latex et gants de manutention", "url": "https://neobex.ca/fournisseur-gants"}, {"@type": "OfferCatalog", "position": 2, "name": "Équipements de protection individuelle", "description": "Masques, lunettes de sécurité, visières et protection respiratoire", "url": "https://neobex.ca/fournisseur-epi"}, {"@type": "OfferCatalog", "position": 3, "name": "Vêtements et accessoires de protection", "description": "Jaquettes, blouses, filets à cheveux, couvre-chaussures et bonnets", "url": "https://neobex.ca/fournisseur-epi#vetements"}, {"@type": "OfferCatalog", "position": 4, "name": "Désinfectants et nettoyants", "description": "Désinfectants de surface, nettoyants industriels et lingettes", "url": "https://neobex.ca/fournisseur-produits-sanitaires#nettoyants"}, {"@type": "OfferCatalog", "position": 5, "name": "Papier et distributrices", "description": "Papier à mains, papier hygiénique, essuie-tout et distributrices", "url": "https://neobex.ca/fournisseur-produits-sanitaires#papier"}, {"@type": "OfferCatalog", "position": 6, "name": "Emballage et contenants", "description": "Contenants, barquettes, sacs et fournitures d'emballage", "url": "https://neobex.ca/fournisseur-industrie-alimentaire#contenants"}, {"@type": "OfferCatalog", "position": 7, "name": "Service alimentaire", "description": "Ustensiles, articles jetables et accessoires de cuisine", "url": "https://neobex.ca/fournisseur-industrie-alimentaire#consommables"}, {"@type": "OfferCatalog", "position": 8, "name": "Entrepôt et expédition", "description": "Film étirable, carton, rubans et fournitures d'expédition", "url": "https://neobex.ca/produits#milieux"}]}
+  </script>
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="header" role="banner">
     <div class="header-inner">
       <a href="/" class="logo">
@@ -71,69 +432,64 @@
 
   <main role="main">
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-slider">
-      <video class="hero-slide active" autoplay muted loop playsinline preload="auto" poster="/images/hero/industrial-poster.jpg" aria-label="Fournitures industrielles Neobex"><source src="/images/hero/industrial.mp4" type="video/mp4"></video>
-      <video class="hero-slide" autoplay muted loop playsinline preload="metadata" poster="/images/hero/medical-poster.jpg" aria-label="Fournitures médicales Neobex"><source src="/images/hero/medical.mp4" type="video/mp4"></video>
-      <video class="hero-slide" autoplay muted loop playsinline preload="metadata" poster="/images/hero/alimentation-poster.jpg" aria-label="Fournitures alimentaires Neobex"><source src="/images/hero/alimentation.mp4" type="video/mp4"></video>
-    </div>
-    <div class="hero-overlay"></div>
-    <div class="hero-inner">
-      <div class="hero-content">
-        <h1>Votre fournisseur en <span>équipements de protection individuelle (EPI), produits sanitaires et industriels</span></h1>
-        <p>Gants, masques, produits nettoyants, sacs à déchets, équipements de protection... Tout ce dont votre entreprise a besoin, livré rapidement partout au Canada.</p>
-
-        <div class="hero-product-badge">+ de 2000 produits disponibles sur demande</div>
-
-        <div class="hero-cta">
+  <!-- ============ HERO ============ -->
+  <section class="v2-hero">
+    <video autoplay muted loop playsinline preload="auto" poster="/images/hero/industrial-poster.jpg" aria-hidden="true">
+      <source src="/images/hero/industrial.mp4" type="video/mp4">
+    </video>
+    <div class="v2-scrim"></div>
+    <div class="v2-hero-inner">
+      <div class="v2-hero-content">
+        <p class="v2-eyebrow">Fournisseur B2B d'EPI et de produits sanitaires · Sherbrooke et partout au Québec</p>
+        <h1>Un seul fournisseur pour <em>tout ce qui se consomme</em> dans vos opérations.</h1>
+        <p class="v2-lede">Gants, équipements de protection, produits sanitaires, papier et emballage. Plus de 2 000 produits, livrés partout au Canada, au prix de votre volume réel.</p>
+        <div class="v2-hero-actions">
           <a href="/soumission" class="btn-hero-primary">Demander une soumission</a>
+          <a href="https://catalogue.neobex.ca/" class="v2-cat-cta">
+            <span class="v2-cat-cta-picto"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3.5" width="8" height="17" rx="1.5" stroke="rgba(255,255,255,.6)" stroke-width="1.6"/><rect x="13" y="3.5" width="8" height="17" rx="1.5" fill="rgba(134,189,70,.2)" stroke="#86BD46" stroke-width="1.6"/><path d="M5.5 8h3M5.5 11h3" stroke="rgba(255,255,255,.5)" stroke-width="1.5" stroke-linecap="round"/><path d="M15.5 8h3M15.5 11h3" stroke="#86BD46" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            <span class="v2-cat-cta-text">
+              <strong>Catalogue Neobex 2026</strong>
+              <em>2 000 produits · accès libre</em>
+            </span>
+          </a>
         </div>
-        <div class="hero-links">
-          <a href="https://catalogue.neobex.ca/">Voir le catalogue →</a>
-          <span aria-hidden="true">·</span>
-          <a href="https://shop.neobex.ca/collections/nos-produits">Boutique en ligne →</a>
+        <div class="v2-hero-links">
+          <a href="/comment-on-travaille" class="v2-ghost">Comment on travaille</a>
+          <a href="https://shop.neobex.ca/collections/nos-produits" class="v2-ghost">Boutique en ligne</a>
         </div>
-
-        <div class="hero-stats">
-          <div class="stat">
-            <div class="stat-value" data-count="500" data-suffix="+">500+</div>
-            <div class="stat-label">Entreprises clientes</div>
+        <div class="v2-stats">
+          <div>
+            <div class="v2-stat-value" data-count="500" data-suffix="+">500+</div>
+            <div class="v2-stat-label">Entreprises clientes</div>
           </div>
-          <div class="stat">
-            <div class="stat-value" data-count="2000" data-suffix="+">2000+</div>
-            <div class="stat-label">Produits disponibles</div>
+          <div>
+            <div class="v2-stat-value" data-count="2000" data-suffix="+">2000+</div>
+            <div class="v2-stat-label">Produits disponibles</div>
           </div>
-          <div class="stat">
-            <div class="stat-value" data-count="15" data-suffix="%">15%</div>
-            <div class="stat-label">Économies moyennes</div>
+          <div>
+            <div class="v2-stat-value" data-count="15" data-suffix="%">15%</div>
+            <div class="v2-stat-label">Économies moyennes</div>
           </div>
         </div>
-
-        <div class="hero-certs" style="margin-top:32px;margin-bottom:0;">
-          <span class="hero-cert">
-            <span class="hero-cert-icon" style="background:#DC2626;">SC</span>
-            Produits homologués Santé Canada
-          </span>
-          <span class="hero-cert">
-            <span class="hero-cert-icon" style="background:#059669;">ISO</span>
-            Fournisseurs certifiés ISO 13485
-          </span>
+        <div class="v2-certs">
+          <span class="v2-chip">Produits homologués Santé Canada</span>
+          <span class="v2-chip">Fournisseurs certifiés ISO 13485</span>
+          <span class="v2-chip">Défi carboneutre du Canada</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CLIENTS -->
-  <section class="clients">
-    <div class="clients-inner">
-      <p class="clients-label">Ils nous font confiance</p>
-      <div class="clients-grid">
-        <img src="/images/clients/mcdonalds.png" alt="McDonald's" class="client-logo" loading="lazy">
-        <img src="/images/clients/sherbrooke.png" alt="Université de Sherbrooke" class="client-logo" loading="lazy">
-        <img src="/images/clients/chu-quebec.png" alt="CHU Québec" class="client-logo" loading="lazy">
-        <img src="/images/clients/udem.jpg" alt="Université de Montréal" class="client-logo" loading="lazy">
-        <img src="/images/clients/transdev.png" alt="Transdev Canada" class="client-logo" loading="lazy">
+  <!-- ============ CLIENTS ============ -->
+  <section class="v2-clients">
+    <div class="v2-clients-inner">
+      <p class="v2-clients-label">Ils nous font confiance</p>
+      <div class="v2-clients-logos">
+        <img src="/images/clients/mcdonalds.png" alt="McDonald's" loading="lazy">
+        <img src="/images/clients/sherbrooke.png" alt="Université de Sherbrooke" loading="lazy">
+        <img src="/images/clients/chu-quebec.png" alt="CHU de Québec" loading="lazy">
+        <img src="/images/clients/udem.jpg" alt="Université de Montréal" loading="lazy">
+        <img src="/images/clients/transdev.png" alt="Transdev Canada" loading="lazy">
       </div>
       <a href="/carboneutralite" class="carbon-badge">
         <span class="carbon-badge-icon">
@@ -144,51 +500,107 @@
     </div>
   </section>
 
-  <!-- SECTEURS AVEC PICTOGRAMMES -->
-  <section class="sectors-picto" id="produits">
-    <div class="sectors-picto-inner">
-      <div class="section-header">
-        <h2>Solutions par secteur</h2>
-        <p>Des produits adaptés aux exigences spécifiques de votre industrie</p>
+  <section class="v2-split">
+      <div class="reveal">
+        <p class="v2-index"><span>01</span> Secteur</p>
+        <h2>Transformation alimentaire</h2>
+        <p>Dans une usine, une rupture de gants ou de filets arrête une ligne de production. C'est pour ça que nous gardons en inventaire ce que vous consommez chaque semaine, et que nous fournissons les fiches techniques dont vos équipes qualité ont besoin pour leurs audits.</p>
+        <p>Usines de transformation, boucheries, fromageries, cuisines commerciales.</p>
+        <a href="/fournisseur-industrie-alimentaire" class="v2-link">Voir la page alimentaire &rarr;</a>
       </div>
-
-      <div class="sectors-picto-grid">
-        <div class="sector-picto-card">
-          <div class="sector-picto-icon" style="background:#F59E0B;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+      <div class="v2-visual reveal">
+        <div class="v2-carousel" data-intervalle="3200">
+          <div class="v2-slides">
+            <img src="/images/secteurs/usine.webp" alt="Filets à cheveux, jaquettes, gants et masques prêts à l'usage en usine alimentaire" width="1400" height="613" class="active">
+            <img src="/images/secteurs/usine-2.webp" alt="Employées en filet, masque et gants bleus sur une ligne de transformation" width="1400" height="613" loading="lazy">
           </div>
-          <h3>Alimentaire</h3>
-          <p class="sector-products">Filets, tabliers, contenants, emballages, ustensiles, gants</p>
-          <a href="https://catalogue.neobex.ca/">Voir le catalogue →</a>
+          <div class="v2-carousel-scrim"></div>
+          <div class="v2-dots" role="tablist" aria-label="Photos — Transformation alimentaire">
+            <button type="button" role="tab" aria-selected="true" aria-label="Photo 1 sur 2 — Transformation alimentaire"></button>
+            <button type="button" role="tab" aria-selected="false" aria-label="Photo 2 sur 2 — Transformation alimentaire"></button>
+          </div>
+          <div class="v2-visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h1a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
         </div>
-
-        <div class="sector-picto-card">
-          <div class="sector-picto-icon" style="background:#DC2626;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-          </div>
-          <h3>Médical</h3>
-          <p class="sector-products">Masques, blouses, couvre-chaussures, désinfectants, seringues, gants</p>
-          <a href="https://catalogue.neobex.ca/">Voir le catalogue →</a>
-        </div>
-
-        <div class="sector-picto-card">
-          <div class="sector-picto-icon" style="background:#005088;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-          </div>
-          <h3>Industriel</h3>
-          <p class="sector-products">Lunettes, visières, casques, vêtements de protection, sacs, gants</p>
-          <a href="https://catalogue.neobex.ca/">Voir le catalogue →</a>
+        <div class="v2-visual-body">
+          <h3>Ce qu'on y livre</h3>
+          <div class="v2-tags"><span class="v2-tag">Filets à cheveux</span><span class="v2-tag">Gants bleus repérables</span><span class="v2-tag">Tabliers</span><span class="v2-tag">Contenants</span><span class="v2-tag">Carton et emballage</span><span class="v2-tag">Ustensiles</span><span class="v2-tag">Nettoyants</span><span class="v2-tag">Papier</span></div>
         </div>
       </div>
+  </section>
+
+  <section class="v2-split inverse">
+      <div class="reveal">
+        <p class="v2-index"><span>02</span> Secteur</p>
+        <h2>Cliniques et milieux de soins</h2>
+        <p>Les gants d'examen vendus au Canada doivent détenir une licence d'instrument médical de Santé Canada. Nous fournissons la documentation avec le produit, pas trois semaines après la commande.</p>
+        <p>Cliniques, cabinets, résidences, laboratoires et services de santé.</p>
+        <a href="/fournisseur-epi" class="v2-link">Voir la page protection &rarr;</a>
+      </div>
+      <div class="v2-visual reveal">
+        <div class="v2-carousel" data-intervalle="3200">
+          <div class="v2-slides">
+            <img src="/images/secteurs/gants-medical.webp" alt="Gants d'examen, lingettes et fournitures d'hygiène en salle de soins" width="1400" height="613" class="active">
+            <img src="/images/secteurs/medical-1.webp" alt="Mains enfilant des gants de nitrile bleus" width="1400" height="613" loading="lazy">
+            <img src="/images/secteurs/foyer.webp" alt="Chariot d'entretien, papier et distributrices dans une résidence" width="1400" height="613" loading="lazy">
+          </div>
+          <div class="v2-carousel-scrim"></div>
+          <div class="v2-dots" role="tablist" aria-label="Photos — Cliniques et milieux de soins">
+            <button type="button" role="tab" aria-selected="true" aria-label="Photo 1 sur 3 — Cliniques et milieux de soins"></button>
+            <button type="button" role="tab" aria-selected="false" aria-label="Photo 2 sur 3 — Cliniques et milieux de soins"></button>
+            <button type="button" role="tab" aria-selected="false" aria-label="Photo 3 sur 3 — Cliniques et milieux de soins"></button>
+          </div>
+          <div class="v2-visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        </div>
+        <div class="v2-visual-body">
+          <h3>Ce qu'on y livre</h3>
+          <div class="v2-tags"><span class="v2-tag">Gants nitrile</span><span class="v2-tag">Masques</span><span class="v2-tag">Blouses</span><span class="v2-tag">Couvre-chaussures</span><span class="v2-tag">Visières</span><span class="v2-tag">Désinfectants</span><span class="v2-tag">Lingettes</span><span class="v2-tag">Savons</span></div>
+        </div>
+      </div>
+  </section>
+
+  <section class="v2-split">
+      <div class="reveal">
+        <p class="v2-index"><span>03</span> Secteur</p>
+        <h2>Entretien, hygiène et expédition</h2>
+        <p>Le papier, les nettoyants et les sacs forment une dépense qui passe inaperçue : chaque commande est petite, mais elle revient toutes les semaines. Sur une année, c'est un poste important et rarement renégocié.</p>
+        <p>Entrepreneurs en entretien ménager, entrepôts, ateliers, municipalités et institutions.</p>
+        <a href="/fournisseur-produits-sanitaires" class="v2-link">Voir la page sanitaire &rarr;</a>
+      </div>
+      <div class="v2-visual reveal">
+        <div class="v2-carousel" data-intervalle="3200">
+          <div class="v2-slides">
+            <img src="/images/secteurs/papier.webp" alt="Distributrices, rouleaux de papier à mains et papier hygiénique" width="1400" height="613" class="active">
+            <img src="/images/secteurs/nettoyant.webp" alt="Produits nettoyants, sacs à déchets, microfibres et emballages" width="1400" height="613" loading="lazy">
+            <img src="/images/secteurs/industrie.webp" alt="Dégraisseurs, microfibres, gants et lunettes de sécurité en atelier" width="1400" height="613" loading="lazy">
+          </div>
+          <div class="v2-carousel-scrim"></div>
+          <div class="v2-dots" role="tablist" aria-label="Photos — Entretien, hygiène et expédition">
+            <button type="button" role="tab" aria-selected="true" aria-label="Photo 1 sur 3 — Entretien, hygiène et expédition"></button>
+            <button type="button" role="tab" aria-selected="false" aria-label="Photo 2 sur 3 — Entretien, hygiène et expédition"></button>
+            <button type="button" role="tab" aria-selected="false" aria-label="Photo 3 sur 3 — Entretien, hygiène et expédition"></button>
+          </div>
+          <div class="v2-visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 8h6a3 3 0 0 1 3 3v8a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-8a3 3 0 0 1 3-3z"/><path d="M10 8V4h4v4"/><path d="M14 4h3l2-2"/><path d="M9 13h6"/></svg></div>
+        </div>
+        <div class="v2-visual-body">
+          <h3>Ce qu'on y livre</h3>
+          <div class="v2-tags"><span class="v2-tag">Papier à mains</span><span class="v2-tag">Papier hygiénique</span><span class="v2-tag">Distributrices</span><span class="v2-tag">Nettoyants</span><span class="v2-tag">Désinfectants</span><span class="v2-tag">Sacs à déchets</span><span class="v2-tag">Carton et emballage</span><span class="v2-tag">Gants d'entretien</span></div>
+        </div>
+      </div>
+  </section>
+
+  <!-- ============ MOMENT FORT ============ -->
+  <section class="v2-statement">
+    <div class="v2-statement-inner reveal">
+      <p>Vos fournitures ne devraient pas demander <span class="hl">quatre fournisseurs</span>, douze factures et trois appels par semaine.</p>
+      <p class="v2-sub">Envoyez-nous votre dernière facture. Nous revenons avec les équivalents, le prix correspondant à vos quantités et des échantillons à tester — en 24 à 48 heures, sans engagement.</p>
     </div>
   </section>
 
-  <!-- GAMMES DE PRODUITS -->
   <section class="gammes-photo" id="gammes">
     <div class="gammes-photo-inner">
       <div class="section-header">
         <h2>Tous vos consommables. <span class="accent">Un seul fournisseur.</span></h2>
-        <p>Huit gammes de produits pour simplifier vos achats, réduire vos coûts et approvisionner vos équipes.</p>
+        <p>Huit gammes — gants jetables, équipements de protection individuelle, produits sanitaires, papier et emballage — pour simplifier vos achats, réduire vos coûts et approvisionner vos équipes.</p>
       </div>
       <div class="gammes-photo-grid">
         <a href="/fournisseur-gants" class="gamme-photo-card">
@@ -283,61 +695,64 @@
     </div>
   </section>
 
-  <!-- POURQUOI NEOBEX -->
-  <section class="why-us" id="avantages">
-    <div class="why-us-inner">
-      <div class="section-header">
-        <h2>Pourquoi choisir Neobex</h2>
-        <p>Plus qu'un fournisseur, un partenaire pour votre approvisionnement</p>
+  <!-- ============ LE CATALOGUE ============ -->
+  <section class="v2-catalogue">
+    <div class="v2-catalogue-card reveal">
+      <div class="v2-cat-picto"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="6" y="7" width="17" height="34" rx="2.5" stroke="rgba(255,255,255,.55)" stroke-width="2"/><path d="M25 9.5c0-1.4 1.1-2.5 2.5-2.5H39.5c1.4 0 2.5 1.1 2.5 2.5v29c0 1.4-1.1 2.5-2.5 2.5H27.5c-1.4 0-2.5-1.1-2.5-2.5z" fill="rgba(134,189,70,.18)" stroke="#86BD46" stroke-width="2"/><path d="M24 7v34" stroke="rgba(255,255,255,.55)" stroke-width="2" stroke-linecap="round"/><path d="M10.5 15h8M10.5 21h8M10.5 27h5" stroke="rgba(255,255,255,.4)" stroke-width="2" stroke-linecap="round"/><path d="M29.5 16h8M29.5 22h8M29.5 28h5" stroke="#86BD46" stroke-width="2" stroke-linecap="round"/></svg></div>
+      <div class="v2-cat-text">
+        <p class="v2-cat-label">L'outil central</p>
+        <h2>Le catalogue Neobex 2026</h2>
+        <p>Plus de 2 000 produits classés par catégorie — bien au-delà de ce que présentent ce site et la boutique. C'est le document que nos clients gardent ouvert quand ils préparent leur commande.</p>
       </div>
+      <div class="v2-cat-action">
+        <a href="https://catalogue.neobex.ca/" class="btn-hero-primary">Consulter le catalogue</a>
+        <span class="v2-cat-note">Accès libre, sans inscription</span>
+      </div>
+    </div>
+  </section>
 
-      <div class="benefits-grid">
-        <div class="benefit-card">
-          <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600&h=200&fit=crop" alt="Économies" class="benefit-card-img" loading="lazy">
-          <div class="benefit-number">15%</div>
+  <!-- ============ AVANTAGES, SANS PHOTOS ============ -->
+  <section class="v2-section" style="background:var(--surface);">
+    <div class="v2-section-inner">
+      <div class="v2-head">
+        <h2>Pourquoi des entreprises changent de fournisseur</h2>
+        <p>Rarement pour une seule raison. Généralement pour trois d'entre elles.</p>
+      </div>
+      <div class="v2-benefits">
+        <div class="v2-benefit reveal">
+          <div class="v2-benefit-num">15%</div>
           <h4>Économies moyennes</h4>
-          <p>Notre chaîne d'approvisionnement optimisée et nos achats en volume nous permettent d'offrir des prix compétitifs sur toute notre gamme.</p>
+          <p>Nos achats en volume et une chaîne d'approvisionnement courte nous permettent d'offrir un prix compétitif sur l'ensemble de la gamme.</p>
         </div>
-
-        <div class="benefit-card">
-          <img src="https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg?auto=compress&cs=tinysrgb&w=600&h=200&fit=crop" alt="Livraison rapide" class="benefit-card-img" loading="lazy">
-          <div class="benefit-number">72h</div>
+        <div class="v2-benefit reveal">
+          <div class="v2-benefit-num">72h</div>
           <h4>Livraison rapide</h4>
-          <p>Expédition depuis notre entrepôt québécois. Livraison rapide partout au Canada pour assurer la continuité de vos opérations.</p>
+          <p>Expédition depuis notre entrepôt québécois, partout au Canada, pour que vos opérations ne s'arrêtent jamais faute de fournitures.</p>
         </div>
-
-        <div class="benefit-card">
-          <img src="https://images.pexels.com/photos/3786157/pexels-photo-3786157.jpeg?auto=compress&cs=tinysrgb&w=600&h=200&fit=crop" alt="Conformité" class="benefit-card-img" loading="lazy">
-          <div class="benefit-number">100%</div>
+        <div class="v2-benefit reveal">
+          <div class="v2-benefit-num">100%</div>
           <h4>Conformité assurée</h4>
-          <p>Nous fournissons des produits homologués pour le marché canadien, fabriqués par des fournisseurs certifiés ISO 13485. Documentation complète pour vos audits.</p>
+          <p>Produits conformes aux exigences du marché canadien, avec la documentation complète pour vos audits et vos dossiers internes.</p>
         </div>
-
-        <div class="benefit-card">
-          <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=600&h=200&fit=crop" alt="Support" class="benefit-card-img" loading="lazy">
-          <div class="benefit-number">✓</div>
-          <h4>Support dédié</h4>
-          <p>Un gestionnaire de compte attitré pour chaque client corporatif. Support technique et conseils adaptés à vos besoins.</p>
-        </div>
-
-        <div class="benefit-card">
-          <img src="/images/echantillons-gratuits.svg" alt="Échantillons gratuits" class="benefit-card-img" loading="lazy">
-          <div class="benefit-number">0$</div>
+        <div class="v2-benefit reveal">
+          <div class="v2-benefit-num">0 $</div>
           <h4>Échantillons gratuits</h4>
-          <p>Testez nos produits avant de commander. Nous envoyons des échantillons gratuits pour valider la qualité.</p>
+          <p>Vos équipes testent sur leurs vrais postes de travail avant que vous changiez quoi que ce soit. Sans engagement.</p>
         </div>
-
-        <div class="benefit-card">
-          <img src="https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg?auto=compress&cs=tinysrgb&w=600&h=200&fit=crop" alt="Stock en inventaire" class="benefit-card-img" loading="lazy">
-          <div class="benefit-number">✓</div>
-          <h4>Stock en inventaire</h4>
-          <p>Entrepôt local au Québec avec inventaire permanent. Vos produits sont toujours disponibles, prêts à être expédiés.</p>
+        <div class="v2-benefit reveal">
+          <div class="v2-benefit-num">1</div>
+          <h4>Un seul interlocuteur</h4>
+          <p>Un responsable attitré qui connaît votre dossier, plutôt qu'un centre d'appel différent à chaque commande.</p>
+        </div>
+        <div class="v2-benefit reveal">
+          <div class="v2-benefit-num">2000+</div>
+          <h4>Produits accessibles</h4>
+          <p>Et si l'article ne figure pas au catalogue, nous le cherchons. Un fournisseur utile règle aussi les trois lignes difficiles de votre liste.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- QUANTITÉS -->
   <section class="volumes">
     <div class="volumes-inner">
       <div class="section-header">
@@ -399,7 +814,6 @@
     </div>
   </section>
 
-  <!-- TÉMOIGNAGES -->
   <section class="testimonials">
     <div class="testimonials-inner">
       <div class="section-header">
@@ -455,7 +869,6 @@
     </div>
   </section>
 
-  <!-- CTA FINAL -->
   <section class="cta-section">
     <div class="cta-inner">
       <h2>Vous voulez savoir combien vous pourriez économiser?</h2>
@@ -470,7 +883,6 @@
 
   </main>
 
-  <!-- FOOTER -->
   <footer class="footer" role="contentinfo">
     <div class="footer-inner">
       <div class="footer-grid">
@@ -511,5 +923,60 @@
 
   <script src="js/analytics.js" defer></script>
   <script src="js/main.js" defer></script>
+  <script>
+  // Apparition au défilement
+  (function () {
+    var cibles = document.querySelectorAll('.reveal');
+    var douceur = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (douceur || !('IntersectionObserver' in window)) {
+      cibles.forEach(function (el) { el.classList.add('vu'); });
+      return;
+    }
+    var obs = new IntersectionObserver(function (entrees) {
+      entrees.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('vu');
+        obs.unobserve(e.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    cibles.forEach(function (el) { obs.observe(el); });
+  })();
+
+  // Carrousels des secteurs : défilement automatique, pause au survol
+  (function () {
+    var douceur = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('.v2-carousel').forEach(function (car) {
+      var photos = car.querySelectorAll('.v2-slides img');
+      var points = car.querySelectorAll('.v2-dots button');
+      if (photos.length < 2) return;
+      var index = 0, minuteur = null;
+      var intervalle = parseInt(car.dataset.intervalle, 10) || 5000;
+
+      function afficher(n) {
+        index = (n + photos.length) % photos.length;
+        photos.forEach(function (img, i) { img.classList.toggle('active', i === index); });
+        points.forEach(function (b, i) { b.setAttribute('aria-selected', i === index ? 'true' : 'false'); });
+      }
+      function demarrer() {
+        if (douceur || minuteur) return;
+        minuteur = setInterval(function () { afficher(index + 1); }, intervalle);
+      }
+      function arreter() { clearInterval(minuteur); minuteur = null; }
+
+      points.forEach(function (b, i) {
+        b.addEventListener('click', function () { arreter(); afficher(i); demarrer(); });
+      });
+      car.addEventListener('mouseenter', arreter);
+      car.addEventListener('mouseleave', demarrer);
+
+      // On ne fait tourner que ce qui est visible à l'écran
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (e) {
+          e[0].isIntersecting ? demarrer() : arreter();
+        }, { threshold: 0.25 }).observe(car);
+      } else { demarrer(); }
+    });
+  })();
+  </script>
 </body>
 </html>
