@@ -134,7 +134,7 @@
   .v2-slides img.active { opacity: 1; }
 
   .v2-carousel-scrim { position: absolute; inset: 0; pointer-events: none;
-    background: linear-gradient(180deg, rgba(10,22,40,.12) 0%, rgba(10,22,40,0) 42%, rgba(10,22,40,.55) 100%); }
+    background: linear-gradient(180deg, rgba(10,22,40,0) 0%, rgba(10,22,40,0) 62%, rgba(10,22,40,.5) 100%); }
 
   .v2-dots { position: absolute; left: 20px; bottom: 16px; display: flex; gap: 7px; }
   .v2-dots button { width: 22px; height: 4px; border-radius: 99px; border: 0; cursor: pointer;
@@ -161,9 +161,9 @@
   .v2-visual::after { display: none; }
 
   /* étalonnage commun : neuf photos de neuf photographes doivent se tenir */
-  .v2-slides img { filter: saturate(.82) contrast(1.07) brightness(1.02); }
+  .v2-slides img { filter: saturate(.9) contrast(1.03) brightness(1.06); }
   .v2-carousel::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
-    background: linear-gradient(158deg, rgba(0,80,136,.22) 0%, rgba(10,22,40,.05) 55%, rgba(10,22,40,.18) 100%);
+    background: linear-gradient(158deg, rgba(0,80,136,.10) 0%, rgba(10,22,40,.02) 55%, rgba(10,22,40,.08) 100%);
     mix-blend-mode: multiply; }
   .v2-carousel-scrim { z-index: 2; }
   .v2-dots { z-index: 3; left: 22px; bottom: 18px; }
@@ -409,7 +409,7 @@
       <div class="v2-visual reveal">
         <div class="v2-carousel" data-intervalle="3200">
           <div class="v2-slides">
-            <img src="/images/secteurs/alimentaire-1.webp" alt="Employé en filet à cheveux emballant des produits frais" width="1200" height="750" class="active">
+            <img src="/images/secteurs/alimentaire-1.webp" alt="Employée en filet à cheveux et vêtements de protection à son poste" width="1200" height="750" class="active">
             <img src="/images/secteurs/alimentaire-2.webp" alt="Main gantée manipulant des aliments en cuisine professionnelle" width="1200" height="750" loading="lazy">
             <img src="/images/secteurs/alimentaire-3.webp" alt="Employé en filet à cheveux devant des plateaux emballés" width="1200" height="750" loading="lazy">
           </div>
@@ -469,8 +469,8 @@
       <div class="v2-visual reveal">
         <div class="v2-carousel" data-intervalle="3200">
           <div class="v2-slides">
-            <img src="/images/secteurs/entretien-1.webp" alt="Rouleaux de papier hygiénique" width="1200" height="750" class="active">
-            <img src="/images/secteurs/entretien-2.webp" alt="Produits nettoyants et vaporisateurs" width="1200" height="750" loading="lazy">
+            <img src="/images/secteurs/entretien-1.webp" alt="Vaporisateur nettoyant et chiffons d'entretien" width="1200" height="750" class="active">
+            <img src="/images/secteurs/entretien-2.webp" alt="Entretien de plancher avec affiche de prudence" width="1200" height="750" loading="lazy">
             <img src="/images/secteurs/entretien-3.webp" alt="Boîte de carton et fournitures d'emballage" width="1200" height="750" loading="lazy">
           </div>
           <div class="v2-carousel-scrim"></div>
