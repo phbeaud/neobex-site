@@ -2978,3 +2978,11 @@ body {
 @media (max-width: 860px) {
   .order-ways { grid-template-columns: 1fr; }
 }
+
+/* Cartes atteintes par une ancre : dégagées de l'en-tête fixe et signalées */
+.value-card[id], h2[id] { scroll-margin-top: 130px; }
+
+.value-card:target {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0,80,136,0.12);
+}
