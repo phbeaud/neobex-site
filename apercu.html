@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aperçu visuel — Neobex</title>
+  <meta name="description" content="Version de démonstration de la page d'accueil Neobex.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/webp" href="/images/logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Archivo:wght@600;700;800&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+  /* =========================================================
+     APERÇU — styles propres à cette page de démonstration.
+     Rien ici n'affecte le site en ligne.
+     ========================================================= */
+  :root { --display: 'Archivo', 'Inter', sans-serif; }
+
+  h1, h2, h3, h4, h5,
+  .v2-stat-value, .v2-benefit-num, .quantity-card h4, .stat-value {
+    font-family: var(--display);
+    letter-spacing: -0.022em;
+  }
+
+  /* ---------- Apparition au défilement ---------- */
+  .js .reveal { opacity: 0; transform: translateY(20px);
+    transition: opacity .75s cubic-bezier(.22,.61,.36,1), transform .75s cubic-bezier(.22,.61,.36,1); }
+  .js .reveal.vu { opacity: 1; transform: none; }
+  .reveal:nth-child(2) { transition-delay: .08s; }
+  .reveal:nth-child(3) { transition-delay: .16s; }
+  @media (prefers-reduced-motion: reduce) {
+    .js .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* ---------- HERO ---------- */
+  .v2-hero { position: relative; min-height: 94vh; display: flex; align-items: center; overflow: hidden; }
+  .v2-hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .v2-scrim { position: absolute; inset: 0;
+    background: linear-gradient(100deg, rgba(10,22,40,.96) 0%, rgba(10,22,40,.88) 38%, rgba(10,22,40,.45) 68%, rgba(10,22,40,.2) 100%); }
+  .v2-hero-inner { position: relative; width: 100%; max-width: 1200px; margin: 0 auto; padding: 150px 24px 64px; }
+  .v2-hero-content { max-width: 760px; }
+
+  .v2-eyebrow { display: inline-flex; align-items: center; gap: 10px;
+    font-size: 12px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase;
+    color: var(--brand-green); margin-bottom: 22px; }
+  .v2-eyebrow::before { content: ""; width: 28px; height: 2px; background: var(--brand-green); }
+
+  .v2-hero h1 { font-size: clamp(36px, 5.2vw, 68px); line-height: 1.03; font-weight: 700;
+    color: var(--white); margin-bottom: 24px; }
+  .v2-hero h1 em { font-style: normal; color: var(--brand-green); }
+
+  .v2-lede { font-size: 19px; line-height: 1.6; color: rgba(255,255,255,.76); max-width: 580px; margin-bottom: 34px; }
+
+  .v2-hero-actions { display: flex; align-items: center; gap: 26px; flex-wrap: wrap; margin-bottom: 52px; }
+  .v2-hero-actions .btn-hero-primary { padding: 17px 34px; font-size: 16px; }
+  .v2-ghost { color: rgba(255,255,255,.8); font-weight: 600; font-size: 15px; text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,.3); padding-bottom: 2px; transition: .2s; }
+  .v2-ghost:hover { color: var(--white); border-color: var(--brand-green); }
+
+  .v2-stats { display: flex; gap: 56px; flex-wrap: wrap;
+    border-top: 1px solid rgba(255,255,255,.16); padding-top: 30px; }
+  .v2-stat-value { font-size: 42px; font-weight: 700; color: var(--white); line-height: 1;
+    font-variant-numeric: tabular-nums; }
+  .v2-stat-label { font-size: 12px; text-transform: uppercase; letter-spacing: 1.2px;
+    color: rgba(255,255,255,.5); margin-top: 9px; }
+
+  .v2-certs { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 30px; }
+  .v2-chip { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600;
+    color: rgba(255,255,255,.82); background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.14); border-radius: 999px; padding: 7px 15px; }
+
+  @media (max-width: 760px) {
+    .v2-hero { min-height: auto; }
+    .v2-hero-inner { padding: 124px 20px 56px; }
+    .v2-scrim { background: linear-gradient(180deg, rgba(10,22,40,.88) 0%, rgba(10,22,40,.95) 60%); }
+    .v2-stats { gap: 28px; }
+    .v2-stat-value { font-size: 32px; }
+  }
+
+  /* ---------- BANDE CLIENTS ---------- */
+  .v2-clients { background: var(--surface); border-bottom: 1px solid var(--border); padding: 44px 24px; }
+  .v2-clients-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center;
+    gap: 48px; flex-wrap: wrap; justify-content: center; }
+  .v2-clients-label { font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase;
+    color: var(--text-muted); white-space: nowrap; }
+  .v2-clients-logos { display: flex; align-items: center; gap: 46px; flex-wrap: wrap; justify-content: center; }
+  .v2-clients-logos img { max-height: 46px; max-width: 150px; object-fit: contain;
+    filter: grayscale(1); opacity: .62; transition: .3s; }
+  .v2-clients-logos img:hover { filter: none; opacity: 1; }
+
+  /* ---------- SECTIONS ASYMÉTRIQUES ---------- */
+  .v2-split { max-width: 1160px; margin: 0 auto; padding: 104px 24px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .v2-split.inverse .v2-visual { order: -1; }
+  .v2-split h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.12; color: var(--navy); margin-bottom: 18px; }
+  .v2-split p { font-size: 17px; line-height: 1.75; color: var(--text-secondary); margin-bottom: 16px; }
+  .v2-split .v2-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 10px;
+    font-weight: 600; color: var(--accent); text-decoration: none; }
+  .v2-split .v2-link:hover { gap: 13px; }
+
+  .v2-visual { background: linear-gradient(150deg, #0A1628 0%, #12304F 100%);
+    border-radius: 22px; padding: 46px 42px; color: var(--white); position: relative; overflow: hidden; }
+  .v2-visual::after { content: ""; position: absolute; right: -70px; bottom: -70px;
+    width: 220px; height: 220px; border-radius: 50%; background: rgba(134,189,70,.12); }
+  .v2-visual-icon { width: 58px; height: 58px; border-radius: 14px; background: rgba(255,255,255,.1);
+    display: flex; align-items: center; justify-content: center; margin-bottom: 26px; }
+  .v2-visual-icon svg { width: 28px; height: 28px; color: var(--brand-green); }
+  .v2-visual h3 { font-size: 22px; margin-bottom: 20px; color: var(--white); }
+  .v2-tags { display: flex; flex-wrap: wrap; gap: 9px; position: relative; z-index: 1; }
+  .v2-tag { font-size: 13.5px; font-weight: 500; color: rgba(255,255,255,.88);
+    background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.13);
+    border-radius: 8px; padding: 7px 13px; }
+
+  @media (max-width: 900px) {
+    .v2-split { grid-template-columns: 1fr; gap: 40px; padding: 72px 20px; }
+    .v2-split.inverse .v2-visual { order: 0; }
+  }
+
+  /* ---------- MOMENT FORT ---------- */
+  .v2-statement { background: var(--navy); padding: 124px 24px; text-align: center; position: relative; overflow: hidden; }
+  .v2-statement::before { content: ""; position: absolute; inset: 0;
+    background: radial-gradient(900px 420px at 50% -10%, rgba(134,189,70,.15), transparent 70%); }
+  .v2-statement-inner { position: relative; max-width: 940px; margin: 0 auto; }
+  .v2-statement p { font-family: var(--display); font-size: clamp(26px, 3.9vw, 46px); line-height: 1.16;
+    font-weight: 700; letter-spacing: -0.022em; color: var(--white); }
+  .v2-statement .hl { color: var(--brand-green); }
+  .v2-statement .v2-sub { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 400;
+    letter-spacing: 0; color: rgba(255,255,255,.6); margin-top: 26px; line-height: 1.7; }
+
+  /* ---------- AVANTAGES, SANS PHOTOS ---------- */
+  .v2-section { padding: 104px 24px; }
+  .v2-section-inner { max-width: 1160px; margin: 0 auto; }
+  .v2-head { max-width: 680px; margin-bottom: 52px; }
+  .v2-head h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.12; color: var(--navy); margin-bottom: 14px; }
+  .v2-head p { font-size: 18px; color: var(--text-secondary); line-height: 1.65; }
+  .v2-head.centre { margin-left: auto; margin-right: auto; text-align: center; }
+
+  .v2-benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: var(--border); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; }
+  .v2-benefit { background: var(--white); padding: 40px 34px; transition: background .25s; }
+  .v2-benefit:hover { background: #FBFDFF; }
+  .v2-benefit-num { font-size: 46px; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 16px; }
+  .v2-benefit h4 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+  .v2-benefit p { font-size: 15px; line-height: 1.65; color: var(--text-secondary); }
+  @media (max-width: 900px) { .v2-benefits { grid-template-columns: 1fr; } }
+
+  /* ---------- Retouches ---------- */
+  .gammes { padding-top: 0; }
+  .quantities h2 { font-family: var(--display); }
+  .testimonials .section-header h2, .cta-section h2 { font-family: var(--display); }
+  </style>
+
+</head>
+<body>
+
+<header class="header" role="banner">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="/images/logo.webp" alt="Neobex - Fournitures sanitaires et industrielles">
+      </a>
+
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="/">Accueil</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle">À propos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <div class="nav-dropdown-menu">
+            <a href="/a-propos#mission">Notre mission</a>
+            <a href="/a-propos#valeurs">Nos valeurs</a>
+            <a href="/comment-on-travaille">Comment on travaille</a><a href="/carboneutralite">Défi carboneutre</a>
+            
+          </div>
+        </div>
+        <a href="https://catalogue.neobex.ca/">Catalogue Neobex</a>
+        <a href="/nous-joindre">Nous joindre</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="/en" class="lang-toggle" aria-label="Switch to English">EN</a>
+        <a href="tel:+15143121809" class="header-phone" aria-label="Appeler Neobex"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>514 312-1809</a>
+        <a href="https://shopify.com/authentication/87295230236/login?client_id=20cf5b16-cc75-48f2-b412-6081bbc5777f&locale=fr&region_country=CA" class="btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Mon portail
+        </a>
+        <a href="/soumission" class="btn-primary">Obtenir une soumission</a>
+        <button class="mobile-menu-toggle" aria-label="Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main role="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="v2-hero">
+    <video autoplay muted loop playsinline preload="auto" poster="/images/hero/industrial-poster.jpg" aria-hidden="true">
+      <source src="/images/hero/industrial.mp4" type="video/mp4">
+    </video>
+    <div class="v2-scrim"></div>
+    <div class="v2-hero-inner">
+      <div class="v2-hero-content">
+        <p class="v2-eyebrow">Fournisseur B2B · Sherbrooke</p>
+        <h1>Un seul fournisseur pour <em>tout ce qui se consomme</em> dans vos opérations.</h1>
+        <p class="v2-lede">Gants, équipements de protection, produits sanitaires, papier et emballage. Plus de 2 000 produits, livrés partout au Canada, au prix de votre volume réel.</p>
+        <div class="v2-hero-actions">
+          <a href="/soumission" class="btn-hero-primary">Demander une soumission</a>
+          <a href="https://catalogue.neobex.ca/" class="v2-ghost">Voir le catalogue</a>
+          <a href="/comment-on-travaille" class="v2-ghost">Comment on travaille</a>
+        </div>
+        <div class="v2-stats">
+          <div>
+            <div class="v2-stat-value" data-count="500" data-suffix="+">500+</div>
+            <div class="v2-stat-label">Entreprises clientes</div>
+          </div>
+          <div>
+            <div class="v2-stat-value" data-count="2000" data-suffix="+">2000+</div>
+            <div class="v2-stat-label">Produits disponibles</div>
+          </div>
+          <div>
+            <div class="v2-stat-value" data-count="15" data-suffix="%">15%</div>
+            <div class="v2-stat-label">Économies moyennes</div>
+          </div>
+        </div>
+        <div class="v2-certs">
+          <span class="v2-chip">Produits homologués Santé Canada</span>
+          <span class="v2-chip">Fournisseurs certifiés ISO 13485</span>
+          <span class="v2-chip">Défi carboneutre du Canada</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLIENTS ============ -->
+  <section class="v2-clients">
+    <div class="v2-clients-inner">
+      <p class="v2-clients-label">Ils nous font confiance</p>
+      <div class="v2-clients-logos">
+        <img src="/images/clients/mcdonalds.png" alt="McDonald's" loading="lazy">
+        <img src="/images/clients/sherbrooke.png" alt="Université de Sherbrooke" loading="lazy">
+        <img src="/images/clients/chu-quebec.png" alt="CHU de Québec" loading="lazy">
+        <img src="/images/clients/udem.jpg" alt="Université de Montréal" loading="lazy">
+        <img src="/images/clients/transdev.png" alt="Transdev Canada" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTEURS, EN ASYMÉTRIE ============ -->
+  <section class="v2-split">
+      <div class="reveal">
+        <h2>Transformation alimentaire</h2>
+        <p>Dans une usine, une rupture de gants ou de filets arrête une ligne de production. C'est pour ça que nous gardons en inventaire ce que vous consommez chaque semaine, et que nous fournissons les fiches techniques dont vos équipes qualité ont besoin pour leurs audits.</p><p>Usines de transformation, boucheries, fromageries, cuisines commerciales.</p>
+        <a href="/fournisseur-industrie-alimentaire" class="v2-link">Voir la page alimentaire &rarr;</a>
+      </div>
+      <div class="v2-visual reveal">
+        <div class="v2-visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h1a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <h3>Ce qu'on y livre</h3>
+        <div class="v2-tags"><span class="v2-tag">Gants bleus repérables</span><span class="v2-tag">Filets et bonnets</span><span class="v2-tag">Tabliers</span><span class="v2-tag">Contenants</span><span class="v2-tag">Emballages</span><span class="v2-tag">Ustensiles</span><span class="v2-tag">Désinfectants</span><span class="v2-tag">Papier</span></div>
+      </div>
+  </section>
+
+  <section class="v2-split inverse">
+      <div class="reveal">
+        <h2>Cliniques et milieux de soins</h2>
+        <p>Les gants d'examen vendus au Canada doivent détenir une licence d'instrument médical de Santé Canada. Nous fournissons la documentation avec le produit, pas trois semaines après la commande.</p><p>Cliniques, cabinets, résidences, laboratoires et services de santé.</p>
+        <a href="/fournisseur-epi" class="v2-link">Voir la page protection &rarr;</a>
+      </div>
+      <div class="v2-visual reveal">
+        <div class="v2-visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <h3>Ce qu'on y livre</h3>
+        <div class="v2-tags"><span class="v2-tag">Gants nitrile</span><span class="v2-tag">Masques</span><span class="v2-tag">Blouses</span><span class="v2-tag">Couvre-chaussures</span><span class="v2-tag">Visières</span><span class="v2-tag">Désinfectants</span><span class="v2-tag">Lingettes</span><span class="v2-tag">Savons</span></div>
+      </div>
+  </section>
+
+  <section class="v2-split">
+      <div class="reveal">
+        <h2>Ateliers, entrepôts et entretien</h2>
+        <p>Là où le gant doit tenir toute la journée, l'épaisseur et la prise comptent plus que le prix de la boîte. Nous partons de vos postes de travail avant de proposer quoi que ce soit.</p><p>Ateliers, entrepôts, entrepreneurs en entretien ménager, municipalités.</p>
+        <a href="/fournisseur-produits-sanitaires" class="v2-link">Voir la page sanitaire &rarr;</a>
+      </div>
+      <div class="v2-visual reveal">
+        <div class="v2-visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Ce qu'on y livre</h3>
+        <div class="v2-tags"><span class="v2-tag">Gants 6 à 8 mil</span><span class="v2-tag">Lunettes</span><span class="v2-tag">Visières</span><span class="v2-tag">Papier</span><span class="v2-tag">Distributrices</span><span class="v2-tag">Nettoyants</span><span class="v2-tag">Sacs</span><span class="v2-tag">Absorbants</span></div>
+      </div>
+  </section>
+
+  <!-- ============ MOMENT FORT ============ -->
+  <section class="v2-statement">
+    <div class="v2-statement-inner reveal">
+      <p>Vos fournitures ne devraient pas demander <span class="hl">quatre fournisseurs</span>, douze factures et trois appels par semaine.</p>
+      <p class="v2-sub">Envoyez-nous votre dernière facture. Nous revenons avec les équivalents, le prix correspondant à vos quantités et des échantillons à tester — en 24 à 48 heures, sans engagement.</p>
+    </div>
+  </section>
+
+  <!-- ============ GAMMES ============ -->
+  <section class="gammes v2-section" id="gammes">
+    <div class="v2-section-inner">
+      <div class="v2-head centre">
+        <h2>Nos huit gammes</h2>
+        <p>Un seul bon de commande pour tout ce que vos équipes consomment</p>
+      </div>
+<div class="gammes-grid">
+        <a href="/fournisseur-gants" class="gamme-card">
+          <div class="gamme-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg></div>
+          <h3>Gants jetables et de travail</h3>
+          <p>Nitrile, vinyle, latex et gants de manutention.</p>
+        </a>
+
+        <a href="/fournisseur-epi" class="gamme-card">
+          <div class="gamme-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>Protection individuelle</h3>
+          <p>Masques, lunettes, visières et protection respiratoire.</p>
+        </a>
+
+        <a href="/fournisseur-epi" class="gamme-card">
+          <div class="gamme-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg></div>
+          <h3>Vêtements et accessoires</h3>
+          <p>Blouses, tabliers, filets, couvre-chaussures et bonnets.</p>
+        </a>
+
+        <a href="/fournisseur-produits-sanitaires" class="gamme-card">
+          <div class="gamme-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></div>
+          <h3>Désinfectants et nettoyants</h3>
+          <p>Désinfectants de surface, savons et nettoyants industriels.</p>
+        </a>
+
+        <a href="/fournisseur-produits-sanitaires" class="gamme-card">
+          <div class="gamme-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/></svg></div>
+          <h3>Papier et distributrices</h3>
+          <p>Papier à mains, hygiénique, essuie-tout et distributrices.</p>
+        </a>
+
+        <a href="/fournisseur-industrie-alimentaire" class="gamme-card">
+          <div class="gamme-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></div>
+          <h3>Emballage et contenants</h3>
+          <p>Contenants, barquettes, sacs et fournitures d'emballage.</p>
+        </a>
+
+        <a href="/fournisseur-industrie-alimentaire" class="gamme-card">
+          <div class="gamme-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h1a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+          <h3>Service alimentaire</h3>
+          <p>Ustensiles, articles jetables et accessoires de cuisine.</p>
+        </a>
+
+        <a href="/produits" class="gamme-card">
+          <div class="gamme-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H3a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2"/><path d="M14 9h4l4 4v4a1 1 0 0 1-1 1h-2"/><circle cx="7.5" cy="18.5" r="2.5"/><circle cx="17.5" cy="18.5" r="2.5"/></svg></div>
+          <h3>Entrepôt et expédition</h3>
+          <p>Fournitures d'expédition et consommables d'entrepôt.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AVANTAGES, SANS PHOTOS ============ -->
+  <section class="v2-section" style="background:var(--surface);">
+    <div class="v2-section-inner">
+      <div class="v2-head">
+        <h2>Pourquoi des entreprises changent de fournisseur</h2>
+        <p>Rarement pour une seule raison. Généralement pour trois d'entre elles.</p>
+      </div>
+      <div class="v2-benefits">
+        <div class="v2-benefit reveal">
+          <div class="v2-benefit-num">15%</div>
+          <h4>Économies moyennes</h4>
+          <p>Nos achats en volume et une chaîne d'approvisionnement courte nous permettent d'offrir un prix compétitif sur l'ensemble de la gamme.</p>
+        </div>
+        <div class="v2-benefit reveal">
+          <div class="v2-benefit-num">72h</div>
+          <h4>Livraison rapide</h4>
+          <p>Expédition depuis notre entrepôt québécois, partout au Canada, pour que vos opérations ne s'arrêtent jamais faute de fournitures.</p>
+        </div>
+        <div class="v2-benefit reveal">
+          <div class="v2-benefit-num">100%</div>
+          <h4>Conformité assurée</h4>
+          <p>Produits conformes aux exigences du marché canadien, avec la documentation complète pour vos audits et vos dossiers internes.</p>
+        </div>
+        <div class="v2-benefit reveal">
+          <div class="v2-benefit-num">0 $</div>
+          <h4>Échantillons gratuits</h4>
+          <p>Vos équipes testent sur leurs vrais postes de travail avant que vous changiez quoi que ce soit. Sans engagement.</p>
+        </div>
+        <div class="v2-benefit reveal">
+          <div class="v2-benefit-num">1</div>
+          <h4>Un seul interlocuteur</h4>
+          <p>Un responsable attitré qui connaît votre dossier, plutôt qu'un centre d'appel différent à chaque commande.</p>
+        </div>
+        <div class="v2-benefit reveal">
+          <div class="v2-benefit-num">2000+</div>
+          <h4>Produits accessibles</h4>
+          <p>Et si l'article ne figure pas au catalogue, nous le cherchons. Un fournisseur utile règle aussi les trois lignes difficiles de votre liste.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VOLUMES ============ -->
+  <section class="quantities">
+    <div class="quantities-inner">
+      <h2>Plus grand volume = prix avantageux</h2>
+      <p>Le prix unitaire suit la quantité commandée. Dites-nous vos volumes annuels.</p>
+      <div class="quantity-options">
+        <div class="quantity-card">
+          <img src="/images/quantities/boite.svg" alt="Commande à la boîte" loading="lazy">
+          <h4>À la boîte</h4>
+          <p>Pour un besoin ponctuel ou pour tester</p>
+        </div>
+        <div class="quantity-card featured">
+          <span class="quantity-badge">Populaire</span>
+          <img src="/images/quantities/caisse.svg" alt="Commande à la caisse" loading="lazy">
+          <h4>À la caisse</h4>
+          <p>Le format le plus courant en entreprise</p>
+        </div>
+        <div class="quantity-card">
+          <img src="/images/quantities/palette.svg" alt="Commande à la palette" loading="lazy">
+          <h4>À la palette</h4>
+          <p>Le meilleur prix unitaire, si vous avez la place</p>
+        </div>
+      </div>
+      <a href="/soumission" class="btn-primary">Demander un prix volume &rarr;</a>
+    </div>
+  </section>
+
+  <!-- ============ TÉMOIGNAGES ============ -->
+  <section class="testimonials">
+    <div class="testimonials-inner">
+      <div class="section-header">
+        <h2>Ce que disent nos clients</h2>
+        <p>Des entreprises de toutes tailles nous font confiance</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <p class="testimonial-quote">"Depuis que nous travaillons avec Neobex, nous avons consolidé tous nos achats de fournitures sanitaires. La gamme complète et les prix compétitifs nous ont permis de simplifier notre approvisionnement."</p>
+          <div class="testimonial-author"><div class="author-avatar">MC</div><div class="author-info"><h5>Marie-Claude</h5><p>Directrice des achats, CHU de Québec</p></div></div>
+        </div>
+        <div class="testimonial-card reveal">
+          <p class="testimonial-quote">"La livraison rapide est un game-changer pour notre réseau de 45 restaurants. Gants, produits nettoyants, sacs... tout arrive à temps. Plus jamais de rupture de stock en plein rush."</p>
+          <div class="testimonial-author"><div class="author-avatar">PL</div><div class="author-info"><h5>Philippe</h5><p>VP Opérations, Groupe Resto MTL</p></div></div>
+        </div>
+        <div class="testimonial-card reveal">
+          <p class="testimonial-quote">"Les gants 8 mil de Neobex ont passé tous nos tests de résistance chimique. La qualité est constante d'une commande à l'autre, ce qui est crucial pour nos certifications ISO."</p>
+          <div class="testimonial-author"><div class="author-avatar">JF</div><div class="author-info"><h5>Jean-François</h5><p>Responsable HSE, Industries Bombardier</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2>Combien pourriez-vous économiser?</h2>
+      <p>Envoyez votre liste de produits ou vos dernières factures. Vous recevez une comparaison ligne par ligne.</p>
+      <div class="cta-buttons">
+        <a href="/soumission" class="btn-white">Demander une analyse</a>
+        <a href="https://catalogue.neobex.ca/" class="btn-outline">Catalogue Neobex</a>
+      </div>
+      <p>Vous savez déjà ce que vous cherchez? <a href="https://shop.neobex.ca/collections/nos-produits">Visitez la boutique en ligne &rarr;</a></p>
+    </div>
+  </section>
+
+  </main>
+
+<footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="/images/logo.webp" alt="Neobex">
+          <p>Votre partenaire de confiance pour les fournitures sanitaires et industrielles au Canada. EPI, gants, produits nettoyants, sacs, papier et plus encore.</p>
+        </div>
+
+        <div class="footer-col"><h4>Nos gammes</h4><a href="/fournisseur-gants">Gants jetables</a><a href="/fournisseur-epi">Équipements de protection</a><a href="/fournisseur-produits-sanitaires">Produits sanitaires</a><a href="/fournisseur-industrie-alimentaire">Industrie alimentaire</a><a href="https://catalogue.neobex.ca/" class="catalogue-link">Catalogue Neobex 2026</a><a href="https://shop.neobex.ca/collections/nos-produits">Boutique en ligne</a><a href="/guide-gants-jetables">Guide d'achat : les gants</a></div>
+
+        <div class="footer-col">
+          <h4>Entreprise</h4>
+          <a href="/a-propos">À propos</a>
+          <a href="/comment-on-travaille">Comment on travaille</a>
+          <a href="/carboneutralite">Défi carboneutre</a>
+          <a href="/faq">FAQ</a>
+          <a href="/carriere">Carrières</a>
+          <a href="/nous-joindre">Nous joindre</a>
+        </div>
+
+        <div class="footer-col footer-contact">
+          <h4>Contact</h4><p class="footer-phone"><a href="tel:+15143121809">514 312-1809</a></p>
+          <p><a href="/nous-joindre"><strong>info@neobex.ca</strong></a></p>
+          <p>Lun-Ven: 8h-18h EST</p>
+          <a href="/nous-joindre" style="margin-top:12px;display:inline-block;">Nous écrire →</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Neobex. Tous droits réservés.</p>
+        <div>
+          <a href="/politique-confidentialite">Politique de confidentialité</a>
+          <a href="/conditions-utilisation">Conditions d'utilisation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/analytics.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script>
+  // Apparition au défilement
+  (function () {
+    var cibles = document.querySelectorAll('.reveal');
+    var douceur = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (douceur || !('IntersectionObserver' in window)) {
+      cibles.forEach(function (el) { el.classList.add('vu'); });
+      return;
+    }
+    var obs = new IntersectionObserver(function (entrees) {
+      entrees.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('vu');
+        obs.unobserve(e.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    cibles.forEach(function (el) { obs.observe(el); });
+  })();
+  </script>
+</body>
+</html>
