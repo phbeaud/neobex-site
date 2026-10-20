@@ -6,6 +6,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/apercu",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
       "source": "/pages/contact",
       "destination": "/nous-joindre",
       "statusCode": 301
