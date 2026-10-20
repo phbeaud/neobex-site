@@ -2986,3 +2986,109 @@ body {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(0,80,136,0.12);
 }
+
+/* ============ GAMMES EN PHOTOS ============ */
+.gammes-photo { padding: 100px 24px; background: var(--white); }
+.gammes-photo-inner { max-width: 1240px; margin: 0 auto; }
+.gammes-photo .section-header { margin-bottom: 44px; }
+.gammes-photo .section-header h2 .accent { color: var(--accent); }
+
+.gammes-photo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+
+.gamme-photo-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color .25s, transform .25s, box-shadow .25s;
+}
+
+.gamme-photo-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 44px -24px rgba(10,22,40,0.45);
+}
+
+.gamme-photo-card > img {
+  width: 100%;
+  aspect-ratio: 358 / 226;
+  object-fit: cover;
+  display: block;
+}
+
+.gamme-photo-body { padding: 20px 20px 22px; display: flex; align-items: center; gap: 14px; flex-grow: 1; }
+.gamme-photo-body h3 { font-size: 16.5px; font-weight: 700; color: var(--navy); line-height: 1.25; margin-bottom: 7px; }
+.gamme-photo-body p { font-size: 14px; line-height: 1.55; color: var(--text-secondary); margin: 0; }
+
+.gamme-photo-arrow {
+  width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0; margin-left: auto;
+  background: rgba(0,80,136,0.08); color: var(--accent);
+  display: flex; align-items: center; justify-content: center; transition: .25s;
+}
+.gamme-photo-arrow svg { width: 17px; height: 17px; }
+.gamme-photo-card:hover .gamme-photo-arrow { background: var(--accent); color: var(--white); }
+
+/* ============ BARRE DE REGROUPEMENT ============ */
+.regroupe-bar {
+  margin-top: 24px; background: rgba(0,80,136,0.06); border-radius: 16px; padding: 26px 30px;
+  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 26px;
+}
+.regroupe-icon {
+  width: 50px; height: 50px; border-radius: 12px; background: rgba(255,255,255,0.75);
+  color: var(--accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.regroupe-icon svg { width: 25px; height: 25px; }
+.regroupe-text { border-right: 1px solid rgba(0,80,136,0.14); padding-right: 26px; }
+.regroupe-text strong { display: block; font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+.regroupe-text p { font-size: 14.5px; line-height: 1.6; color: var(--text-secondary); margin: 0; }
+.regroupe-bar .btn-primary { padding: 16px 28px; font-size: 15px; white-space: nowrap; }
+
+/* ============ VOLUMES : BOÎTE, CAISSE, PALETTE ============ */
+.volumes { padding: 100px 24px; background: var(--surface); }
+.volumes-inner { max-width: 1160px; margin: 0 auto; }
+.volumes .section-header { margin-bottom: 44px; }
+.volumes .section-header h2 .accent { color: var(--accent); }
+
+.volumes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+.volume-card {
+  background: var(--white); border: 1px solid var(--border); border-radius: 18px; overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: border-color .25s, transform .25s, box-shadow .25s;
+}
+.volume-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 18px 44px -22px rgba(10,22,40,0.4); }
+.volume-card > img { width: 100%; aspect-ratio: 541 / 261; object-fit: cover; display: block; }
+
+.volume-body { padding: 24px 24px 22px; display: flex; flex-direction: column; flex-grow: 1; }
+.volume-head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.volume-icon {
+  width: 46px; height: 46px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(0,80,136,0.08); color: var(--accent);
+  display: flex; align-items: center; justify-content: center;
+}
+.volume-icon svg { width: 24px; height: 24px; }
+.volume-card h3 { font-size: 21px; font-weight: 700; color: var(--navy); line-height: 1.15; }
+.volume-sub { font-size: 14.5px; font-weight: 600; color: var(--accent); margin: 3px 0 0; }
+.volume-desc { font-size: 14.5px; line-height: 1.6; color: var(--text-secondary); margin: 0 0 18px; flex-grow: 1; }
+
+.volume-badge {
+  display: flex; align-items: center; justify-content: center; gap: 9px; margin: 0;
+  background: rgba(0,80,136,0.06); border-radius: 10px; padding: 11px 14px;
+  font-size: 14.5px; font-weight: 700; color: var(--accent);
+}
+.volume-badge svg { width: 19px; height: 19px; flex-shrink: 0; }
+
+@media (max-width: 1080px) { .gammes-photo-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) {
+  .volumes-grid { grid-template-columns: 1fr; }
+  .regroupe-bar { grid-template-columns: 1fr; gap: 18px; }
+  .regroupe-text { border-right: 0; padding-right: 0; }
+  .regroupe-bar .btn-primary { text-align: center; }
+}
+@media (max-width: 560px) {
+  .gammes-photo-grid { grid-template-columns: 1fr; }
+  .gammes-photo, .volumes { padding: 72px 20px; }
+}
