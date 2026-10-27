@@ -3204,3 +3204,19 @@ h1, h2, h3, h4, h5,
   margin-bottom: 10px;
 }
 .process-duree svg { width: 14px; height: 14px; }
+
+/* Les trois séquences du hero alternent aussi dans le nouveau visuel.
+   Le voile du hero du nouveau visuel assombrit déjà l'image : les
+   vidéos restent à pleine opacité, contrairement à l'ancien hero. */
+.v2-hero .hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  animation: none;
+}
+
+.v2-hero .hero-slide.active { opacity: 1; }
