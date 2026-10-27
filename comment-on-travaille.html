@@ -20,7 +20,7 @@
   <link rel="alternate" hreflang="x-default" href="https://neobex.ca/comment-on-travaille">
   <link rel="icon" type="image/webp" href="/images/logo.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://neobex.ca/"}, {"@type": "ListItem", "position": 2, "name": "Comment on travaille", "item": "https://neobex.ca/comment-on-travaille"}]}
@@ -75,45 +75,87 @@
     </div>
   </section>
 
+  <section class="parcours" aria-label="Aperçu du parcours">
+    <div class="parcours-inner">
+      <div class="parcours-rail">
+        <a href="#etape-1" class="parcours-etape">
+          <span class="parcours-pastille"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M12 17v-6M9.5 13.5 12 11l2.5 2.5"/></svg></span>
+          <span class="parcours-num">Étape 1</span>
+          <span class="parcours-label">Votre liste</span>
+          <span class="parcours-duree">5 minutes</span>
+        </a>
+        <a href="#etape-2" class="parcours-etape">
+          <span class="parcours-pastille"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13"/><path d="M3 6h.01M3 12h.01M3 18h.01"/></svg></span>
+          <span class="parcours-num">Étape 2</span>
+          <span class="parcours-label">Notre analyse</span>
+          <span class="parcours-duree">24 à 48 h</span>
+        </a>
+        <a href="#etape-3" class="parcours-etape">
+          <span class="parcours-pastille"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <span class="parcours-num">Étape 3</span>
+          <span class="parcours-label">Vos essais</span>
+          <span class="parcours-duree">À votre rythme</span>
+        </a>
+        <a href="#etape-4" class="parcours-etape">
+          <span class="parcours-pastille"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M9 13h6M9 17h4"/></svg></span>
+          <span class="parcours-num">Étape 4</span>
+          <span class="parcours-label">Votre soumission</span>
+          <span class="parcours-duree">Sans engagement</span>
+        </a>
+        <a href="#etape-5" class="parcours-etape">
+          <span class="parcours-pastille"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H3a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2"/><path d="M14 9h4l4 4v4a1 1 0 0 1-1 1h-2"/><circle cx="7.5" cy="18.5" r="2.5"/><circle cx="17.5" cy="18.5" r="2.5"/></svg></span>
+          <span class="parcours-num">Étape 5</span>
+          <span class="parcours-label">La livraison</span>
+          <span class="parcours-duree">En continu</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section class="about-section" style="background:var(--surface);">
     <div class="about-inner">
       <div class="section-header" style="margin-bottom:48px;"><h2>Les cinq étapes</h2><p>Du premier document à la livraison récurrente</p></div>
       <div class="process-timeline">
-      <div class="process-step">
+      <div class="process-step" id="etape-1">
         <div class="process-num">1</div>
         <div class="process-body">
+          <p class="process-duree"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 5 minutes de votre temps</p>
           <h3>Vous nous envoyez ce que vous achetez déjà</h3>
           <p>Une facture, un bon de commande, un fichier Excel, ou une photo de la boîte prise dans votre entrepôt. Le format n'a aucune importance.</p><p>Nous partons de là plutôt que de vous faire parcourir un catalogue de 2 000 articles, parce que c'est la seule façon de comparer des choses comparables. Un prix n'a de sens que rapporté au produit exact, au format exact et à la quantité exacte que vous consommez.</p>
           <div class="process-aside"><strong>Ce que ça vous demande :</strong> cinq minutes et un document que vous avez déjà sous la main.</div>
         </div>
       </div>
-      <div class="process-step">
+      <div class="process-step" id="etape-2">
         <div class="process-num">2</div>
         <div class="process-body">
+          <p class="process-duree"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Traité en 24 à 48 heures</p>
           <h3>On analyse, ligne par ligne</h3>
           <p>Nous identifions pour chaque article ce que nous pouvons fournir : le même produit, ou un équivalent lorsque c'en est un vraiment. Nous vérifions les formats, les contenances et les quantités par caisse, parce que c'est souvent là que se cachent les écarts de prix apparents entre deux fournisseurs.</p><p>Quand un article n'a pas d'équivalent satisfaisant chez nous, nous le disons. Il arrive que nous recommandions de garder un produit chez votre fournisseur actuel.</p>
           <div class="process-aside"><strong>Ce qu'on ne fait pas :</strong> remplacer un produit par un article moins cher mais moins performant sans vous le signaler. Un gant qu'il faut changer deux fois plus souvent ne fait économiser personne.</div>
         </div>
       </div>
-      <div class="process-step">
+      <div class="process-step" id="etape-3">
         <div class="process-num">3</div>
         <div class="process-body">
+          <p class="process-duree"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> À votre rythme</p>
           <h3>Vous testez avant de changer quoi que ce soit</h3>
           <p>Pour tout produit que vos équipes utilisent quotidiennement, nous envoyons des échantillons gratuits. Une fiche technique vous dit ce qu'un produit est censé faire; une semaine d'utilisation réelle vous dit s'il le fait sur vos postes de travail.</p><p>C'est l'étape que les acheteurs sautent le plus souvent, et celle qui cause le plus de retours.</p>
           <div class="process-aside"><strong>Ce que ça vous demande :</strong> faire essayer le produit par les gens qui le portent ou l'utilisent, pas seulement par le service des achats.</div>
         </div>
       </div>
-      <div class="process-step">
+      <div class="process-step" id="etape-4">
         <div class="process-num">4</div>
         <div class="process-body">
+          <p class="process-duree"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Sans engagement</p>
           <h3>Vous recevez une soumission produit par produit</h3>
           <p>Pas un prix global, mais une ligne par article : ce que vous payez aujourd'hui, ce que nous proposons, et le format correspondant. Vous voyez immédiatement où se trouvent les écarts, et vous pouvez n'en retenir qu'une partie.</p><p>Le prix unitaire dépend du volume. Nous vous indiquons donc ce que donne la boîte, la caisse et la palette, pour que vous décidiez en connaissance de cause plutôt que de découvrir le palier après coup.</p>
           <div class="process-aside"><strong>Sans engagement :</strong> vous pouvez prendre deux articles sur quinze, ou n'en prendre aucun. L'analyse reste la vôtre.</div>
         </div>
       </div>
-      <div class="process-step">
+      <div class="process-step" id="etape-5">
         <div class="process-num">5</div>
         <div class="process-body">
+          <p class="process-duree"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Puis en continu</p>
           <h3>On livre, et on garde votre stock disponible</h3>
           <p>Les produits que vous consommez régulièrement sont gardés en inventaire pour éviter les ruptures, parce qu'une rupture de gants ou de filets à cheveux arrête une ligne de production — et là, le prix unitaire n'a plus aucune importance.</p><p>Nous fournissons les fiches techniques dont vos équipes qualité ont besoin pour leurs dossiers de conformité et leurs audits.</p>
           

@@ -3092,3 +3092,115 @@ body {
   .gammes-photo-grid { grid-template-columns: 1fr; }
   .gammes-photo, .volumes { padding: 72px 20px; }
 }
+
+/* ============ TYPOGRAPHIE DES TITRES ============ */
+:root { --display: 'Archivo', 'Inter', -apple-system, sans-serif; }
+
+h1, h2, h3, h4, h5,
+.stat-value, .benefit-number, .volume-card h3 {
+  font-family: var(--display);
+  letter-spacing: -0.02em;
+}
+
+/* ============ PARCOURS EN CINQ ÉTAPES ============ */
+.parcours { padding: 72px 24px 0; background: var(--white); }
+.parcours-inner { max-width: 1060px; margin: 0 auto; }
+
+.parcours-rail {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  position: relative;
+}
+
+/* le fil qui relie les étapes */
+.parcours-rail::before {
+  content: "";
+  position: absolute;
+  top: 32px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--border), var(--accent), var(--border));
+}
+
+.parcours-etape {
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  padding: 0 6px;
+}
+
+.parcours-pastille {
+  width: 64px; height: 64px; margin: 0 auto 14px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--border);
+  color: var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; z-index: 1;
+  box-shadow: 0 0 0 6px var(--white);
+  transition: border-color .25s, background .25s, color .25s, transform .25s;
+}
+.parcours-pastille svg { width: 26px; height: 26px; }
+
+.parcours-etape:hover .parcours-pastille {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--white);
+  transform: translateY(-3px);
+}
+
+.parcours-num {
+  display: block;
+  font-family: var(--display);
+  font-size: 11px; font-weight: 800; letter-spacing: 1.4px;
+  color: var(--brand-green);
+  margin-bottom: 6px;
+}
+
+.parcours-label {
+  display: block;
+  font-size: 15px; font-weight: 700; color: var(--navy);
+  line-height: 1.25; margin-bottom: 7px;
+}
+
+.parcours-duree {
+  display: inline-block;
+  font-size: 12px; font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--surface);
+  border-radius: 99px;
+  padding: 4px 11px;
+}
+
+@media (max-width: 760px) {
+  .parcours { padding: 56px 0 0; }
+  .parcours-inner { padding: 0; }
+  .parcours-rail {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 46%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0 20px 14px;
+    gap: 14px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .parcours-rail::before { display: none; }
+  .parcours-etape { scroll-snap-align: center; }
+  .parcours-pastille { width: 54px; height: 54px; box-shadow: none; }
+}
+
+/* ============ DURÉE SUR CHAQUE ÉTAPE DÉTAILLÉE ============ */
+.process-duree {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 12.5px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .8px;
+  color: var(--accent);
+  background: rgba(0,80,136,0.07);
+  border-radius: 99px;
+  padding: 5px 13px;
+  margin-bottom: 10px;
+}
+.process-duree svg { width: 14px; height: 14px; }
