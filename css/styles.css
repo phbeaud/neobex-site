@@ -2770,11 +2770,6 @@ body {
   .header-inner { padding: 0 14px; }
   .logo img { height: 56px; }
   .header-actions { gap: 8px; }
-  .header-actions .btn-secondary {
-    font-size: 0;
-    padding: 10px;
-    gap: 0;
-  }
   .header-actions .btn-primary {
     padding: 11px 14px;
     font-size: 13px;
