@@ -3103,7 +3103,7 @@ h1, h2, h3, h4, h5,
 
 .parcours-rail {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
   gap: 8px;
   position: relative;
 }
@@ -3215,3 +3215,176 @@ h1, h2, h3, h4, h5,
 }
 
 .v2-hero .hero-slide.active { opacity: 1; }
+
+/* ============ HERO DE PAGE AVEC PHOTO ============ */
+.hero-secteur {
+  position: relative;
+  min-height: 62vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--navy);
+}
+
+.hero-secteur > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .55;
+}
+
+.hero-secteur::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(10,22,40,.95) 0%, rgba(10,22,40,.82) 42%, rgba(10,22,40,.42) 72%, rgba(10,22,40,.25) 100%);
+}
+
+.hero-secteur-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 148px 24px 64px;
+}
+
+.hero-secteur-content { max-width: 720px; }
+
+.hero-secteur h1 {
+  font-size: clamp(32px, 4.2vw, 52px);
+  line-height: 1.08;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.hero-secteur .lede {
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255,255,255,.78);
+  max-width: 580px;
+  margin-bottom: 32px;
+}
+
+.hero-secteur-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+
+@media (max-width: 760px) {
+  .hero-secteur { min-height: auto; }
+  .hero-secteur-inner { padding: 124px 20px 56px; }
+  .hero-secteur::after {
+    background: linear-gradient(180deg, rgba(10,22,40,.86) 0%, rgba(10,22,40,.94) 65%);
+  }
+}
+
+/* ============ CARTES D'OFFRE AVEC PHOTO ============ */
+.offre-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.offre-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color .25s, transform .25s, box-shadow .25s;
+}
+
+.offre-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 44px -24px rgba(10,22,40,0.45);
+}
+
+.offre-card > img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+}
+
+.offre-body { padding: 22px 22px 24px; }
+.offre-body h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 9px; line-height: 1.3; }
+.offre-body p { font-size: 14.5px; line-height: 1.6; color: var(--text-secondary); margin: 0; }
+
+@media (max-width: 1080px) { .offre-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .offre-grid { grid-template-columns: 1fr; } }
+
+/* ============ CARTES DE GARANTIE, AVEC PASTILLE ============ */
+.garantie-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+.garantie-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 30px 26px;
+}
+
+.garantie-icon {
+  width: 52px; height: 52px; border-radius: 14px;
+  background: rgba(0,80,136,0.08); color: var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px;
+}
+.garantie-icon svg { width: 25px; height: 25px; }
+.garantie-card h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 9px; }
+.garantie-card p { font-size: 14.5px; line-height: 1.6; color: var(--text-secondary); margin: 0; }
+
+@media (max-width: 860px) { .garantie-grid { grid-template-columns: 1fr; } }
+
+/* Cartes d'offre atteintes par une ancre */
+.offre-card[id] { scroll-margin-top: 130px; }
+
+.offre-card:target {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0,80,136,0.12);
+}
+
+/* ============ SURTITRE ET LIEN SUR FOND SOMBRE ============ */
+.surtitre {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--brand-green);
+  margin-bottom: 22px;
+}
+
+.surtitre::before {
+  content: "";
+  width: 28px;
+  height: 2px;
+  background: var(--brand-green);
+}
+
+.lien-clair {
+  color: rgba(255,255,255,0.82);
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.32);
+  padding-bottom: 2px;
+  transition: color .2s, border-color .2s;
+}
+
+.lien-clair:hover {
+  color: var(--white);
+  border-color: var(--brand-green);
+}

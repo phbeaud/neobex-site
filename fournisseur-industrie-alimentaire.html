@@ -64,12 +64,18 @@
   
   <main role="main">
 
-  <section class="page-hero">
-    <h1>Fournisseur pour l'industrie alimentaire</h1>
-    <p>Usines de transformation, boucheries, fromageries, cuisines commerciales : les fournitures qui reviennent chaque semaine.</p>
-    <div style="display:flex;justify-content:center;gap:16px;margin-top:24px;flex-wrap:wrap;">
-      <a href="/soumission" class="btn-hero-primary">Demander une soumission</a>
-      <a href="https://catalogue.neobex.ca/" class="btn-hero-outline">Voir le catalogue</a>
+  <section class="hero-secteur">
+    <img src="/images/secteurs/usine.webp" alt="Filets à cheveux, jaquettes et gants en usine de transformation alimentaire" width="1400" height="613">
+    <div class="hero-secteur-inner">
+      <div class="hero-secteur-content">
+        <p class="surtitre">Fournisseur B2B · Sherbrooke et partout au Québec</p>
+        <h1>Fournisseur pour l'industrie alimentaire</h1>
+        <p class="lede">Usines de transformation, boucheries, fromageries, cuisines commerciales : les fournitures qui reviennent chaque semaine.</p>
+        <div class="hero-secteur-actions">
+          <a href="/soumission" class="btn-hero-primary">Demander une soumission</a>
+          <a href="https://catalogue.neobex.ca/" class="lien-clair">Voir le catalogue</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -83,33 +89,84 @@
   <section class="about-section" style="background:var(--surface);">
     <div class="about-inner">
       <div class="section-header" style="margin-bottom:40px;"><h2>Les fournitures que nous livrons</h2><p>Protection, hygiène et emballage, au même endroit</p></div>
-      <div class="values-grid">
-        <div class="value-card"><h3>Protection du personnel</h3><p>Gants, filets à cheveux, tabliers et vêtements de protection pour les employés en contact avec les aliments.</p></div>
-        <div class="value-card"><h3>Hygiène et salubrité</h3><p>Désinfectants, nettoyants, savons et papier pour maintenir vos standards de propreté.</p></div>
-        <div class="value-card" id="contenants"><h3>Contenants et emballages</h3><p>Contenants, emballages et ustensiles pour la préparation, la conservation et le service.</p></div>
-        <div class="value-card" id="consommables"><h3>Consommables d'opération</h3><p>Les articles qui s'épuisent chaque semaine et qu'il ne faut jamais manquer.</p></div>
+      <div class="offre-grid">
+        <article class="offre-card">
+          <img src="/images/secteurs/usine.webp" alt="Filets à cheveux et vêtements de protection" width="600" height="375" loading="lazy">
+          <div class="offre-body">
+            <h3>Protection du personnel</h3>
+            <p>Gants, filets à cheveux, tabliers et vêtements de protection pour les employés en contact avec les aliments.</p>
+          </div>
+        </article>
+        <article class="offre-card">
+          <img src="/images/gammes/desinfectants.webp" alt="Produits de désinfection et nettoyants" width="600" height="375" loading="lazy">
+          <div class="offre-body">
+            <h3>Hygiène et salubrité</h3>
+            <p>Désinfectants, nettoyants, savons et papier pour maintenir vos standards de propreté.</p>
+          </div>
+        </article>
+        <article class="offre-card" id="contenants">
+          <img src="/images/gammes/emballage.webp" alt="Contenants et barquettes alimentaires" width="600" height="375" loading="lazy">
+          <div class="offre-body">
+            <h3>Contenants et emballages</h3>
+            <p>Contenants, emballages et ustensiles pour la préparation, la conservation et le service.</p>
+          </div>
+        </article>
+        <article class="offre-card" id="consommables">
+          <img src="/images/gammes/service.webp" alt="Ustensiles et articles jetables" width="600" height="375" loading="lazy">
+          <div class="offre-body">
+            <h3>Consommables d'opération</h3>
+            <p>Les articles qui s'épuisent chaque semaine et qu'il ne faut jamais manquer.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
   <section class="about-section" style="background:var(--surface);">
     <div class="about-inner">
       <div class="section-header" style="margin-bottom:40px;"><h2>Ce que nous apportons à une usine alimentaire</h2><p>Au-delà de la livraison</p></div>
-      <div class="values-grid">
-        <div class="value-card"><h3>Stock en inventaire</h3><p>Les produits que vous consommez régulièrement sont gardés disponibles.</p></div>
-        <div class="value-card"><h3>Échantillons gratuits</h3><p>Vos équipes testent avant que vous changiez un produit utilisé tous les jours.</p></div>
-        <div class="value-card"><h3>Analyse des achats</h3><p>Nous comparons vos fournitures actuelles et identifions les équivalents pertinents.</p></div>
+      <div class="garantie-grid">
+        <article class="garantie-card">
+          <span class="garantie-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></span>
+          <h3>Stock en inventaire</h3>
+          <p>Les produits que vous consommez régulièrement sont gardés disponibles.</p>
+        </article>
+        <article class="garantie-card">
+          <span class="garantie-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/></svg></span>
+          <h3>Échantillons gratuits</h3>
+          <p>Vos équipes testent avant que vous changiez un produit utilisé tous les jours.</p>
+        </article>
+        <article class="garantie-card">
+          <span class="garantie-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+          <h3>Analyse des achats</h3>
+          <p>Nous comparons vos fournitures actuelles et identifions les équivalents pertinents.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="about-section" style="background:var(--surface);">
-    <div class="about-inner">
-      <div class="section-header" style="margin-bottom:40px;"><h2>Comment ça se passe</h2><p>Trois étapes, sans engagement de votre part</p></div>
-      <div class="values-grid">
-        <div class="value-card"><h3>1. Vous envoyez votre liste</h3><p>Factures, bons de commande ou simple liste de produits. Le format n'a pas d'importance : nous travaillons avec ce que vous avez sous la main.</p></div>
-        <div class="value-card"><h3>2. Nous analysons</h3><p>Nous identifions les équivalents, vérifions les formats et les quantités, puis comparons avec ce que vous payez actuellement.</p></div>
-        <div class="value-card"><h3>3. Vous recevez une soumission</h3><p>Une proposition claire, produit par produit, avec des échantillons gratuits si vous souhaitez valider avant de changer.</p></div>
+  <section class="parcours" aria-label="Les trois étapes">
+    <div class="parcours-inner">
+      <div class="parcours-rail">
+        <div class="parcours-etape">
+          <span class="parcours-pastille"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M12 17v-6M9.5 13.5 12 11l2.5 2.5"/></svg></span>
+          <span class="parcours-num">Étape 1</span>
+          <span class="parcours-label">Votre liste</span>
+          <span class="parcours-duree">5 minutes</span>
+        </div>
+        <div class="parcours-etape">
+          <span class="parcours-pastille"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13"/><path d="M3 6h.01M3 12h.01M3 18h.01"/></svg></span>
+          <span class="parcours-num">Étape 2</span>
+          <span class="parcours-label">Notre analyse</span>
+          <span class="parcours-duree">24 à 48 h</span>
+        </div>
+        <div class="parcours-etape">
+          <span class="parcours-pastille"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M9 13h6M9 17h4"/></svg></span>
+          <span class="parcours-num">Étape 3</span>
+          <span class="parcours-label">Votre soumission</span>
+          <span class="parcours-duree">Sans engagement</span>
+        </div>
       </div>
+      <p style="text-align:center;margin-top:34px;font-size:15px;color:var(--text-secondary);">Le processus complet est décrit sur la page <a href="/comment-on-travaille" style="color:var(--accent);font-weight:600;">Comment on travaille</a>.</p>
     </div>
   </section>
 

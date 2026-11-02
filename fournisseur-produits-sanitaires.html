@@ -64,12 +64,18 @@
   
   <main role="main">
 
-  <section class="page-hero">
-    <h1>Fournisseur de produits sanitaires et d'entretien</h1>
-    <p>Désinfectants, nettoyants, papier et distributrices pour les entreprises, les institutions et les entrepreneurs en entretien.</p>
-    <div style="display:flex;justify-content:center;gap:16px;margin-top:24px;flex-wrap:wrap;">
-      <a href="/soumission" class="btn-hero-primary">Demander une soumission</a>
-      <a href="https://catalogue.neobex.ca/" class="btn-hero-outline">Voir le catalogue</a>
+  <section class="hero-secteur">
+    <img src="/images/secteurs/nettoyant.webp" alt="Produits nettoyants, sacs à déchets et fournitures d'entretien" width="1400" height="613">
+    <div class="hero-secteur-inner">
+      <div class="hero-secteur-content">
+        <p class="surtitre">Fournisseur B2B · Sherbrooke et partout au Québec</p>
+        <h1>Fournisseur de produits sanitaires et d'entretien</h1>
+        <p class="lede">Désinfectants, nettoyants, papier et distributrices pour les entreprises, les institutions et les entrepreneurs en entretien.</p>
+        <div class="hero-secteur-actions">
+          <a href="/soumission" class="btn-hero-primary">Demander une soumission</a>
+          <a href="https://catalogue.neobex.ca/" class="lien-clair">Voir le catalogue</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -83,33 +89,84 @@
   <section class="about-section" style="background:var(--surface);">
     <div class="about-inner">
       <div class="section-header" style="margin-bottom:40px;"><h2>Ce que nous fournissons</h2><p>Les consommables qui reviennent chaque mois</p></div>
-      <div class="values-grid">
-        <div class="value-card" id="nettoyants"><h3>Désinfectants et nettoyants</h3><p>Désinfectants de surface, nettoyants multi-usages, lingettes et produits nettoyants québécois.</p></div>
-        <div class="value-card" id="papier"><h3>Papier et distributrices</h3><p>Papier hygiénique, essuie-mains, rouleaux industriels et distributrices adaptées.</p></div>
-        <div class="value-card" id="sacs"><h3>Sacs et gestion des déchets</h3><p>Sacs à déchets de différents formats et épaisseurs selon l'usage et le volume.</p></div>
-        <div class="value-card"><h3>Accessoires d'entretien</h3><p>Les articles complémentaires qui évitent de multiplier les fournisseurs.</p></div>
+      <div class="offre-grid">
+        <article class="offre-card" id="nettoyants">
+          <img src="/images/gammes/desinfectants.webp" alt="Vaporisateurs et bidons de nettoyant" width="600" height="375" loading="lazy">
+          <div class="offre-body">
+            <h3>Désinfectants et nettoyants</h3>
+            <p>Désinfectants de surface, nettoyants multi-usages, lingettes et produits nettoyants québécois.</p>
+          </div>
+        </article>
+        <article class="offre-card" id="papier">
+          <img src="/images/gammes/papier.webp" alt="Rouleaux de papier et distributrice" width="600" height="375" loading="lazy">
+          <div class="offre-body">
+            <h3>Papier et distributrices</h3>
+            <p>Papier hygiénique, essuie-mains, rouleaux industriels et distributrices adaptées.</p>
+          </div>
+        </article>
+        <article class="offre-card" id="sacs">
+          <img src="/images/secteurs/nettoyant.webp" alt="Sacs à déchets et fournitures" width="600" height="375" loading="lazy">
+          <div class="offre-body">
+            <h3>Sacs et gestion des déchets</h3>
+            <p>Sacs à déchets de différents formats et épaisseurs selon l'usage et le volume.</p>
+          </div>
+        </article>
+        <article class="offre-card">
+          <img src="/images/secteurs/foyer.webp" alt="Chariot d'entretien en résidence" width="600" height="375" loading="lazy">
+          <div class="offre-body">
+            <h3>Accessoires d'entretien</h3>
+            <p>Les articles complémentaires qui évitent de multiplier les fournisseurs.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
   <section class="about-section" style="background:var(--surface);">
     <div class="about-inner">
       <div class="section-header" style="margin-bottom:40px;"><h2>Pourquoi des entreprises changent de fournisseur</h2><p>Ce que nos clients cherchent le plus souvent</p></div>
-      <div class="values-grid">
-        <div class="value-card"><h3>Un seul fournisseur</h3><p>Regrouper papier, nettoyants, sacs et protection chez le même fournisseur simplifie la facturation et les commandes.</p></div>
-        <div class="value-card"><h3>Un prix lié au volume</h3><p>À la boîte, à la caisse ou à la palette : le prix unitaire suit la quantité commandée.</p></div>
-        <div class="value-card"><h3>Une analyse de vos achats</h3><p>Nous regardons ce que vous payez aujourd'hui avant de proposer quoi que ce soit.</p></div>
+      <div class="garantie-grid">
+        <article class="garantie-card">
+          <span class="garantie-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg></span>
+          <h3>Un seul fournisseur</h3>
+          <p>Regrouper papier, nettoyants, sacs et protection chez le même fournisseur simplifie la facturation et les commandes.</p>
+        </article>
+        <article class="garantie-card">
+          <span class="garantie-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19V13M12 19V8M19 19V5"/></svg></span>
+          <h3>Un prix lié au volume</h3>
+          <p>À la boîte, à la caisse ou à la palette : le prix unitaire suit la quantité commandée.</p>
+        </article>
+        <article class="garantie-card">
+          <span class="garantie-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+          <h3>Une analyse de vos achats</h3>
+          <p>Nous regardons ce que vous payez aujourd'hui avant de proposer quoi que ce soit.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="about-section" style="background:var(--surface);">
-    <div class="about-inner">
-      <div class="section-header" style="margin-bottom:40px;"><h2>Comment ça se passe</h2><p>Trois étapes, sans engagement de votre part</p></div>
-      <div class="values-grid">
-        <div class="value-card"><h3>1. Vous envoyez votre liste</h3><p>Factures, bons de commande ou simple liste de produits. Le format n'a pas d'importance : nous travaillons avec ce que vous avez sous la main.</p></div>
-        <div class="value-card"><h3>2. Nous analysons</h3><p>Nous identifions les équivalents, vérifions les formats et les quantités, puis comparons avec ce que vous payez actuellement.</p></div>
-        <div class="value-card"><h3>3. Vous recevez une soumission</h3><p>Une proposition claire, produit par produit, avec des échantillons gratuits si vous souhaitez valider avant de changer.</p></div>
+  <section class="parcours" aria-label="Les trois étapes">
+    <div class="parcours-inner">
+      <div class="parcours-rail">
+        <div class="parcours-etape">
+          <span class="parcours-pastille"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M12 17v-6M9.5 13.5 12 11l2.5 2.5"/></svg></span>
+          <span class="parcours-num">Étape 1</span>
+          <span class="parcours-label">Votre liste</span>
+          <span class="parcours-duree">5 minutes</span>
+        </div>
+        <div class="parcours-etape">
+          <span class="parcours-pastille"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13"/><path d="M3 6h.01M3 12h.01M3 18h.01"/></svg></span>
+          <span class="parcours-num">Étape 2</span>
+          <span class="parcours-label">Notre analyse</span>
+          <span class="parcours-duree">24 à 48 h</span>
+        </div>
+        <div class="parcours-etape">
+          <span class="parcours-pastille"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M9 13h6M9 17h4"/></svg></span>
+          <span class="parcours-num">Étape 3</span>
+          <span class="parcours-label">Votre soumission</span>
+          <span class="parcours-duree">Sans engagement</span>
+        </div>
       </div>
+      <p style="text-align:center;margin-top:34px;font-size:15px;color:var(--text-secondary);">Le processus complet est décrit sur la page <a href="/comment-on-travaille" style="color:var(--accent);font-weight:600;">Comment on travaille</a>.</p>
     </div>
   </section>
 
