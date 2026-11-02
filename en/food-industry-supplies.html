@@ -51,12 +51,18 @@
 
   <main role="main">
 
-  <section class="page-hero">
-    <h1>Supplier for the food industry</h1>
-    <p>Processing plants, butcher shops, cheese makers, commercial kitchens: the supplies that come back every week.</p>
-    <div style="display:flex;justify-content:center;gap:16px;margin-top:24px;flex-wrap:wrap;">
-      <a href="/en/quote" class="btn-hero-primary">Request a Quote</a>
-      <a href="https://catalogue.neobex.ca/" class="btn-hero-outline">See the catalogue</a>
+  <section class="hero-secteur">
+    <img src="/images/secteurs/usine.webp" alt="Hairnets, gowns and gloves in a food processing plant" width="1400" height="613">
+    <div class="hero-secteur-inner">
+      <div class="hero-secteur-content">
+        <p class="surtitre">B2B supplier &middot; Sherbrooke and across Quebec</p>
+        <h1>Supplier for the food industry</h1>
+        <p class="lede">Processing plants, butcher shops, cheese makers, commercial kitchens: the supplies that come back every week.</p>
+        <div class="hero-secteur-actions">
+          <a href="/en/quote" class="btn-hero-primary">Request a Quote</a>
+          <a href="https://catalogue.neobex.ca/" class="lien-clair">See the catalogue</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -70,25 +76,85 @@
   <section class="about-section" style="background:var(--surface);">
     <div class="about-inner">
       <div class="section-header" style="margin-bottom:40px;"><h2>The supplies we deliver</h2><p>Protection, hygiene and packaging, in one place</p></div>
-      <div class="values-grid"><div class="value-card"><h3>Staff protection</h3><p>Gloves, hairnets, aprons and protective garments for employees in contact with food.</p></div><div class="value-card"><h3>Hygiene and sanitation</h3><p>Disinfectants, cleaners, soaps and paper to maintain your cleanliness standards.</p></div><div class="value-card" id="contenants"><h3>Containers and packaging</h3><p>Containers, packaging and utensils for preparation, storage and service.</p></div><div class="value-card" id="consommables"><h3>Operating consumables</h3><p>The items that run out every week and that you can never be without.</p></div></div>
+      <div class="offre-grid">
+        <article class="offre-card">
+          <img src="/images/secteurs/usine.webp" alt="Hairnets and protective garments" width="600" height="375" loading="lazy">
+          <div class="offre-body">
+            <h3>Staff protection</h3>
+            <p>Gloves, hairnets, aprons and protective garments for employees in contact with food.</p>
+          </div>
+        </article>
+        <article class="offre-card">
+          <img src="/images/gammes/desinfectants.webp" alt="Disinfection products and cleaners" width="600" height="375" loading="lazy">
+          <div class="offre-body">
+            <h3>Hygiene and sanitation</h3>
+            <p>Disinfectants, cleaners, soaps and paper to maintain your cleanliness standards.</p>
+          </div>
+        </article>
+        <article class="offre-card" id="contenants">
+          <img src="/images/gammes/emballage.webp" alt="Food containers and trays" width="600" height="375" loading="lazy">
+          <div class="offre-body">
+            <h3>Containers and packaging</h3>
+            <p>Containers, packaging and utensils for preparation, storage and service.</p>
+          </div>
+        </article>
+        <article class="offre-card" id="consommables">
+          <img src="/images/gammes/service.webp" alt="Utensils and disposable items" width="600" height="375" loading="lazy">
+          <div class="offre-body">
+            <h3>Operating consumables</h3>
+            <p>The items that run out every week and that you can never be without.</p>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
   <section class="about-section" style="background:var(--surface);">
     <div class="about-inner">
       <div class="section-header" style="margin-bottom:40px;"><h2>What we bring to a food plant</h2><p>Beyond delivery</p></div>
-      <div class="values-grid"><div class="value-card"><h3>Stock on hand</h3><p>The products you consume regularly are kept available.</p></div><div class="value-card"><h3>Free samples</h3><p>Your teams test before you change a product used every day.</p></div><div class="value-card"><h3>Purchase analysis</h3><p>We compare your current supplies and identify the relevant equivalents.</p></div></div>
+      <div class="garantie-grid">
+        <article class="garantie-card">
+          <span class="garantie-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></span>
+          <h3>Stock on hand</h3>
+          <p>The products you consume regularly are kept available.</p>
+        </article>
+        <article class="garantie-card">
+          <span class="garantie-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/></svg></span>
+          <h3>Free samples</h3>
+          <p>Your teams test before you change a product used every day.</p>
+        </article>
+        <article class="garantie-card">
+          <span class="garantie-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+          <h3>Purchase analysis</h3>
+          <p>We compare your current supplies and identify the relevant equivalents.</p>
+        </article>
+      </div>
     </div>
   </section>
 
-  <section class="about-section" style="background:var(--surface);">
-    <div class="about-inner">
-      <div class="section-header" style="margin-bottom:40px;"><h2>How it works</h2><p>Three steps, with no commitment on your part</p></div>
-      <div class="values-grid">
-        <div class="value-card"><h3>1. You send your list</h3><p>Invoices, purchase orders or a simple product list. The format does not matter: we work with whatever you have on hand.</p></div>
-        <div class="value-card"><h3>2. We analyze it</h3><p>We identify the equivalents, check formats and quantities, then compare against what you pay today.</p></div>
-        <div class="value-card"><h3>3. You receive a quote</h3><p>A clear proposal, product by product, with free samples if you want to check before changing anything.</p></div>
+  <section class="parcours" aria-label="The three steps">
+    <div class="parcours-inner">
+      <div class="parcours-rail">
+        <div class="parcours-etape">
+          <span class="parcours-pastille"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M12 17v-6M9.5 13.5 12 11l2.5 2.5"/></svg></span>
+          <span class="parcours-num">Step 1</span>
+          <span class="parcours-label">Your list</span>
+          <span class="parcours-duree">5 minutes</span>
+        </div>
+        <div class="parcours-etape">
+          <span class="parcours-pastille"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13"/><path d="M3 6h.01M3 12h.01M3 18h.01"/></svg></span>
+          <span class="parcours-num">Step 2</span>
+          <span class="parcours-label">Our analysis</span>
+          <span class="parcours-duree">24 to 48 h</span>
+        </div>
+        <div class="parcours-etape">
+          <span class="parcours-pastille"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M9 13h6M9 17h4"/></svg></span>
+          <span class="parcours-num">Step 3</span>
+          <span class="parcours-label">Your quote</span>
+          <span class="parcours-duree">No commitment</span>
+        </div>
       </div>
+      <p style="text-align:center;margin-top:34px;font-size:15px;color:var(--text-secondary);">The full process is described on the <a href="/en/how-we-work" style="color:var(--accent);font-weight:600;">How we work</a> page.</p>
     </div>
   </section>
 
