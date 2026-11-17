@@ -68,12 +68,12 @@
         <h2>Demandez votre soumission gratuite</h2>
         <p class="subtitle">Remplissez le formulaire ci-dessous et notre équipe vous contactera rapidement.</p>
 
-        <form action="https://formsubmit.co/vente@neobexgroup.com" method="POST" enctype="multipart/form-data" aria-label="Formulaire de demande de soumission">
-          <input type="hidden" name="_subject" value="Nouvelle demande de soumission - Neobex">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_next" value="https://neobex.ca/merci">
-          <input type="hidden" name="_autoresponse" value="Merci pour votre demande. Notre équipe l'a bien reçue et vous répondra en 24 à 48 heures. Pour toute question entre-temps : 514 312-1809. — L'équipe Neobex">
-          <input type="text" name="_honey" style="display:none;" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <form action="https://api.web3forms.com/submit" method="POST" data-soumission aria-label="Formulaire de demande de soumission">
+          <input type="hidden" name="access_key" value="9c2c050b-6ccf-4c76-b9f6-765335b4d1c4">
+          <input type="hidden" name="subject" value="Nouvelle demande de soumission - Neobex">
+          <input type="hidden" name="from_name" value="Site Neobex - Soumission">
+          <input type="hidden" name="redirect" value="https://neobex.ca/merci">
+          <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off" aria-hidden="true">
 
           <div class="form-row">
             <div class="form-group">
@@ -128,20 +128,14 @@
             <textarea id="message" name="message" rows="4" placeholder="Décrivez vos besoins..."></textarea>
           </div>
 
-          <div class="form-group">
-            <label for="fichiers">Vos listes de produits ou vos factures</label>
-            <input type="file" id="fichiers" name="attachment" multiple accept=".pdf,.xls,.xlsx,.csv,.doc,.docx,.jpg,.jpeg,.png,.heic">
-            <p class="form-hint">Excel, PDF, Word ou une simple photo. C'est le moyen le plus rapide d'obtenir un prix juste. Maximum 10 Mo au total.</p>
-          </div>
-
           <button type="submit" class="btn-submit">Envoyer ma demande →</button>
         </form>
 
         <div class="file-drop">
           <div class="file-drop-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg></div>
           <div>
-            <h4>Vous préférez envoyer vos documents par courriel?</h4>
-            <p>Écrivez à <a href="mailto:vente@neobexgroup.com">vente@neobexgroup.com</a> ou appelez-nous au <a href="tel:+15143121809">514 312-1809</a>. Les deux aboutissent à la même équipe.</p>
+            <h4>Vous avez une liste de produits ou des factures?</h4>
+            <p>Envoyez vos fichiers a <a href="mailto:vente@neobexgroup.com?subject=Ma%20liste%20de%20produits%20%E2%80%94%20demande%20de%20soumission">vente@neobexgroup.com</a> ou appelez-nous au <a href="tel:+15143121809">514 312-1809</a>. C'est la meme equipe, et c'est le moyen le plus rapide d'obtenir un prix juste.</p>
           </div>
         </div>
 
@@ -170,6 +164,7 @@
     </div>
   </footer>
   <script src="js/analytics.js" defer></script>
+  <script src="js/formulaire.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>
